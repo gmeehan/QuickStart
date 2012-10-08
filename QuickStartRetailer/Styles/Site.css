@@ -148,11 +148,25 @@ first child of the left and right table columns */
 div.hideSkiplink
 {
     background-color:#3a4f63;
+    clear:both;
 }
 
 div.menu
 {
     padding: 4px 0px 4px 4px;
+    width:100% !important;
+    margin-top:0px;
+}
+
+div.menu ul
+{
+    width:100% !important;
+    list-style-type: none;
+}
+
+div.menu li
+{
+    width:33%;
 }
 
 div.menu ul li a, div.menu ul li a:visited
@@ -161,10 +175,11 @@ div.menu ul li a, div.menu ul li a:visited
     border: 1px #4e667d solid;
     color: #dde4ec;
     display: block;
-    line-height: 1.35em;
     padding: 4px 20px;
     text-decoration: none;
+    font-weight:bold;
     white-space: nowrap;
+    text-align:center;
 }
 
 div.menu ul li a:hover
@@ -172,6 +187,8 @@ div.menu ul li a:hover
     background-color: #bfcbd6;
     color: #465c71;
     text-decoration: none;
+    font-weight:bold;
+    text-align:center;
 }
 
 div.menu ul li a:active
@@ -180,6 +197,8 @@ div.menu ul li a:active
     color: #cfdbe6;
     text-decoration: none;
     font-size:18px;
+    font-weight:bold;
+    text-align:center;
 }
 
 /* FORM ELEMENTS   

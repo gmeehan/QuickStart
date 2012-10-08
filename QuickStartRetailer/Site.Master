@@ -13,14 +13,20 @@
     <div class="page">
         <div class="header">
             <div class="title">
-                <div class="logo">
+                <div class="logo" style="float:left">
                     <img src="Images/QuickStart_Logo_Transparent.png" alt="logo" style="height: 157px; width: 481px" />
+                </div>
+                <div class="search" style="float:left; margin:60px">
+                    <asp:TextBox ID="TextBox1" runat="server" Width="250px" placeholder="Search by Keyword..." Height="30px" />
+                    <asp:Button ID="Button1" runat="server" Width="30px" Height="30px" Text="Go" />
                 </div>
             </div>
         </div>
-        <div class="clear hideSkiplink">
-            <div style="width:70%; margin-left:auto; margin-right:auto">
-                <asp:Menu ID="NavigationMenu" Width="100%" runat="server" CssClass="menu" Orientation="Horizontal">
+        <div class="hideSkiplink"> 
+            <div style="width:70%; margin-left:auto; margin-right:auto; margin-top:0px">
+                <asp:Menu ID="NavigationMenu" Width="100%" SkipLinkText="" runat="server" CssClass="menu" Orientation="Horizontal" RenderingMode="List">
+                    <staticmenustyle width="100%" />  
+                    <staticmenuitemstyle width="100%" />
                     <Items>
                         <asp:MenuItem Text="Home" Value="Home"/>
                         <asp:MenuItem Text="Products" Value="Products"/>
