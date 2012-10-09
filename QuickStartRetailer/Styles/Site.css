@@ -235,30 +235,44 @@ div.menu ul li a:active
 
 /* MISC  
 ----------------------------------------------------------*/
-.tree-menu 
+.left-nav
 {
-    list-style: none outside none;
-    max-width:14%;
-    font-size:18px;
-    text-align:left;
-    text-decoration:none;
-    background-color:#CCCCCC;
-    list-style-type:none;
+    float: left;
+    margin-right: 2px;
 }
-
-.tree-item li:hover, .tree-item a
+.nav-head 
 {
-    color:#3A55A5 !important;
-    padding: 6px 3px 6px 17px;
+    background: url("/Images/info-box-top.gif") no-repeat scroll 0 0 transparent;
+    clear: both;
+    margin-top: 3px;
+    width: 315px;
 }
-
-.current-item
+.nav-head h2 
 {
-    color:#3A55A5 !important;
-    padding-top:8px;
-    float:left;
-    padding-bottom:5px;
-    font-weight:bold;    
+    max-width: 85%;
+    padding-left: 6%; 
+}
+.nav-box 
+{
+    background-image: url("/Images/nav-box-mid.gif");
+    background-position: left bottom;
+    background-repeat: repeat;
+    clear: both;
+    min-height: 161px;
+    margin: 0;
+    width: 315px;
+}
+.nav-box div
+{
+    padding-left: 6%;
+}
+.nav-end
+{
+    background-image: url("/Images/nav-box-bottom.gif") !important;
+}
+.nav-end p 
+{
+    padding-left: 6%;
 }
 
 .clear

@@ -73,6 +73,8 @@
     <Content Include="Images\blue-arrow.png" />
     <Content Include="Images\btrFly.jpg" />
     <Content Include="Images\h-dot.gif" />
+    <Content Include="Images\nav-box-bottom.gif" />
+    <Content Include="Images\nav-box-mid.gif" />
     <Content Include="Images\info-box-top.gif" />
     <Content Include="Images\info-box.gif" />
     <Content Include="Images\image1.jpg" />
