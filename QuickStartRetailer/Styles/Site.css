@@ -291,3 +291,41 @@ div.menu ul li a:active
 {
     font-size:large;
 }
+.index-info-box
+{
+    float: left;
+    margin-right: 2px;
+}
+.info-head 
+{
+    background: url("/Images/info-box-top.gif") no-repeat scroll 0 0 transparent;
+    clear: both;
+    margin-top: 3px;
+    width: 315px;
+}
+.info-head h2 
+{
+    max-width: 85%;
+    padding-left: 6%; 
+}
+.info-box 
+{
+    background-image: url("/Images/info-box.gif");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    clear: both;
+    height: 114px;
+    margin: 0;
+    width: 315px;
+}
+.info-box p
+{
+    max-width: 85%;
+    padding-left: 6%;
+}
+.h-dot 
+{
+    background: url("/Images/h-dot.gif") repeat-x scroll 0 0 transparent;
+    height: 1px;
+    margin: 0 24px 0 18px;
+}

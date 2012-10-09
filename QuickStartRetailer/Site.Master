@@ -28,7 +28,9 @@
             <div class="header">
                 <div class="title">
                     <div style="float:left">
-                        <img src="Images/QuickStart_Logo_Transparent.png" id="ImageLogo" alt="logo" class="logo" />
+                        <a href="Index.aspx">
+                            <img src="Images/QuickStart_Logo_Transparent.png" id="ImageLogo" alt="logo" class="logo" />
+                        </a>
                     </div>
                     <div class="search" style="float:left; margin:60px">
                         <asp:TextBox ID="TextBoxSearch" runat="server" Width="250px" AutoCompleteType="Search" placeholder="Search by Product..." />

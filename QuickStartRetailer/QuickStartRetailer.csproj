@@ -70,7 +70,11 @@
     <Content Include="Checkout.aspx" />
     <Content Include="Images\arrow.png" />
     <Content Include="Images\bg.png" />
+    <Content Include="Images\blue-arrow.png" />
     <Content Include="Images\btrFly.jpg" />
+    <Content Include="Images\h-dot.gif" />
+    <Content Include="Images\info-box-top.gif" />
+    <Content Include="Images\info-box.gif" />
     <Content Include="Images\image1.jpg" />
     <Content Include="Images\image2.jpg" />
     <Content Include="Images\image3.jpg" />
@@ -79,6 +83,7 @@
     <Content Include="Images\left.png" />
     <Content Include="Images\logoSmall.png" />
     <Content Include="Images\right.png" />
+    <Content Include="Images\spacer1px.gif" />
     <Content Include="OrderInvoice.aspx" />
     <Content Include="OrderConfirmation.aspx" />
     <Content Include="PaymentInfo.aspx" />

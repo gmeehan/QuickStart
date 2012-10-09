@@ -46,31 +46,42 @@
     </div><!-- end #slider -->
 
     <div class="left-content-section">
-        <h7><a href="/MyProfile.aspx">Heading 1</a></h7>
-        <ul>
-            <li class="index-list-item">item 1</li>
-            <li class="index-list-item">item 2</li>
-            <li class="index-list-item">item 3</li>
-        </ul>
-        <h7><a href="/MyAccount.aspx">Heading 3</a></h7>
-        <ul>
-            <li class="index-list-item">item 1</li>
-            <li class="index-list-item">item 2</li>
-            <li class="index-list-item">item 3</li>
-        </ul>
+        <div class="index-info-box">
+            <div class="info-head">
+                <h2>
+                    <a href="AddToCart.aspx">Add To Cart</a>
+                </h2>
+                <div class="h-dot"><img width="1" height="1" alt="" src="/Images/spacer1px.gif"></div>
+            </div>
+            <div class="info-box">
+               <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut ipsum vel dui.</p>
+                    <p>
+                        <img width="7" height="8" alt="" src="/Images/blue-arrow.png">
+                        <a href="/AddToCart.aspx">Get Started!</a>
+                    </p>
+               </div>     
+            </div>
+        </div>
     </div>
+
     <div class="right-content-section">
-        <h7><a href="/ProductInfo.aspx">Heading 2</a></h7>
-        <ul>
-            <li class="index-list-item">item 1</li>
-            <li class="index-list-item">item 2</li>
-            <li class="index-list-item">item 3</li>
-        </ul>
-        <h7><a href="/OrderHistory.aspx">Heading 4</a></h7>
-        <ul>
-            <li class="index-list-item">item 1</li>
-            <li class="index-list-item">item 2</li>
-            <li class="index-list-item">item 3</li>
-        </ul>
+        <div class="index-info-box">
+            <div class="info-head">
+                <h2>
+                    <a href="ProductInfo.aspx">Products</a>
+                </h2>
+                <div class="h-dot"><img width="1" height="1" alt="" src="/Images/spacer1px.gif"></div>
+            </div>
+            <div class="info-box">
+               <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut ipsum vel dui.</p>
+                    <p>
+                        <img width="7" height="8" alt="" src="/Images/blue-arrow.png">
+                        <a href="/ProductInfo.aspx">Get Started!</a>
+                    </p>
+               </div>     
+            </div>
+        </div>
     </div>
 </asp:Content>
