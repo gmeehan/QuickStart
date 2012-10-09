@@ -13,8 +13,7 @@ body
 
 a:link, a:visited
 {
-    color: #BAD8E9;
-    text-decoration:none;
+    color: #034af3;
 }
 
 a:hover
@@ -38,7 +37,7 @@ p
 /* HEADINGS   
 ----------------------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6, h7
+h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
     color: #666666;
@@ -74,12 +73,6 @@ h4
 h5, h6
 {
     font-size: 1em;
-}
-
-h7
-{
-    font-size: 3.5em;
-    font-weight: 600;
 }
 
 /* this rule styles <h1> and <h2> tags that are the 
@@ -154,11 +147,8 @@ first child of the left and right table columns */
 
 .footer
 {
-    color: #BFCBD6;
-    font-weight:bold;
-    font-size:1.3em;
-    background-color:#3A4F63;
-    padding: 8px 0px 8px 0px;
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
     margin: 0px auto;
     text-align: center;
     line-height: normal;
@@ -187,9 +177,15 @@ div.menu ul
     list-style-type: none;
 }
 
-div.menu li
+.static
 {
-    width:33%;
+    width:15%;
+    padding:0px 3px 0px 3px;
+}
+
+.dynamic
+{
+    width:auto;
 }
 
 div.menu ul li a, div.menu ul li a:visited
@@ -219,7 +215,6 @@ div.menu ul li a:active
     background-color: #465c71;
     color: #cfdbe6;
     text-decoration: none;
-    font-size:18px;
     font-weight:bold;
     text-align:center;
 }
@@ -232,48 +227,27 @@ div.menu ul li a:active
 }
 
 
+/* LOGIN PAGE
+----------------------------------------------------------*/ 
+.adminLoginPasswordDiv
+{
+    margin-left: auto; 
+    margin-right:auto; 
+    margin-top:50px; 
+    width:250px;
+    font-weight:bold;
+}
+
+.adminLoginButtonDiv
+{
+    margin-left: auto; 
+    margin-right:auto; 
+    margin-top:50px; 
+    width:95px;
+}
 
 /* MISC  
 ----------------------------------------------------------*/
-.left-nav
-{
-    float: left;
-    margin-right: 2px;
-}
-.nav-head 
-{
-    background: url("/Images/info-box-top.gif") no-repeat scroll 0 0 transparent;
-    clear: both;
-    margin-top: 3px;
-    width: 315px;
-}
-.nav-head h2 
-{
-    max-width: 85%;
-    padding-left: 6%; 
-}
-.nav-box 
-{
-    background-image: url("/Images/nav-box-mid.gif");
-    background-position: left bottom;
-    background-repeat: repeat;
-    clear: both;
-    min-height: 161px;
-    margin: 0;
-    width: 315px;
-}
-.nav-box div
-{
-    padding-left: 6%;
-}
-.nav-end
-{
-    background-image: url("/Images/nav-box-bottom.gif") !important;
-}
-.nav-end p 
-{
-    padding-left: 6%;
-}
 
 .clear
 {
@@ -285,61 +259,7 @@ div.menu ul li a:active
     font-weight: bold;
 }
 
-/* Index.aspx (DL)  
-----------------------------------------------------------*/
-.left-content-section 
+.textCenter
 {
-    margin-top:15px;
-    margin-left:180px;
-    float:left;
-    text-align:justify;
-}
-.right-content-section
-{
-    margin-top:15px;
-    margin-right:180px;
-    float:right;
-    text-align:justify;
-}
-.index-list-item
-{
-    font-size:large;
-}
-.index-info-box
-{
-    float: left;
-    margin-right: 2px;
-}
-.info-head 
-{
-    background: url("/Images/info-box-top.gif") no-repeat scroll 0 0 transparent;
-    clear: both;
-    margin-top: 3px;
-    width: 315px;
-}
-.info-head h2 
-{
-    max-width: 85%;
-    padding-left: 6%; 
-}
-.info-box 
-{
-    background-image: url("/Images/info-box.gif");
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    clear: both;
-    height: 114px;
-    margin: 0;
-    width: 315px;
-}
-.info-box p
-{
-    max-width: 85%;
-    padding-left: 6%;
-}
-.h-dot 
-{
-    background: url("/Images/h-dot.gif") repeat-x scroll 0 0 transparent;
-    height: 1px;
-    margin: 0 24px 0 18px;
+    text-align:center;
 }

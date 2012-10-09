@@ -1,7 +1,9 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="QuickStartRetailer._Default" %>
+﻿<%@ Page Title="Tax Management" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true"
+    CodeBehind="Taxes.aspx.cs" Inherits="QuickStartRetailer.Admin._Taxes" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
+
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+Taxes
 </asp:Content>
