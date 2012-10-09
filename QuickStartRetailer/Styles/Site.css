@@ -242,10 +242,13 @@ div.menu ul li a:active
 }
 .nav-head 
 {
-    background: url("/Images/info-box-top.gif") no-repeat scroll 0 0 transparent;
+    background: url("/Images/nav-box-top.gif") no-repeat scroll 0 0 transparent;
     clear: both;
     margin-top: 3px;
+    margin-bottom:-13px;
     width: 315px;
+    padding-top:3px;
+    padding-bottom:3px;
 }
 .nav-head h2 
 {
@@ -268,7 +271,12 @@ div.menu ul li a:active
 }
 .nav-end
 {
-    background-image: url("/Images/nav-box-bottom.gif") !important;
+    background: url("/Images/nav-box-bottom.gif") no-repeat scroll 0 0 transparent;
+    clear: both;
+    margin-top: -10px;
+    width: 315px;
+    padding-top:3px;
+    padding-bottom:32px;
 }
 .nav-end p 
 {
