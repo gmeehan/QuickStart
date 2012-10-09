@@ -13,6 +13,7 @@
     <RootNamespace>QuickStartRetailer</RootNamespace>
     <AssemblyName>QuickStartRetailer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,11 +68,24 @@
     <Content Include="Category.aspx" />
     <Content Include="AddToCart.aspx" />
     <Content Include="Checkout.aspx" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\bg.png" />
+    <Content Include="Images\btrFly.jpg" />
+    <Content Include="Images\image1.jpg" />
+    <Content Include="Images\image2.jpg" />
+    <Content Include="Images\image3.jpg" />
+    <Content Include="Images\image4.jpg" />
+    <Content Include="Images\jump-to.png" />
+    <Content Include="Images\left.png" />
+    <Content Include="Images\logoSmall.png" />
+    <Content Include="Images\right.png" />
     <Content Include="OrderInvoice.aspx" />
     <Content Include="OrderConfirmation.aspx" />
     <Content Include="PaymentInfo.aspx" />
     <Content Include="DeliveryInfo.aspx" />
     <Content Include="ProductInfo.aspx" />
+    <Content Include="Scripts\jquery.simpleSlide_min.js" />
+    <Content Include="Styles\SliderCss.css" />
     <Content Include="SubCategory.aspx" />
     <Content Include="OrderHistory.aspx" />
     <Content Include="MyProfile.aspx" />
