@@ -1,10 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="QuickStartRetailer.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="QuickStartRetailer.Admin.AdminMaster" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Admin.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -17,7 +17,7 @@
                     <img src="Images/QuickStart_Logo_Transparent.png" id="ImageLogo" alt="logo" class="logo" />
                 </div>
                 <div class="search" style="float:left; margin:60px">
-                    <asp:TextBox ID="TextBoxSearch" runat="server" Width="250px" AutoCompleteType="Search" placeholder="Search by Product..." />
+                    <asp:TextBox ID="TextBoxSearch" runat="server" Width="250px" placeholder="Search by Keyword..." Height="30px" />
                     <asp:Button ID="ButtonSearch" runat="server" Width="30px" Height="30px" Text="Go" />
                 </div>
             </div>

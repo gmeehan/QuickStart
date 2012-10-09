@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuickStartRetailer {
+namespace QuickStartRetailer.Admin {
     
     
-    public partial class SiteMaster {
+    public partial class AdminMaster {
         
         /// <summary>
         /// HeadContent control.
