@@ -88,7 +88,6 @@ first child of the left and right table columns */
 
 .page
 {
-    padding-top:50px;
     background-color: #fff;
     border: 1px solid #496077;
     min-height:800px;
@@ -178,9 +177,15 @@ div.menu ul
     list-style-type: none;
 }
 
-div.menu li
+.static
 {
-    width:33%;
+    width:15%;
+    padding:0px 3px 0px 3px;
+}
+
+.dynamic
+{
+    width:auto;
 }
 
 div.menu ul li a, div.menu ul li a:visited
@@ -210,7 +215,6 @@ div.menu ul li a:active
     background-color: #465c71;
     color: #cfdbe6;
     text-decoration: none;
-    font-size:18px;
     font-weight:bold;
     text-align:center;
 }
@@ -223,6 +227,24 @@ div.menu ul li a:active
 }
 
 
+/* LOGIN PAGE
+----------------------------------------------------------*/ 
+.adminLoginPasswordDiv
+{
+    margin-left: auto; 
+    margin-right:auto; 
+    margin-top:50px; 
+    width:250px;
+    font-weight:bold;
+}
+
+.adminLoginButtonDiv
+{
+    margin-left: auto; 
+    margin-right:auto; 
+    margin-top:50px; 
+    width:95px;
+}
 
 /* MISC  
 ----------------------------------------------------------*/
@@ -235,4 +257,9 @@ div.menu ul li a:active
 .bold
 {
     font-weight: bold;
+}
+
+.textCenter
+{
+    text-align:center;
 }
