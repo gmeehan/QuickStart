@@ -1,0 +1,14 @@
+C:\Users\Graham\QuickStart\QSRDataObjects\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Graham\QuickStart\QSRDataObjects\obj\Debug\QSRDataObjects.dll
+C:\Users\Graham\QuickStart\QSRDataObjects\obj\Debug\QSRDataObjects.pdb
+C:\Users\Graham\QuickStart\QSRDataObjects\bin\Debug\QSRDataObjects.dll.config
+C:\Users\Graham\QuickStart\QSRDataObjects\bin\Debug\QSRDataObjects.dll
+C:\Users\Graham\QuickStart\QSRDataObjects\bin\Debug\QSRDataObjects.pdb
+C:\Users\Graham\QuickStart\QSRDataObjects\bin\Debug\QuickStart_DB.mdf
+C:\Users\Graham\QuickStart\QSRDataObjects\bin\Debug\QuickStart_DB_log.ldf
+C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\bin\Debug\QSRDataObjects.dll.config
+C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\bin\Debug\QSRDataObjects.dll
+C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\bin\Debug\QSRDataObjects.pdb
+C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\QSRDataObjects.dll
+C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\QSRDataObjects.pdb

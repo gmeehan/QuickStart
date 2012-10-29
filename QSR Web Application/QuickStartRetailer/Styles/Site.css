@@ -1,0 +1,532 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    background: #b6b7bc;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+
+a:link, a:visited
+{
+    color: #BAD8E9;
+    text-decoration:none;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6, h7
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+h7
+{
+    font-size: 3.5em;
+    font-weight: 600;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    background-color: #fff;
+    border: 1px solid #496077;
+    min-height:600px;
+    margin-top:30px;
+}
+
+.header
+{
+    position: relative;
+    padding: 0px;
+    min-height:125px;
+    width: 100%;
+    
+    background-image: linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -o-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -moz-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -webkit-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -ms-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.25, rgb(226,229,235)),
+	    color-stop(0.63, rgb(250,250,250))
+    );
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.title
+{
+    margin-left:auto;
+    margin-right:auto;
+    width: 900px;
+    background-color:transparent;
+}
+
+.logo
+{
+    height: 100px; 
+    width: 350px;
+    margin-top:10px
+}
+
+.main
+{
+    padding: 0px 12px;
+    min-height: 420px;
+    width: 900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #BFCBD6;
+    font-weight:bold;
+    font-size:1.3em;
+    padding: 8px 0px 8px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+    background-image: linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -o-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -moz-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -webkit-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -ms-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.25, rgb(226,229,235)),
+	    color-stop(0.63, rgb(250,250,250))
+    );
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    /* Gradient backgrounds for the buttons. Generated using http://gradients.glrzad.com/ */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #787878), color-stop(0.5, #5E5E5E), color-stop(0.51, #707070), color-stop(1, #838383));
+    background-image: -moz-linear-gradient(center bottom, #787878 0%, #5E5E5E 50%, #707070 51%, #838383 100%);
+    background-color:#5f5f5f; /* Fallback */
+    clear:both;
+}
+
+/* MASTER PAGE
+----------------------------------------------------------*/ 
+.search
+{
+    float:left; 
+    margin-top:7px; 
+    margin-left:213px;
+}
+
+#TextBoxSearch
+{
+    float:left;
+    padding:5px;
+}
+
+#ButtonSearch
+{
+    margin-left:5px;
+    margin-top:4px;
+    float:left;
+}
+
+.userPanel
+{
+    width:300px;
+    color:White;
+    float:left; 
+    margin-top:10px; 
+    margin-left:200px;
+    padding:5px 10px 5px 10px;
+    border:1px solid black;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    /* Gradient backgrounds for the buttons. Generated using http://gradients.glrzad.com/ */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #787878), color-stop(0.5, #5E5E5E), color-stop(0.51, #707070), color-stop(1, #838383));
+    background-image: -moz-linear-gradient(center bottom, #787878 0%, #5E5E5E 50%, #707070 51%, #838383 100%);
+    background-color:#5f5f5f; /* Fallback */
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.left-nav
+{
+    float: left;
+    margin-right: 2px;
+}
+.nav-head 
+{
+    background: url("/Images/nav-box-top.gif") no-repeat scroll 0 0 transparent;
+    clear: both;
+    margin-top: 3px;
+    margin-bottom:-13px;
+    width: 315px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+.nav-head h2 
+{
+    max-width: 85%;
+    padding-left: 6%; 
+}
+.nav-box 
+{
+    background-image: url("/Images/nav-box-mid.gif");
+    background-position: left bottom;
+    background-repeat: repeat;
+    clear: both;
+    min-height: 161px;
+    margin: 0;
+    width: 315px;
+}
+.nav-box div
+{
+    padding-left: 6%;
+}
+.nav-end
+{
+    background: url("/Images/nav-box-bottom.gif") no-repeat scroll 0 0 transparent;
+    clear: both;
+    margin-top: -10px;
+    width: 315px;
+    padding-top:3px;
+    padding-bottom:32px;
+}
+.nav-end p 
+{
+    padding-left: 6%;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+/* APPLE STYLE NAVIGATION MENU 
+----------------------------------------------------------*/
+#appleNav 
+{   
+    margin-left:auto;
+    margin-right:auto;
+    list-style:none;
+    float:none !important;
+
+    /* Lucinda Grande is the font used on the website from Apple. */
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; letter-spacing:-0.5px; font-size:13px;
+    
+    /* Apply a subtle text-shadow to the text */
+    text-shadow: 0 -1px 3px #202020;
+
+    /* We want to add the shadow to the complete navigation menu. In order to do that, we'll need to set
+    the correct width and height, and also the correct borders, in order to create the perfect drop shadow */
+    width:900px; height:34px;
+    
+    /* Gradient backgrounds for the buttons. Generated using http://gradients.glrzad.com/ */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #787878), color-stop(0.5, #5E5E5E), color-stop(0.51, #707070), color-stop(1, #838383));
+    background-image: -moz-linear-gradient(center bottom, #787878 0%, #5E5E5E 50%, #707070 51%, #838383 100%);
+    background-color:#5f5f5f; /* Fallback */
+}
+
+#appleNav li { display:block; float:left; border-right:1px solid #5d5d5d; border-left:1px solid #929292; width:220px; height:34px; border-bottom:1px solid #575757; border-top:1px solid #797979;
+
+    /* Gradient backgrounds for the buttons. Generated using http://gradients.glrzad.com/ */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #787878), color-stop(0.5, #5E5E5E), color-stop(0.51, #707070), color-stop(1, #838383));
+    background-image: -moz-linear-gradient(center bottom, #787878 0%, #5E5E5E 50%, #707070 51%, #838383 100%);
+    background-color:#5f5f5f; /* Fallback */
+}
+
+/* Set the states when hovering, except for the last item in the list (the search bar), since it doesn't need to change */
+#appleNav li:hover {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3F3F3F), color-stop(0.5, #383838), color-stop(0.51, #434343), color-stop(1, #555555));
+    background-image: -moz-linear-gradient(center bottom, #3F3F3F 0%, #383838 50%, #434343 51%, #555555 100% );
+    background-color:#383838; /* Fallback */
+    
+    /* We use the inset of the box shadow to create a subtle inner glow when hovering */
+    -moz-box-shadow: inset 0 0 5px 5px #535353;
+    -webkit-box-shadow: inset 0 0 5px 5px #535353;
+    box-shadow: inset 0 0 5px 5px #535353;
+}
+
+/* When the user clicks the button, we simply change the box inset (compared to the "hover") */
+#appleNav li:active {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3F3F3F), color-stop(0.5, #383838), color-stop(0.51, #434343), color-stop(1, #555555));
+    background-image: -moz-linear-gradient(center bottom, #3F3F3F 0%, #383838 50%, #434343 51%, #555555 100% );
+    background-color:#383838; /* Fallback */
+    
+    -moz-box-shadow: inset 0 1px 2px 2px #000;
+    -webkit-box-shadow: inset 0 1px 2px 2px #000;
+    box-shadow: inset 0 1px 2px 2px #000;
+}
+
+#appleNav li a { color:white; text-decoration:none; text-align:center; display:block; line-height:34px; outline:none; }
+
+/* Fade in animation (Webkit only) */
+/*
+@-webkit-keyframes showMenu {
+    from { opacity: 0; top:-20px; }
+    to   { opacity: 1; }
+}
+*/
+
+#appleNav {
+     -webkit-animation: showMenu 1s; position:relative;
+}
+
+/* Index.aspx (DL)  
+----------------------------------------------------------*/
+.left-content-section 
+{
+    margin-top:15px;
+    margin-left:80px;
+    float:left;
+    text-align:justify;
+}
+.right-content-section
+{
+    margin-top:15px;
+    margin-right:80px;
+    float:right;
+    text-align:justify;
+}
+.index-list-item
+{
+    font-size:large;
+}
+.index-info-box
+{
+    float: left;
+    margin-right: 2px;
+}
+.info-head 
+{
+    background: url("/Images/info-box-top.gif") no-repeat scroll 0 0 transparent;
+    clear: both;
+    margin-top: 3px;
+    width: 315px;
+}
+.info-head h2 
+{
+    max-width: 85%;
+    padding-left: 6%; 
+}
+.info-box 
+{
+    background-image: url("/Images/info-box.gif");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    clear: both;
+    height: 114px;
+    margin: 0;
+    width: 315px;
+}
+.info-box p
+{
+    max-width: 85%;
+    padding-left: 6%;
+}
+.h-dot 
+{
+    background: url("/Images/h-dot.gif") repeat-x scroll 0 0 transparent;
+    height: 1px;
+    margin: 0 24px 0 18px;
+}
+
+/* LOGIN PAGE
+----------------------------------------------------------*/ 
+.userLoginDiv
+{
+    float:left;
+    margin-left: 130px; 
+    margin-right:auto; 
+    margin-top:50px; 
+    width:250px;
+    font-weight:bold;
+    border:1px solid black;
+    padding:0px 20px 20px 20px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-image: linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -o-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -moz-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -webkit-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -ms-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.02, rgb(215,239,195)),
+	    color-stop(0.51, rgb(234,247,235))
+    );
+}
+
+.userLoginButtonDiv
+{
+    margin-left: auto; 
+    margin-right:auto; 
+    margin-top:30px; 
+    width:95px;
+}
+
+.userLoginMessageDiv
+{
+    margin-left: auto; 
+    margin-right:auto; 
+    margin-top:30px; 
+    width:195px;
+    text-align:center;
+}
+
+.userContToRegisterButtonDiv
+{
+    margin-left: auto; 
+    margin-right:auto; 
+    margin-top:30px; 
+    width:195px;
+    text-align:center;
+}
+
+.userRegisterDiv
+{
+    float:right;
+    margin-left: auto; 
+    margin-right:130px; 
+    margin-top:50px; 
+    width:250px;
+    font-weight:bold;
+    border:1px solid black;
+    padding:0px 20px 20px 20px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-image: linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -o-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -moz-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -webkit-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: -ms-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.02, rgb(215,239,195)),
+	    color-stop(0.51, rgb(234,247,235))
+    );
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.textCenter
+{
+    text-align:center;
+}

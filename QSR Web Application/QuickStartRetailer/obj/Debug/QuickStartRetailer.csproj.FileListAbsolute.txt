@@ -1,0 +1,18 @@
+C:\Users\Graham\QuickStart\QuickStartRetailer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Graham\QuickStart\QuickStartRetailer\bin\QuickStartRetailer.dll
+C:\Users\Graham\QuickStart\QuickStartRetailer\bin\QuickStartRetailer.pdb
+C:\Users\Graham\QuickStart\QuickStartRetailer\bin\QSRWebObjects.dll
+C:\Users\Graham\QuickStart\QuickStartRetailer\bin\QSRDataObjects.dll
+C:\Users\Graham\QuickStart\QuickStartRetailer\bin\QSRWebObjects.pdb
+C:\Users\Graham\QuickStart\QuickStartRetailer\bin\QSRDataObjects.pdb
+C:\Users\Graham\QuickStart\QuickStartRetailer\obj\Debug\QuickStartRetailer.dll
+C:\Users\Graham\QuickStart\QuickStartRetailer\obj\Debug\QuickStartRetailer.pdb
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\bin\QuickStartRetailer.dll
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\bin\QuickStartRetailer.pdb
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\bin\QSRWebObjects.dll
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\bin\QSRDataObjects.dll
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\bin\QSRWebObjects.pdb
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\bin\QSRDataObjects.pdb
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\obj\Debug\QuickStartRetailer.dll
+C:\Users\Graham\QuickStart\QSR Web Application\QuickStartRetailer\obj\Debug\QuickStartRetailer.pdb

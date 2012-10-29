@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuickStart_DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="QuickStart_DBModelStoreContainer">
+    <EntitySet Name="Administrators" EntityType="QuickStart_DBModel.Store.Administrators" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Audits" EntityType="QuickStart_DBModel.Store.Audits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AuditTypes" EntityType="QuickStart_DBModel.Store.AuditTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="QuickStart_DBModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Configurations" EntityType="QuickStart_DBModel.Store.Configurations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeliveryType" EntityType="QuickStart_DBModel.Store.DeliveryType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LangLabels" EntityType="QuickStart_DBModel.Store.LangLabels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderItems" EntityType="QuickStart_DBModel.Store.OrderItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="QuickStart_DBModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductDeliveryTypes" EntityType="QuickStart_DBModel.Store.ProductDeliveryTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="QuickStart_DBModel.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatesProvinces" EntityType="QuickStart_DBModel.Store.StatesProvinces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="QuickStart_DBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="AdministratorID" />
+    </Key>
+    <Property Name="AdministratorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="varchar" MaxLength="30" />
+    <Property Name="Password" Type="varchar" MaxLength="30" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Audits">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuditTypeID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AdminID" Type="int" />
+    <Property Name="Notes" Type="varchar" MaxLength="200" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="TESTCOLUMN" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="AuditTypes">
+    <Key>
+      <PropertyRef Name="AuditTypeID" />
+    </Key>
+    <Property Name="AuditTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="IsAdmin" Type="bit" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="ParentCategoryID" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Configurations">
+    <Key>
+      <PropertyRef Name="ConfigurationCode" />
+    </Key>
+    <Property Name="ConfigurationCode" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="Value" Type="varchar" MaxLength="100" />
+    <Property Name="IsYesNoValue" Type="bit" />
+    <Property Name="YesNoValue" Type="bit" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DeliveryType">
+    <Key>
+      <PropertyRef Name="DeliveryTypeID" />
+    </Key>
+    <Property Name="DeliveryTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LangLabels">
+    <Key>
+      <PropertyRef Name="LangLabelCode" />
+    </Key>
+    <Property Name="LangLabelCode" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Value" Type="varchar" MaxLength="100" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OrderItems">
+    <Key>
+      <PropertyRef Name="OrderItemID" />
+    </Key>
+    <Property Name="OrderItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="10" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Subtotal" Type="float" />
+    <Property Name="Taxes" Type="float" />
+    <Property Name="DeliveryCost" Type="float" />
+    <Property Name="DeliveryTypeID" Type="int" />
+    <Property Name="GrandTotal" Type="float" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductDeliveryTypes">
+    <Key>
+      <PropertyRef Name="ProductDeliveryTypeID" />
+    </Key>
+    <Property Name="ProductDeliveryTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductCode" />
+    </Key>
+    <Property Name="ProductCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="MSRP" Type="float" />
+    <Property Name="isFreeShipping" Type="bit" />
+    <Property Name="isTaxFree" Type="bit" />
+    <Property Name="QuantityInStock" Type="int" />
+    <Property Name="IsQuantityUnlimited" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StatesProvinces">
+    <Key>
+      <PropertyRef Name="StateProvinceID" />
+    </Key>
+    <Property Name="StateProvinceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Country" Type="varchar" MaxLength="20" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+    <Property Name="TaxRatePercentage" Type="float" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="varchar" MaxLength="30" />
+    <Property Name="Password" Type="varchar" MaxLength="30" />
+    <Property Name="Salutation" Type="varchar" MaxLength="30" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="Address1" Type="varchar" MaxLength="30" />
+    <Property Name="Address2" Type="varchar" MaxLength="30" />
+    <Property Name="City" Type="varchar" MaxLength="30" />
+    <Property Name="StateProvinceID" Type="int" />
+    <Property Name="ZipPostalCode" Type="varchar" MaxLength="9" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="IsReceiveNewsletters" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+</Schema>

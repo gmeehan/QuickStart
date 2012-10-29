@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStartRetailer", "QuickStartRetailer\QuickStartRetailer.csproj", "{27C5AF6B-39A6-4377-8F27-AA1ADC1CBA7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QSRWebObjects", "QSRWebObjects\QSRWebObjects.csproj", "{CBA2D2CE-7EA1-4EC0-A0D6-C5BE6CF9EC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QSRDataObjects", "QSRDataObjects\QSRDataObjects.csproj", "{92E3CF8D-4EE0-409D-9B1E-F84E28538497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27C5AF6B-39A6-4377-8F27-AA1ADC1CBA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C5AF6B-39A6-4377-8F27-AA1ADC1CBA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C5AF6B-39A6-4377-8F27-AA1ADC1CBA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C5AF6B-39A6-4377-8F27-AA1ADC1CBA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA2D2CE-7EA1-4EC0-A0D6-C5BE6CF9EC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA2D2CE-7EA1-4EC0-A0D6-C5BE6CF9EC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA2D2CE-7EA1-4EC0-A0D6-C5BE6CF9EC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA2D2CE-7EA1-4EC0-A0D6-C5BE6CF9EC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E3CF8D-4EE0-409D-9B1E-F84E28538497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E3CF8D-4EE0-409D-9B1E-F84E28538497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E3CF8D-4EE0-409D-9B1E-F84E28538497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E3CF8D-4EE0-409D-9B1E-F84E28538497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="QuickStartRetailer.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/SliderCss.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.simpleSlide_min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            simpleSlide({
+                'set_speed': 300,
+                'swipe': 'true',
+                'status_width': 20,
+                'status_color_outside': '#DDD',
+                'status_color_inside': '#2184B1'
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <div style="float:left">
+                        <a href="Index.aspx">
+                            <img src="Images/QuickStart_Logo_Transparent.png" id="ImageLogo" alt="logo" class="logo" />
+                        </a>
+                    </div>
+                    <div class="userPanel">
+                        <div>
+                            <div style="float:left; padding-right:10px;">
+                                <asp:Label ID="LabelWelcome" runat="server" Text="Welcome, Guest"></asp:Label>
+                            </div>
+                            <div style="float:right;">
+                                <a href="MyAccount.aspx">My Account</a>
+                                |
+                                <asp:LinkButton ID="LinkButtonLoginLogout" runat="server" 
+                                    onclick="LinkButtonLoginLogout_Click">Login</asp:LinkButton>
+                            </div>
+                        </div>
+                        <hr class="clear"/>
+                        <div class="clear">
+                            <div style="float:left;">
+                                <asp:Label ID="LabelCartItems" runat="server" Text="Items in Cart: 0"></asp:Label>
+                                <br />
+                                <asp:Label ID="LabelSubtotal" runat="server" Text="Subtotal: $0.00"></asp:Label>
+                            </div>
+                            <div style="float:right;">
+                                <a href="Checkout.aspx">View Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <asp:TextBox ID="TextBoxSearch" runat="server" Width="250px" AutoCompleteType="Search" placeholder="Search by Product..." />
+                        <asp:ImageButton ID="ButtonSearch" Width="25px" Height="25px" ImageUrl="~/Images/Magnifying-Glass-icon.png" runat="server" />
+                    </div>
+                </div>
+            </div>
+            <div class="hideSkiplink">
+                <asp:Menu ID="appleNav" SkipLinkText="" runat="server" Orientation="Horizontal" RenderingMode="List">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Index.aspx" Text="Home" Value="Home"/>
+                        <asp:MenuItem NavigateUrl="~/Category.aspx" Text="Categories" Value="Categories"/>
+                        <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us" Value="Contact Us" />
+                        <asp:MenuItem NavigateUrl="~/MyAccount.aspx" Text="My Account" Value="My Account" />
+                    </Items>
+                </asp:Menu>
+            </div>
+            <div class="mainContainer">
+                <div class="main">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="footer">
+                <img alt="logo" src="Images/logoSmall.png" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

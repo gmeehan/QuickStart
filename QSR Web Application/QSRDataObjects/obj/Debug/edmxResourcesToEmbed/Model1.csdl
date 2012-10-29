@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuickStart_DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="QuickStart_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrators" EntityType="QuickStart_DBModel.Administrator" />
+    <EntitySet Name="Audits" EntityType="QuickStart_DBModel.Audit" />
+    <EntitySet Name="AuditTypes" EntityType="QuickStart_DBModel.AuditType" />
+    <EntitySet Name="Categories" EntityType="QuickStart_DBModel.Category" />
+    <EntitySet Name="Configurations" EntityType="QuickStart_DBModel.Configuration" />
+    <EntitySet Name="DeliveryTypes" EntityType="QuickStart_DBModel.DeliveryType" />
+    <EntitySet Name="LangLabels" EntityType="QuickStart_DBModel.LangLabel" />
+    <EntitySet Name="OrderItems" EntityType="QuickStart_DBModel.OrderItem" />
+    <EntitySet Name="Orders" EntityType="QuickStart_DBModel.Order" />
+    <EntitySet Name="ProductDeliveryTypes" EntityType="QuickStart_DBModel.ProductDeliveryType" />
+    <EntitySet Name="Products" EntityType="QuickStart_DBModel.Product" />
+    <EntitySet Name="StatesProvinces" EntityType="QuickStart_DBModel.StatesProvince" />
+    <EntitySet Name="Users" EntityType="QuickStart_DBModel.User" />
+  </EntityContainer>
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="AdministratorID" />
+    </Key>
+    <Property Name="AdministratorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditTypeID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AdminID" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="TESTCOLUMN" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="AuditType">
+    <Key>
+      <PropertyRef Name="AuditTypeID" />
+    </Key>
+    <Property Name="AuditTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsAdmin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ParentCategoryID" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Configuration">
+    <Key>
+      <PropertyRef Name="ConfigurationCode" />
+    </Key>
+    <Property Name="ConfigurationCode" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Value" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsYesNoValue" Type="Boolean" />
+    <Property Name="YesNoValue" Type="Boolean" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="DeliveryType">
+    <Key>
+      <PropertyRef Name="DeliveryTypeID" />
+    </Key>
+    <Property Name="DeliveryTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Cost" Type="Double" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="LangLabel">
+    <Key>
+      <PropertyRef Name="LangLabelCode" />
+    </Key>
+    <Property Name="LangLabelCode" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Value" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="OrderItemID" />
+    </Key>
+    <Property Name="OrderItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Subtotal" Type="Double" />
+    <Property Name="Taxes" Type="Double" />
+    <Property Name="DeliveryCost" Type="Double" />
+    <Property Name="DeliveryTypeID" Type="Int32" />
+    <Property Name="GrandTotal" Type="Double" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="ProductDeliveryType">
+    <Key>
+      <PropertyRef Name="ProductDeliveryTypeID" />
+    </Key>
+    <Property Name="ProductDeliveryTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductCode" />
+    </Key>
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="MSRP" Type="Double" />
+    <Property Name="isFreeShipping" Type="Boolean" />
+    <Property Name="isTaxFree" Type="Boolean" />
+    <Property Name="QuantityInStock" Type="Int32" />
+    <Property Name="IsQuantityUnlimited" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="StatesProvince">
+    <Key>
+      <PropertyRef Name="StateProvinceID" />
+    </Key>
+    <Property Name="StateProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="TaxRatePercentage" Type="Double" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Salutation" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Address1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="StateProvinceID" Type="Int32" />
+    <Property Name="ZipPostalCode" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="IsReceiveNewsletters" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+  </EntityType>
+</Schema>
