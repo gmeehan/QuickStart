@@ -17,9 +17,14 @@ namespace QuickStartRetailer.Admin
                 Response.Redirect("~/Admin/Login.aspx");
             else
             {
+                //Populate products grid
+                Product product = new Product();
+                GridViewProducts.DataSource = product.GetAllProducts(true);
+                GridViewProducts.DataBind();
+
                 if (!Page.IsPostBack)
                 {
-
+                    
                 }
             }
         }

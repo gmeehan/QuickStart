@@ -12,3 +12,9 @@ C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\bin\Debug\QSRDataO
 C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\QSRDataObjects.dll
 C:\Users\Graham\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\QSRDataObjects.pdb
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRDataObjects\bin\Debug\QSRDataObjects.dll.config
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRDataObjects\bin\Debug\QSRDataObjects.dll
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRDataObjects\bin\Debug\QSRDataObjects.pdb
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\QSRDataObjects.dll
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRDataObjects\obj\Debug\QSRDataObjects.pdb

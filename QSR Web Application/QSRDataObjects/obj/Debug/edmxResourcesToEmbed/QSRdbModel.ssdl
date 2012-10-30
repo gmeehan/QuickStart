@@ -127,6 +127,7 @@
     </Key>
     <Property Name="ProductCode" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Brand" Type="varchar" MaxLength="50" />
     <Property Name="Description" Type="varchar" MaxLength="200" />
     <Property Name="CategoryID" Type="int" />
     <Property Name="MSRP" Type="float" />

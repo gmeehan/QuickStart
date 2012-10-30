@@ -26,6 +26,7 @@ namespace QSRDataObjects
                 {
                     hsh["productcode"] = obj.ProductCode;
                     hsh["name"] = obj.Name;
+                    hsh["brand"] = obj.Brand;
                     hsh["description"] = obj.Description;
                     hsh["categoryid"] = obj.CategoryID;
                     hsh["msrp"] = obj.MSRP;
@@ -43,6 +44,29 @@ namespace QSRDataObjects
             }
 
             return hsh;
+        }
+
+        /// <summary>
+        /// Purpose: Grabs all products
+        /// Accepts: Boolean
+        /// Returns: List<Product>
+        /// </summary>
+        public List<Product> GetAllProducts(bool onlyActive)
+        {
+            QuickStart_DBEntities dbContext;
+            List<Product> allproducts = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                allproducts = dbContext.Products.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ProductData", "GetAllProducts");
+            }
+
+            return allproducts;
         }
     }
 }

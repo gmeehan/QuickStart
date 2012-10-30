@@ -14,3 +14,10 @@ C:\Users\Graham\QuickStart\QSR Web Application\QSRWebObjects\bin\Debug\QSRDataOb
 C:\Users\Graham\QuickStart\QSR Web Application\QSRWebObjects\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Graham\QuickStart\QSR Web Application\QSRWebObjects\obj\Debug\QSRWebObjects.dll
 C:\Users\Graham\QuickStart\QSR Web Application\QSRWebObjects\obj\Debug\QSRWebObjects.pdb
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRWebObjects\bin\Debug\QSRWebObjects.dll
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRWebObjects\bin\Debug\QSRWebObjects.pdb
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRWebObjects\bin\Debug\QSRDataObjects.dll
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRWebObjects\bin\Debug\QSRDataObjects.pdb
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRWebObjects\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRWebObjects\obj\Debug\QSRWebObjects.dll
+C:\Users\Graham\Documents\GitHub\QuickStart\QSR Web Application\QSRWebObjects\obj\Debug\QSRWebObjects.pdb

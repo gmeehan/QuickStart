@@ -120,6 +120,7 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="QuickStart_DBModel.Product">
         <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
           <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
