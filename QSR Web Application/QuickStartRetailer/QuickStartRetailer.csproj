@@ -54,11 +54,37 @@
     <Content Include="Admin\Appearance.aspx" />
     <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\EmailToUsers.aspx" />
+    <Content Include="Admin\fancybox\lib\jquery-1.8.2.min.js" />
+    <Content Include="Admin\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Admin\fancybox\source\blank.gif" />
+    <Content Include="Admin\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Admin\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Admin\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Admin\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Admin\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Admin\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Admin\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Admin\Forms\AddProductForm.aspx" />
     <Content Include="Admin\Images\logoSmall.png" />
     <Content Include="Admin\Purchasing.aspx" />
     <Content Include="Admin\Pricing.aspx" />
     <Content Include="Admin\EditTables.aspx" />
     <Content Include="Admin\OrderHistory.aspx" />
+    <Content Include="Admin\Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Admin\Scripts\jquery-1.4.1.js" />
+    <Content Include="Admin\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Admin\Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Admin\Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Admin\Scripts\jquery-ui-1.8.18.custom.min.js" />
+    <Content Include="Admin\Scripts\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Admin\Scripts\jquery.simpleSlide_min.js" />
+    <Content Include="Admin\Scripts\jquery.smooth-scroll.min.js" />
+    <Content Include="Admin\Scripts\lightbox.js" />
     <Content Include="Admin\Taxes.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Admin\Products.aspx" />
@@ -149,6 +175,13 @@
     </Compile>
     <Compile Include="Admin\EmailToUsers.aspx.designer.cs">
       <DependentUpon>EmailToUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Forms\AddProductForm.aspx.cs">
+      <DependentUpon>AddProductForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Forms\AddProductForm.aspx.designer.cs">
+      <DependentUpon>AddProductForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Purchasing.aspx.cs">
       <DependentUpon>Purchasing.aspx</DependentUpon>
@@ -276,6 +309,7 @@
     <Compile Include="ProductInfo.aspx.designer.cs">
       <DependentUpon>ProductInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubCategory.aspx.cs">
       <DependentUpon>SubCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -342,7 +376,6 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
