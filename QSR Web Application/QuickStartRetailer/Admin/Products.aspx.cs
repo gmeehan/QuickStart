@@ -28,5 +28,11 @@ namespace QuickStartRetailer.Admin
                 }
             }
         }
+
+        protected void GridViewProducts_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridViewProducts.PageIndex = e.NewPageIndex;
+            GridViewProducts.DataBind();
+        }
     }
 }

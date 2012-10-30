@@ -19,5 +19,10 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 Products
 <a class="fancybox" rel="group" href="Forms/AddProductForm.aspx">hi dave</a>
-    <asp:GridView ID="GridViewProducts" AutoGenerateColumns="true" runat="server"></asp:GridView>
+    <asp:GridView ID="GridViewProducts" runat="server" AutoGenerateColumns="true" 
+        PageSize="5" GridLines="None"
+        AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" 
+        AlternatingRowStyle-CssClass="alt" 
+        onpageindexchanging="GridViewProducts_PageIndexChanging">
+    </asp:GridView>
 </asp:Content>
