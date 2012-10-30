@@ -48,6 +48,7 @@ namespace QuickStartRetailer
                     if (main.Text == "Categories")
                     {
                         m = main;
+                        break;
                     }
                 }
 
@@ -59,6 +60,7 @@ namespace QuickStartRetailer
                         {
                             mi.Value = cs.ParentCategoryID.ToString();
                             mi.Text = cs.Name;
+                            mi.NavigateUrl = "~/SubCategory.aspx?id=" + cs.CategoryID;
                             ms.ChildItems.Add(mi);
                             break;
                         }
@@ -68,6 +70,7 @@ namespace QuickStartRetailer
                 {
                     mi.Value = cs.CategoryID.ToString();
                     mi.Text = cs.Name;
+                    mi.Selectable = false;
                     m.ChildItems.Add(mi);
                 }
             }

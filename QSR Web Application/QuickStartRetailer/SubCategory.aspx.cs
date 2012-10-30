@@ -14,6 +14,19 @@ namespace QuickStartRetailer
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            Category cat = new Category();
+            List<Category> cats = cat.GetAllCategories(true);
+
+            foreach (var c in cats)
+            {
+
+                if (c.CategoryID == Int32.Parse(Request.QueryString["id"]))
+                {
+
+                    subCatDiv.InnerHtml = "<h2>" + c.Name + "</h2>";
+                    break;
+                }
+            }
         }
     }
 }
