@@ -9,6 +9,47 @@ namespace QSRDataObjects
     public class UserData : ErrorLoggerData
     {
         /// <summary>
+        /// Purpose: Add new user's information to the DB
+        /// Accepts: Hashtable
+        /// Returns: Boolean
+        /// </summary>
+        public int AddUser(Hashtable hsh)
+        {
+            int newId = -1;
+            User usr = new User();
+            QuickStart_DBEntities dbContext;
+
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+                usr.Username = Convert.ToString(hsh["username"]);
+                usr.Password = Convert.ToString(hsh["password"]);
+                usr.Salutation = Convert.ToString(hsh["salutation"]);
+                usr.FirstName = Convert.ToString(hsh["firstName"]);
+                usr.LastName = Convert.ToString(hsh["lastName"]);
+                usr.Address1 = Convert.ToString(hsh["address1"]);
+                usr.Address2 = Convert.ToString(hsh["address2"]);
+                usr.City = Convert.ToString(hsh["city"]);
+                usr.StateProvinceID = Convert.ToInt32(hsh["stateProv"]);
+                usr.ZipPostalCode = Convert.ToString(hsh["zipPC"]);
+                usr.Email = Convert.ToString(hsh["email"]);
+                usr.IsReceiveNewsletters = Convert.ToBoolean(hsh["newsletters"]);
+                usr.Created = DateTime.Now;
+
+                dbContext.AddToUsers(usr);
+                dbContext.SaveChanges();
+                newId = usr.UserID;
+                dbContext.Detach(usr);
+            }
+            catch (Exception e)
+            {
+                System.Exception error = e;
+            }
+
+            return newId;
+        }
+
+        /// <summary>
         /// Purpose: Grabs user information based on ID
         /// Accepts: Int
         /// Returns: Hashtable

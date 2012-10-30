@@ -117,6 +117,37 @@ namespace QSRWebObjects
         }
 
         /// <summary>
+        /// Purpose: Add new user information to the DB
+        /// Accepts: Nothing
+        /// Returns: Boolean
+        /// </summary>
+        public void AddUser()
+        {
+            Hashtable HashUser = new Hashtable();
+            try
+            {
+                UserData usr = new UserData();
+                HashUser["username"] = _username;
+                HashUser["password"] = _password;
+                HashUser["salutation"] = _salutation;
+                HashUser["firstName"] = _firstName;
+                HashUser["lastName"] = _lastName;
+                HashUser["address1"] = _address1;
+                HashUser["address2"] = _address2;
+                HashUser["city"] = _city;
+                HashUser["stateProv"] = _stateProvinceID;
+                HashUser["zipPC"] = _zipCodePostal;
+                HashUser["email"] = _email;
+                HashUser["newsletters"] = _isReceiveNewsletters;
+                _userID = usr.AddUser(HashUser);
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "User.cs", "AddUser()");
+            }
+        }
+
+        /// <summary>
         /// Purpose: Grabs user information based on ID
         /// Accepts: Int
         /// Returns: Nothing

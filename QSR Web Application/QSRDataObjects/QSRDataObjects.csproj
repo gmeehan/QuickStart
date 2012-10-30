@@ -66,16 +66,16 @@
     <Compile Include="DeliveryTypeData.cs" />
     <Compile Include="ErrorLoggerData.cs" />
     <Compile Include="LangLabelData.cs" />
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="OrderData.cs" />
     <Compile Include="OrderItemData.cs" />
     <Compile Include="ProductData.cs" />
     <Compile Include="ProductDeliveryTypeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QSRdbModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QSRdbModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="StateProvinceData.cs" />
     <Compile Include="UserData.cs" />
   </ItemGroup>
@@ -112,9 +112,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="QSRdbModel.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QSRdbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>

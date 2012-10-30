@@ -54,49 +54,11 @@
     <Content Include="Admin\Appearance.aspx" />
     <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\EmailToUsers.aspx" />
-    <Content Include="Admin\fancybox\lib\jquery-1.8.2.min.js" />
-    <Content Include="Admin\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
-    <Content Include="Admin\fancybox\source\blank.gif" />
-    <Content Include="Admin\fancybox\source\fancybox_loading.gif" />
-    <Content Include="Admin\fancybox\source\fancybox_overlay.png" />
-    <Content Include="Admin\fancybox\source\fancybox_sprite.png" />
-    <Content Include="Admin\fancybox\source\helpers\fancybox_buttons.png" />
-    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-buttons.css" />
-    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-buttons.js" />
-    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-media.js" />
-    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
-    <Content Include="Admin\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
-    <Content Include="Admin\fancybox\source\jquery.fancybox.css" />
-    <Content Include="Admin\fancybox\source\jquery.fancybox.js" />
-    <Content Include="Admin\fancybox\source\jquery.fancybox.pack.js" />
-    <Content Include="Admin\Forms\AddProductForm.aspx" />
-    <Content Include="Admin\Images\bg-checker.png" />
-    <Content Include="Admin\Images\box.png" />
-    <Content Include="Admin\Images\bullet.gif" />
-    <Content Include="Admin\Images\close.png" />
-    <Content Include="Admin\Images\donate.png" />
-    <Content Include="Admin\Images\favicon.gif" />
-    <Content Include="Admin\Images\loading.gif" />
     <Content Include="Admin\Images\logoSmall.png" />
-    <Content Include="Admin\Images\next.png" />
-    <Content Include="Admin\Images\prev.png" />
-    <Content Include="Admin\Images\speech-bubbles.png" />
     <Content Include="Admin\Purchasing.aspx" />
     <Content Include="Admin\Pricing.aspx" />
     <Content Include="Admin\EditTables.aspx" />
     <Content Include="Admin\OrderHistory.aspx" />
-    <Content Include="Admin\Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Admin\Scripts\jquery-1.4.1.js" />
-    <Content Include="Admin\Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Admin\Scripts\jquery-1.7.2.min.js" />
-    <Content Include="Admin\Scripts\jquery-1.8.2.min.js" />
-    <Content Include="Admin\Scripts\jquery-ui-1.8.18.custom.min.js" />
-    <Content Include="Admin\Scripts\jquery.mousewheel-3.0.6.pack.js" />
-    <Content Include="Admin\Scripts\jquery.simpleSlide_min.js" />
-    <Content Include="Admin\Scripts\jquery.smooth-scroll.min.js" />
-    <Content Include="Admin\Scripts\lightbox.js" />
-    <Content Include="Admin\Styles\lightbox.css" />
-    <Content Include="Admin\Styles\screen.css" />
     <Content Include="Admin\Taxes.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Admin\Products.aspx" />
@@ -109,17 +71,10 @@
     <Content Include="Checkout.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="Images\arrow.png" />
-    <Content Include="Images\bg-checker.png" />
     <Content Include="Images\bg.png" />
     <Content Include="Images\blue-arrow.png" />
-    <Content Include="Images\box.png" />
     <Content Include="Images\btrFly.jpg" />
-    <Content Include="Images\bullet.gif" />
-    <Content Include="Images\close.png" />
-    <Content Include="Images\donate.png" />
-    <Content Include="Images\favicon.gif" />
     <Content Include="Images\h-dot.gif" />
-    <Content Include="Images\loading.gif" />
     <Content Include="Images\Magnifying-Glass-icon.png" />
     <Content Include="Images\nav-box-bottom.gif" />
     <Content Include="Images\nav-box-mid.gif" />
@@ -132,23 +87,14 @@
     <Content Include="Images\jump-to.png" />
     <Content Include="Images\left.png" />
     <Content Include="Images\logoSmall.png" />
-    <Content Include="Images\next.png" />
-    <Content Include="Images\prev.png" />
     <Content Include="Images\right.png" />
     <Content Include="Images\spacer1px.gif" />
-    <Content Include="Images\speech-bubbles.png" />
     <Content Include="OrderInvoice.aspx" />
     <Content Include="OrderConfirmation.aspx" />
     <Content Include="PaymentInfo.aspx" />
     <Content Include="DeliveryInfo.aspx" />
     <Content Include="ProductInfo.aspx" />
-    <Content Include="Scripts\jquery-1.7.2.min.js" />
-    <Content Include="Scripts\jquery-ui-1.8.18.custom.min.js" />
     <Content Include="Scripts\jquery.simpleSlide_min.js" />
-    <Content Include="Scripts\jquery.smooth-scroll.min.js" />
-    <Content Include="Scripts\lightbox.js" />
-    <Content Include="Styles\lightbox.css" />
-    <Content Include="Styles\screen.css" />
     <Content Include="Styles\SliderCss.css" />
     <Content Include="SubCategory.aspx" />
     <Content Include="OrderHistory.aspx" />
@@ -203,13 +149,6 @@
     </Compile>
     <Compile Include="Admin\EmailToUsers.aspx.designer.cs">
       <DependentUpon>EmailToUsers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Forms\AddProductForm.aspx.cs">
-      <DependentUpon>AddProductForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Forms\AddProductForm.aspx.designer.cs">
-      <DependentUpon>AddProductForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Purchasing.aspx.cs">
       <DependentUpon>Purchasing.aspx</DependentUpon>
@@ -438,7 +377,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51480</DevelopmentServerPort>
+          <DevelopmentServerPort>51945</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
