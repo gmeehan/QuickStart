@@ -30,6 +30,8 @@ namespace QuickStartRetailer
 
                     //Change login button to logout
                     LinkButtonLoginLogout.Text = "Logout";
+                    
+                    
                 }
             }
 
@@ -37,7 +39,38 @@ namespace QuickStartRetailer
             Category cat = new Category();
             List<Category> cats = cat.GetAllCategories(true);
 
-            //TO DO: PLACE ALL CATEGORIES AND SUB-CATEGORIES IN MASTER PAGE'S "CATEGORIES" MENU ITEM
+            foreach(var cs in cats)
+            {
+                MenuItem mi = new MenuItem();
+                MenuItem m = new MenuItem();
+                foreach (MenuItem main in appleNav.Items)
+                {
+                    if (main.Text == "Categories")
+                    {
+                        m = main;
+                    }
+                }
+
+                if (cs.ParentCategoryID > 0)
+                {
+                    foreach (MenuItem ms in m.ChildItems)
+                    {
+                        if (ms.Value == cs.ParentCategoryID.ToString())
+                        {
+                            mi.Value = cs.ParentCategoryID.ToString();
+                            mi.Text = cs.Name;
+                            ms.ChildItems.Add(mi);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    mi.Value = cs.CategoryID.ToString();
+                    mi.Text = cs.Name;
+                    m.ChildItems.Add(mi);
+                }
+            }
         }
 
         protected void LinkButtonLoginLogout_Click(object sender, EventArgs e)
