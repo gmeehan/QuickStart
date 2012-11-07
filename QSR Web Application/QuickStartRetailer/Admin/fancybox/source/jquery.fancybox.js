@@ -1798,7 +1798,7 @@
 		onReady : function (opts, obj) {
 			$('.fancybox-overlay').stop(true, true);
 
-			if (!this.overlay) {
+			if (!this.overlay) { 
 				this.margin = D.height() > W.height() || $('body').css('overflow-y') === 'scroll' ? $('body').css('margin-right') : false;
 				this.el     = document.all && !document.querySelector ? $('html') : $('body');
 

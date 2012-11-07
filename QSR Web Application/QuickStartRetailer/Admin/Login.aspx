@@ -9,11 +9,11 @@
     <h2 class="textCenter">Administrator Login</h2>
     <br />
     <asp:Label ID="Label1" runat="server" Text="Username" Width="100px"></asp:Label>
-    <asp:TextBox ID="TextBoxUsername" runat="server" Width="140px"></asp:TextBox>
+    <asp:TextBox ID="TextBoxUsername" runat="server" Text="admin" Width="140px"></asp:TextBox>
     <br />
     <br />
     <asp:Label ID="Label2" runat="server" Text="Password" Width="100px"></asp:Label>
-    <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password" Width="140px"></asp:TextBox>
+    <asp:TextBox ID="TextBoxPassword" runat="server" Text="admin" TextMode="Password" Width="140px"></asp:TextBox>
     <br />
     <br />
     <div class="adminLoginButtonDiv">

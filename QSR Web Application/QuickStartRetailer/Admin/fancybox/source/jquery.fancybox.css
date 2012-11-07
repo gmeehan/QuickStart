@@ -50,6 +50,8 @@
 
 .fancybox-inner {
 	overflow: hidden;
+	/*Added my Graham to fit web form into fancybox properly, without causing scrollbar*/
+	/*height: auto !important;*/
 }
 
 .fancybox-type-iframe .fancybox-inner {

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-using QSRDataObjects; //Connect web layer to data layer
+using QSRDataObjects;
+using System.Data;
+using System.ComponentModel; //Connect web layer to data layer
 
 namespace QSRWebObjects
 {
@@ -164,6 +166,22 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "Product", "GetAllProducts");
             }
             return products;
+        }
+
+        public DataTable ToDataTable(List<Product> data)
+        {
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(Product));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (Product item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
         }
     }
 }

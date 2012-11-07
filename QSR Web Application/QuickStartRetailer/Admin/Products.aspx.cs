@@ -4,8 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
-using QSRWebObjects; //Connect presentation layer to web object layer
+using QSRWebObjects;
+using System.Data;
+using System.ComponentModel; //Connect presentation layer to web object layer
 
 namespace QuickStartRetailer.Admin
 {
@@ -19,7 +22,8 @@ namespace QuickStartRetailer.Admin
             {
                 //Populate products grid
                 Product product = new Product();
-                GridViewProducts.DataSource = product.GetAllProducts(true);
+                DataTable dataTable = product.ToDataTable(product.GetAllProducts(true));
+                GridViewProducts.DataSource = dataTable;
                 GridViewProducts.DataBind();
 
                 if (!Page.IsPostBack)
@@ -33,6 +37,61 @@ namespace QuickStartRetailer.Admin
         {
             GridViewProducts.PageIndex = e.NewPageIndex;
             GridViewProducts.DataBind();
+        }
+
+        protected void GridViewProducts_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            if (e.SortExpression == (string)ViewState["SortColumn"])
+            {
+                // We are resorting the same column, so flip the sort direction
+                e.SortDirection =
+                    ((SortDirection)ViewState["SortColumnDirection"] == SortDirection.Ascending) ?
+                    SortDirection.Descending : SortDirection.Ascending;
+            }
+            // Apply the sort
+            DataTable dataTable = GridViewProducts.DataSource as DataTable;
+            dataTable.DefaultView.Sort = e.SortExpression +
+                (string)((e.SortDirection == SortDirection.Ascending) ? " ASC" : " DESC");
+            ViewState["SortColumn"] = e.SortExpression;
+            ViewState["SortColumnDirection"] = e.SortDirection;
+
+            GridViewProducts.DataSource = dataTable;
+            GridViewProducts.DataBind();
+        }
+
+        private string ConvertSortDirectionToSql(SortDirection sortDirection)
+        {
+            string newSortDirection = String.Empty;
+
+            switch (sortDirection)
+            {
+                case SortDirection.Ascending:
+                    newSortDirection = "ASC";
+                    break;
+
+                case SortDirection.Descending:
+                    newSortDirection = "DESC";
+                    break;
+            }
+
+            return newSortDirection;
+        }
+
+        protected void GridViewProducts_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DataRowView drv = (DataRowView)e.Row.DataItem;
+                ((HtmlAnchor)e.Row.FindControl("edit")).HRef = "Forms/EditProductForm.aspx?prodcd=" + drv[0].ToString();
+                /*
+                HtmlAnchor htmlanchor = new HtmlAnchor();
+                htmlanchor.HRef = "Forms/AddProductForm.aspx?this=4";
+                htmlanchor.
+                htmlanchor.Title = "Edit"; //tooltip
+                htmlanchor.InnerHtml = "<img alt=\"edit\" src=\"Images/clipboard_edit.png\" />";
+                e.Row.Cells[12].Controls.Add(htmlanchor);
+                */
+            }
         }
     }
 }

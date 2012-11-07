@@ -104,13 +104,13 @@ namespace QSRWebObjects
                 foreach (QSRDataObjects.Category c in dataCategories)
                 {
                     Category cat = new Category();
-                    cat.CategoryID = c.CategoryID;
-                    cat.Name = c.Name;
-                    cat.Description = c.Description;
-                    cat.ParentCategoryID = Convert.ToInt32(c.ParentCategoryID);
-                    cat.Created = Convert.ToDateTime(c.Created);
-                    cat.Modified = Convert.ToDateTime(c.Modified);
-                    cat.IsActive = Convert.ToBoolean(c.IsActive);
+                    try { cat.CategoryID = c.CategoryID; } catch (Exception) { cat.CategoryID = 0; }
+                    try { cat.Name = c.Name; } catch (Exception) { cat.Name = ""; }
+                    try { cat.Description = c.Description; } catch (Exception) { cat.Description = ""; }
+                    try { cat.ParentCategoryID = Convert.ToInt32(c.ParentCategoryID); } catch (Exception) { cat.ParentCategoryID = 0; }
+                    try { cat.Created = Convert.ToDateTime(c.Created); } catch (Exception) { cat.Created = DateTime.MinValue; }
+                    try { cat.Modified = Convert.ToDateTime(c.Modified); } catch (Exception) { cat.Modified = DateTime.MinValue; }
+                    try { cat.IsActive = Convert.ToBoolean(c.IsActive); } catch (Exception) { cat.IsActive = false; }
                     categories.Add(cat);
                 }
             }

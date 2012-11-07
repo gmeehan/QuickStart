@@ -24,6 +24,17 @@
     <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
     <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox_600x500").fancybox({
+                'autoSize': false,
+                'width': 600,
+                'height': 500,
+                'type': 'iframe'
+            });
+        });
+    </script>
+
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     
     </asp:ContentPlaceHolder>

@@ -14,7 +14,6 @@ namespace QuickStartRetailer
 {
     public partial class _Registration : System.Web.UI.Page
     {
-        int indx = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             // dynamic dropdown loads here
