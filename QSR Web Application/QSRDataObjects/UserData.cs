@@ -11,7 +11,7 @@ namespace QSRDataObjects
         /// <summary>
         /// Purpose: Add new user's information to the DB
         /// Accepts: Hashtable
-        /// Returns: Boolean
+        /// Returns: int
         /// </summary>
         public int AddUser(Hashtable hsh)
         {
@@ -43,7 +43,7 @@ namespace QSRDataObjects
             }
             catch (Exception e)
             {
-                System.Exception error = e;
+                ErrorLoggerData.ErrorRoutine(e, "UserData", "AddUser");
             }
 
             return newId;

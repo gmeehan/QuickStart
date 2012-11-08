@@ -26,13 +26,9 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $(".fancybox_600x500").fancybox({
-                'autoSize': false,
-                'width': 600,
-                'height': 500,
-                'type': 'iframe'
-            });
+            
         });
+
     </script>
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">

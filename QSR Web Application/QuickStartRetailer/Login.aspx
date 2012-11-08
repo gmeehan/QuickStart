@@ -16,7 +16,7 @@
     <br />
     <br />
     <div class="userLoginButtonDiv">
-        <asp:Button ID="ButtonLogin" runat="server" Text="Login" CssClass="bold" Width="90px" onclick="ButtonLogin_Click" />
+        <asp:Button ID="ButtonLogin" runat="server" Text="Login" CssClass="fancy_button" Width="90px" onclick="ButtonLogin_Click" />
     </div>
     <div class="userLoginMessageDiv">
         <asp:Label ID="LabelOutput" Width="200px" runat="server" Text=""></asp:Label>
@@ -25,7 +25,7 @@
 <div class="userRegisterDiv">
     <h2 class="textCenter">Don't Have an Account? Click to Register.</h2>
     <div class="userContToRegisterButtonDiv">
-        <asp:Button ID="ButtonGoToRegister" runat="server" Text="Continue to Registration..." CssClass="bold" onclick="ButtonGoToRegister_Click" />
+        <asp:Button ID="ButtonGoToRegister" runat="server" Text="Continue to Registration..." CssClass="fancy_button" onclick="ButtonGoToRegister_Click" />
     </div>
 </div>
 </asp:Content>

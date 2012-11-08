@@ -20,16 +20,41 @@ namespace QuickStartRetailer.Admin
                 Response.Redirect("~/Admin/Login.aspx");
             else
             {
-                //Populate products grid
-                Product product = new Product();
-                DataTable dataTable = product.ToDataTable(product.GetAllProducts(true));
-                GridViewProducts.DataSource = dataTable;
-                GridViewProducts.DataBind();
-
                 if (!Page.IsPostBack)
                 {
                     
                 }
+            }
+        }
+
+        protected void GridViewProducts_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DataRowView drv = (DataRowView)e.Row.DataItem;
+                ((HtmlAnchor)e.Row.FindControl("edit")).HRef = "Forms/EditProductForm.aspx?prodcd=" + drv[0].ToString();
+                /*
+                HtmlAnchor htmlanchor = new HtmlAnchor();
+                htmlanchor.HRef = "Forms/AddProductForm.aspx?this=4";
+                htmlanchor.
+                htmlanchor.Title = "Edit"; //tooltip
+                htmlanchor.InnerHtml = "<img alt=\"edit\" src=\"Images/clipboard_edit.png\" />";
+                e.Row.Cells[12].Controls.Add(htmlanchor);
+                */
+
+                DataRowView row = (DataRowView)e.Row.DataItem; 
+
+                if (Convert.ToBoolean(row["isActive"]))
+                {
+                    ((HtmlAnchor)e.Row.FindControl("activation")).InnerHtml = "<img alt=\"deactivate\" src=\"Images/Check-icon.png\" />";
+                    ((HtmlAnchor)e.Row.FindControl("activation")).HRef = "Forms/DeactivateProductForm.aspx?prodcd=" + drv[0].ToString();
+                }
+                else
+                {
+                    ((HtmlAnchor)e.Row.FindControl("activation")).InnerHtml = "<img alt=\"activate\" src=\"Images/X-icon.png\" />";
+                    ((HtmlAnchor)e.Row.FindControl("activation")).HRef = "Forms/ActivateProductForm.aspx?prodcd=" + drv[0].ToString();
+                }
+
             }
         }
 
@@ -77,21 +102,18 @@ namespace QuickStartRetailer.Admin
             return newSortDirection;
         }
 
-        protected void GridViewProducts_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void UpdatePanel1_Load(object sender, EventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                DataRowView drv = (DataRowView)e.Row.DataItem;
-                ((HtmlAnchor)e.Row.FindControl("edit")).HRef = "Forms/EditProductForm.aspx?prodcd=" + drv[0].ToString();
-                /*
-                HtmlAnchor htmlanchor = new HtmlAnchor();
-                htmlanchor.HRef = "Forms/AddProductForm.aspx?this=4";
-                htmlanchor.
-                htmlanchor.Title = "Edit"; //tooltip
-                htmlanchor.InnerHtml = "<img alt=\"edit\" src=\"Images/clipboard_edit.png\" />";
-                e.Row.Cells[12].Controls.Add(htmlanchor);
-                */
-            }
+            //Populate products grid
+            Product product = new Product();
+            DataTable dataTable = product.ToDataTable(product.GetAllProducts(false));
+            GridViewProducts.DataSource = dataTable;
+            GridViewProducts.DataBind();
+        }
+
+        protected void ButtonAddProduct_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

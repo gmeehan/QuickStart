@@ -69,9 +69,14 @@
     <Content Include="Admin\fancybox\source\jquery.fancybox.css" />
     <Content Include="Admin\fancybox\source\jquery.fancybox.js" />
     <Content Include="Admin\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Admin\Forms\ActivateProductForm.aspx" />
+    <Content Include="Admin\Forms\AddProductForm.aspx" />
+    <Content Include="Admin\Forms\DeactivateProductForm.aspx" />
     <Content Include="Admin\Forms\EditProductForm.aspx" />
+    <Content Include="Admin\Images\Check-icon.png" />
     <Content Include="Admin\Images\clipboard_edit.png" />
     <Content Include="Admin\Images\logoSmall.png" />
+    <Content Include="Admin\Images\X-icon.png" />
     <Content Include="Admin\Purchasing.aspx" />
     <Content Include="Admin\Pricing.aspx" />
     <Content Include="Admin\EditTables.aspx" />
@@ -176,6 +181,27 @@
     </Compile>
     <Compile Include="Admin\EmailToUsers.aspx.designer.cs">
       <DependentUpon>EmailToUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Forms\ActivateProductForm.aspx.cs">
+      <DependentUpon>ActivateProductForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Forms\ActivateProductForm.aspx.designer.cs">
+      <DependentUpon>ActivateProductForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Forms\AddProductForm.aspx.cs">
+      <DependentUpon>AddProductForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Forms\AddProductForm.aspx.designer.cs">
+      <DependentUpon>AddProductForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Forms\DeactivateProductForm.aspx.cs">
+      <DependentUpon>DeactivateProductForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Forms\DeactivateProductForm.aspx.designer.cs">
+      <DependentUpon>DeactivateProductForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Forms\EditProductForm.aspx.cs">
       <DependentUpon>EditProductForm.aspx</DependentUpon>

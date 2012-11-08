@@ -17,7 +17,7 @@
     <br />
     <br />
     <div class="adminLoginButtonDiv">
-        <asp:Button ID="ButtonLogin" runat="server" Text="Login" CssClass="bold" 
+        <asp:Button ID="ButtonLogin" runat="server" Text="Login" CssClass="fancy_button" 
             Width="90px" onclick="ButtonLogin_Click" />
     </div>
     <div class="adminLoginMessageDiv">

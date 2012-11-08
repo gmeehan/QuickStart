@@ -9,19 +9,12 @@ using QSRWebObjects;
 
 namespace QuickStartRetailer.Admin.Forms
 {
-    public partial class EditProductForm : System.Web.UI.Page
+    public partial class AddProductForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //Obtain product code from query string
-                string prodcd = Request.QueryString["prodcd"].ToString();
-
-                //Get product by its code
-                Product prod = new Product();
-                prod.GetProductByCode(prodcd);
-
                 //Populate categories dropdown list
                 Category cat = new Category();
                 List<Category> categories = cat.GetAllCategories(true);
@@ -29,27 +22,6 @@ namespace QuickStartRetailer.Admin.Forms
                 DropDownListCategory.DataTextField = "Name";
                 DropDownListCategory.DataValueField = "CategoryID";
                 DropDownListCategory.DataBind();
-
-                //Put product details into fields
-                LabelProductCode.Text = Request.QueryString["prodcd"].ToString();
-                TextBoxName.Text = prod.Name;
-                TextBoxBrand.Text = prod.Brand;
-                TextBoxDescription.Text = prod.Description;
-                DropDownListCategory.SelectedValue = prod.CategoryID.ToString();
-                TextBoxMSRP.Text = prod.Msrp.ToString();
-                CheckBoxFreeShipping.Checked = prod.IsFreeShipping;
-                CheckBoxTaxFree.Checked = prod.IsTaxFree;
-                TextBoxQtyInStock.Text = prod.QuantityInStock.ToString();
-                CheckBoxQtyUnlimited.Checked = prod.IsQuantityUnlimited;
-                LabelCreated.Text = prod.Created.ToShortDateString();
-                if (prod.Modified > DateTime.MinValue)
-                {
-                    LabelModified.Text = prod.Modified.ToShortDateString();
-                }
-                else
-                {
-                    LabelModified.Text = "N/A";
-                }
             }
         }
 
@@ -61,7 +33,7 @@ namespace QuickStartRetailer.Admin.Forms
                 Product prod = new Product();
 
                 //Get existing product by its code
-                prod.GetProductByCode(LabelProductCode.Text);
+                prod.GetProductByCode(TextBoxProductCode.Text);
 
                 //Update all fields
                 prod.Name = TextBoxName.Text;
@@ -75,8 +47,8 @@ namespace QuickStartRetailer.Admin.Forms
                 prod.IsQuantityUnlimited = CheckBoxQtyUnlimited.Checked;
                 prod.Modified = DateTime.Now;
 
-                //Update the product
-                if (prod.UpdateProduct())
+                //Add the product
+                if (prod.AddProduct() != "")
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "", "window.top.window.$.fancybox.close();", true);
                     //Response.Redirect("~/Admin/Products.aspx");
@@ -84,7 +56,7 @@ namespace QuickStartRetailer.Admin.Forms
                 else
                 {
                     LabelOutput.ForeColor = System.Drawing.Color.Red;
-                    LabelOutput.Text = "Error: Update Failed";
+                    LabelOutput.Text = "Error: Add Failed";
                 }
             }
             catch (Exception ex)

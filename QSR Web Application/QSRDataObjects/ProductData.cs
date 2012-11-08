@@ -36,6 +36,7 @@ namespace QSRDataObjects
                     hsh["isquantityunlimited"] = obj.IsQuantityUnlimited;
                     hsh["created"] = obj.Created;
                     hsh["modified"] = obj.Modified;
+                    hsh["isactive"] = obj.isActive;
                 }
             }
             catch (Exception ex)
@@ -59,7 +60,14 @@ namespace QSRDataObjects
             {
                 dbContext = new QuickStart_DBEntities();
 
-                allproducts = dbContext.Products.ToList();
+                if (onlyActive == true) //only the active categories are returned
+                {
+                    allproducts = dbContext.Products.Where(p => p.isActive == true).ToList();
+                }
+                else //all categories are returned
+                {
+                    allproducts = dbContext.Products.ToList();
+                }
             }
             catch (Exception ex)
             {
@@ -67,6 +75,86 @@ namespace QSRDataObjects
             }
 
             return allproducts;
+        }
+
+        /// <summary>
+        /// Purpose: Update an existing Product in the database
+        /// Accepts: Hashtable
+        /// Returns: Boolean
+        /// </summary>
+        public bool UpdateProduct(Hashtable hsh)
+        {
+            bool isSuccess = false;
+            Product prod = new Product();
+            QuickStart_DBEntities dbContext;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+                string prodcd = hsh["productcode"].ToString();
+                prod = dbContext.Products.FirstOrDefault(p => p.ProductCode == prodcd);
+                prod.Name = Convert.ToString(hsh["name"]);
+                prod.Brand = Convert.ToString(hsh["brand"]);
+                prod.Description = Convert.ToString(hsh["description"]);
+                prod.CategoryID = Convert.ToInt32(hsh["categoryid"]);
+                prod.MSRP = Convert.ToDouble(hsh["msrp"]);
+                prod.isFreeShipping = Convert.ToBoolean(hsh["isfreeshipping"]);
+                prod.isTaxFree = Convert.ToBoolean(hsh["istaxfree"]);
+                prod.QuantityInStock = Convert.ToInt32(hsh["quantityinstock"]);
+                prod.IsQuantityUnlimited = Convert.ToBoolean(hsh["isquantityunlimited"]);
+                //prod.Created = Convert.ToDateTime(hsh["created"]);
+                prod.Modified = Convert.ToDateTime(hsh["modified"]);
+                prod.isActive = Convert.ToBoolean(hsh["isactive"]);
+
+                dbContext.SaveChanges();
+                isSuccess = true;
+            }
+            catch (Exception e)
+            {
+                ErrorRoutine(e, "ProductData", "UpdateProduct");
+            }
+
+            return isSuccess;
+        }
+
+        /// <summary>
+        /// Purpose: Add a new Product to the database
+        /// Accepts: Hashtable
+        /// Returns: String (Product Code)
+        /// </summary>
+        public string AddProduct(Hashtable hsh)
+        {
+            //The product code that was added to database
+            string retProdcd = "";
+            Product prod = new Product();
+            QuickStart_DBEntities dbContext;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+                prod.ProductCode = Convert.ToString(hsh["productcode"]);
+                prod.Name = Convert.ToString(hsh["name"]);
+                prod.Brand = Convert.ToString(hsh["brand"]);
+                prod.Description = Convert.ToString(hsh["description"]);
+                prod.CategoryID = Convert.ToInt32(hsh["categoryid"]);
+                prod.MSRP = Convert.ToDouble(hsh["msrp"]);
+                prod.isFreeShipping = Convert.ToBoolean(hsh["isfreeshipping"]);
+                prod.isTaxFree = Convert.ToBoolean(hsh["istaxfree"]);
+                prod.QuantityInStock = Convert.ToInt32(hsh["quantityinstock"]);
+                prod.IsQuantityUnlimited = Convert.ToBoolean(hsh["isquantityunlimited"]);
+                prod.Created = DateTime.Now;
+                prod.Modified = null;
+                prod.isActive = true; //set to active
+
+                dbContext.AddToProducts(prod);
+                dbContext.SaveChanges();
+                retProdcd = prod.ProductCode;
+                dbContext.Detach(prod);
+            }
+            catch (Exception e)
+            {
+                ErrorRoutine(e, "ProductData", "AddProduct");
+            }
+
+            return retProdcd;
         }
     }
 }

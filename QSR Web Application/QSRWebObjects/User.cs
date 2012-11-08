@@ -143,7 +143,7 @@ namespace QSRWebObjects
             }
             catch (Exception ex)
             {
-                ErrorRoutine(ex, "User.cs", "AddUser()");
+                ErrorRoutine(ex, "User", "AddUser");
             }
         }
 

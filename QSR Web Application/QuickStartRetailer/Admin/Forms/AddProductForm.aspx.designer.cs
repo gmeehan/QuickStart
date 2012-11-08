@@ -10,7 +10,7 @@
 namespace QuickStartRetailer.Admin.Forms {
     
     
-    public partial class EditProductForm {
+    public partial class AddProductForm {
         
         /// <summary>
         /// formTitleHeader control.
@@ -31,13 +31,13 @@ namespace QuickStartRetailer.Admin.Forms {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// LabelProductCode control.
+        /// TextBoxProductCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelProductCode;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxProductCode;
         
         /// <summary>
         /// Label1 control.

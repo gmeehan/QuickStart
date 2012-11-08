@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditProductForm.aspx.cs" MasterPageFile="~/Admin/Forms/Form.Master" Inherits="QuickStartRetailer.Admin.Forms.EditProductForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddProductForm.aspx.cs" MasterPageFile="~/Admin/Forms/Form.Master" Inherits="QuickStartRetailer.Admin.Forms.AddProductForm" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <script type="text/javascript">
         $(document).ready(function () {
@@ -10,24 +10,24 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="form_title">
-        <h2 runat="server" id="formTitleHeader">Edit Product</h2>
+        <h2 runat="server" id="formTitleHeader">Add Product</h2>
     </div>
     <div class="form_ContentLeft">
         <div class="form_row">
             <asp:Label ID="Label2" CssClass="form_label" runat="server" Width="100px" Text="Product Code:"></asp:Label>
-            <asp:Label ID="LabelProductCode" CssClass="form_label" runat="server" Text=""></asp:Label>
+            <asp:TextBox ID="TextBoxProductCode" MaxLength="10" CssClass="form_textbox_medium" runat="server"></asp:TextBox>
         </div>
         <div class="form_row">
             <asp:Label ID="Label1" CssClass="form_label" runat="server" Width="100px" Text="Name:"></asp:Label>
-            <asp:TextBox ID="TextBoxName" CssClass="form_textbox_medium" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxName" MaxLength="50" CssClass="form_textbox_medium" runat="server"></asp:TextBox>
         </div>
         <div class="form_row">
             <asp:Label ID="Label3" CssClass="form_label" runat="server" Width="100px" Text="Brand:"></asp:Label>
-            <asp:TextBox ID="TextBoxBrand" CssClass="form_textbox_medium" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxBrand" MaxLength="50" CssClass="form_textbox_medium" runat="server"></asp:TextBox>
         </div>
         <div class="form_row">
             <asp:Label ID="Label4" CssClass="form_label" runat="server" Width="100px" Text="Description:"></asp:Label>
-            <asp:TextBox ID="TextBoxDescription" CssClass="form_textbox_medium"  runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxDescription" MaxLength="200" CssClass="form_textbox_medium"  runat="server"></asp:TextBox>
         </div>
         <div class="form_row"> 
             <asp:Label ID="Label5" CssClass="form_label" runat="server" Width="100px" Text="Category:"></asp:Label>

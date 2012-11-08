@@ -28,7 +28,7 @@
         <div class="regLabel"><p class="ckBox"><asp:CheckBox ID="ckBox" Text="Sign me up to recieve monthly newsletters!" TextAlign="Right" AutoPostBack="true" runat="server" /></p></div>
 
         <div class="userRegButtonDiv">
-            <asp:Button ID="ButtonReg" runat="server" Text="Register" CssClass="bold" Width="100px" onclick="ButtonReg_Click" />
+            <asp:Button ID="ButtonReg" runat="server" Text="Register" CssClass="fancy_button" Width="100px" onclick="ButtonReg_Click" />
         </div>
 
         <div class="reportLabel">

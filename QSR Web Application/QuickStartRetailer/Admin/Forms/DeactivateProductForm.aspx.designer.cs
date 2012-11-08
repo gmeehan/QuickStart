@@ -7,54 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuickStartRetailer.Admin {
+namespace QuickStartRetailer.Admin.Forms {
     
     
-    public partial class _Products {
+    public partial class DeactivateProductForm {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// formTitleHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl formTitleHeader;
         
         /// <summary>
-        /// add control.
+        /// ButtonSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor add;
+        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
         
         /// <summary>
-        /// ButtonAddProduct control.
+        /// ButtonCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddProduct;
+        protected global::System.Web.UI.WebControls.Button ButtonCancel;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// LabelOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// GridViewProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewProducts;
+        protected global::System.Web.UI.WebControls.Label LabelOutput;
     }
 }

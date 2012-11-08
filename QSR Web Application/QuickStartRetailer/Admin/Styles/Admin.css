@@ -441,42 +441,46 @@ div.hideSkiplink
 .form_ContentLeft
 {
     float:left;
+    width:45%;
+    margin-left:5%;
 }
 
 .form_ContentRight
 {
     float:right;
+    width:40%;
+    margin-right:5%;
 }
 
 .form_title
 {
-    width:99%;
+    width:100%;
     text-align:center;
     padding-bottom:10px;
+    /*
     border:1px solid grey;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-    background-image: linear-gradient(bottom, rgb(191,232,245) 1%, rgb(202,233,235) 51%, rgb(211,237,242) 76%);
-    background-image: -o-linear-gradient(bottom, rgb(191,232,245) 1%, rgb(202,233,235) 51%, rgb(211,237,242) 76%);
-    background-image: -moz-linear-gradient(bottom, rgb(191,232,245) 1%, rgb(202,233,235) 51%, rgb(211,237,242) 76%);
-    background-image: -webkit-linear-gradient(bottom, rgb(191,232,245) 1%, rgb(202,233,235) 51%, rgb(211,237,242) 76%);
-    background-image: -ms-linear-gradient(bottom, rgb(191,232,245) 1%, rgb(202,233,235) 51%, rgb(211,237,242) 76%);
+    background-image: linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -o-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -moz-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -webkit-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
+    background-image: -ms-linear-gradient(bottom, rgb(226,229,235) 25%, rgb(250,250,250) 63%);
 
     background-image: -webkit-gradient(
 	    linear,
 	    left bottom,
 	    left top,
-	    color-stop(0.01, rgb(191,232,245)),
-	    color-stop(0.51, rgb(202,233,235)),
-	    color-stop(0.76, rgb(211,237,242))
+	    color-stop(0.25, rgb(226,229,235)),
+	    color-stop(0.63, rgb(250,250,250))
     );
+    */
 }
  
 .form_body
 {
     background-color:#F9F9F9;
-    border:3px groove grey;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
@@ -492,6 +496,7 @@ div.hideSkiplink
 {
     margin-top:20px;
     margin-bottom:20px;
+    height:20px;
 }
 
 .form_label
@@ -499,9 +504,27 @@ div.hideSkiplink
     font-weight:bold;
 }
 
+.form_textbox_numeric_short
+{
+    width:60px;
+    text-align:right;
+    padding-right:3px;
+}
+
+.form_textbox_medium
+{
+    width:130px;
+    padding-left:3px;
+}
+
+.form_dropdown_medium
+{
+    width:140px;
+    padding-left:3px;
+}
+
 .form_bottom_div
 {
-    padding-top:40px;
     width:100%;
     clear:both;
 }
@@ -509,6 +532,15 @@ div.hideSkiplink
 .form_buttons_div
 {
     text-alight:center;
+    width:165px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.form_output_div
+{
+    text-alight:center;
+    height:40px;
     width:165px;
     margin-left:auto;
     margin-right:auto;
