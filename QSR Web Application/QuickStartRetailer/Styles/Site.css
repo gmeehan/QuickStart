@@ -11,6 +11,7 @@ body
     color: #696969;
 }
 
+/*
 a:link, a:visited
 {
     color: #BAD8E9;
@@ -27,6 +28,7 @@ a:active
 {
     color: #034af3;
 }
+*/
 
 p
 {
@@ -132,6 +134,23 @@ first child of the left and right table columns */
     border: none;
     line-height: 2em;
     font-size: 2em;
+}
+
+.header a:link, a:visited
+{
+    color: #BAD8E9;
+    text-decoration:none;
+}
+
+.header a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+.header a:active
+{
+    color: #034af3;
 }
 
 .title
@@ -242,8 +261,11 @@ div.hideSkiplink
     background-color:#5f5f5f; /* Fallback */
 }
 
-/* MISC  
+/* LEFT NAVIGATION MENU 
 ----------------------------------------------------------*/
+
+
+/*
 .left-nav
 {
     float: left;
@@ -255,15 +277,16 @@ div.hideSkiplink
     clear: both;
     margin-top: 3px;
     margin-bottom:-13px;
-    width: 315px;
+    width: 215px;
     padding-top:3px;
-    padding-bottom:3px;
+    padding-bottom:8px;
 }
-.nav-head h2 
+.nav-head h1 
 {
     max-width: 85%;
     padding-left: 6%; 
 }
+
 .nav-box 
 {
     background-image: url("/Images/nav-box-mid.gif");
@@ -272,18 +295,26 @@ div.hideSkiplink
     clear: both;
     min-height: 161px;
     margin: 0;
-    width: 315px;
+    width: 215px;
 }
 .nav-box div
 {
     padding-left: 6%;
+    margin-top:10px;
+}
+
+.navitem
+{
+    height:18px;
+    padding-top:0px;
+    padding-bottom:0px;
 }
 .nav-end
 {
     background: url("/Images/nav-box-bottom.gif") no-repeat scroll 0 0 transparent;
     clear: both;
     margin-top: -10px;
-    width: 315px;
+    width: 215px;
     padding-top:3px;
     padding-bottom:32px;
 }
@@ -291,16 +322,111 @@ div.hideSkiplink
 {
     padding-left: 6%;
 }
+*/
 
-.clear
+.left-nav
 {
-    clear: both;
+    float:left;
+    height:auto;
+    width:20%;
+    min-height:400px;
+    padding:15px;
+    margin-top:15px;
+    /*-moz-border-radius: 15px;
+    border-radius: 15px;*/
+    background-image: linear-gradient(bottom, rgb(255,255,255) 5%, rgb(250,250,250) 53%);
+    background-image: -o-linear-gradient(bottom, rgb(255,255,255) 5%, rgb(250,250,250) 53%);
+    background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 5%, rgb(250,250,250) 53%);
+    background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 5%, rgb(250,250,250) 53%);
+    background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 5%, rgb(250,250,250) 53%);
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.05, rgb(255,255,255)),
+	    color-stop(0.53, rgb(250,250,250))
+    );
 }
 
-.bold
+.products-content
 {
-    font-weight: bold;
+    width:75%; 
+    height:auto; 
+    margin-left:25%;
+    padding-left:30px;
+    
 }
+
+.subcategory-heading
+{
+    width:100%;
+    text-align:center;
+    
+}
+
+/* PRODUCT DATA LIST
+----------------------------------------------------------*/
+
+.productList
+{
+    margin-top:40px;
+}
+
+.productListOuterCell
+{
+    border-bottom: 1px dotted silver;
+}
+
+.productListInnerCell
+{
+    text-align:center;
+    width:200px;
+    height:250px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.product-image-small
+{
+    height:130px;
+    width:130px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.product-price-small
+{
+    width:100%;
+    text-align:center;
+    font-weight:bold;
+    font-size:24px;    
+}
+
+.product-name-small
+{
+    width:100%;
+    text-align:center;
+    font-size:20px;    
+}
+
+.productList a:link, a:visited
+{
+    color: Gray;
+    text-decoration:none;
+}
+
+.productList a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+.productList a:active
+{
+    color: #034af3;
+}
+    
+
 
 /* APPLE STYLE NAVIGATION MENU 
 ----------------------------------------------------------*/
@@ -577,4 +703,9 @@ div.hideSkiplink
 .textCenter
 {
     text-align:center;
+}
+
+.maxWidth
+{
+    width:100%;
 }

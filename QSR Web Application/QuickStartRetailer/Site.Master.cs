@@ -35,45 +35,49 @@ namespace QuickStartRetailer
                 }
             }
 
-            //Get all active categories
-            Category cat = new Category();
-            List<Category> cats = cat.GetAllCategories(true);
-
-            foreach(var cs in cats)
+            if (!Page.IsPostBack)
             {
-                MenuItem mi = new MenuItem();
-                MenuItem m = new MenuItem();
-                foreach (MenuItem main in appleNav.Items)
-                {
-                    if (main.Text == "Categories")
-                    {
-                        m = main;
-                        break;
-                    }
-                }
+                //Get all active categories
+                Category cat = new Category();
+                List<Category> cats = cat.GetAllCategories(true);
 
-                if (cs.ParentCategoryID > 0)
+                foreach (var cs in cats)
                 {
-                    foreach (MenuItem ms in m.ChildItems)
+                    MenuItem mi = new MenuItem();
+                    MenuItem m = new MenuItem();
+                    foreach (MenuItem main in appleNav.Items)
                     {
-                        if (ms.Value == cs.ParentCategoryID.ToString())
+                        if (main.Text == "Categories")
                         {
-                            mi.Value = cs.ParentCategoryID.ToString();
-                            mi.Text = cs.Name;
-                            mi.NavigateUrl = "~/SubCategory.aspx?id=" + cs.CategoryID;
-                            ms.ChildItems.Add(mi);
+                            m = main;
                             break;
                         }
                     }
-                }
-                else
-                {
-                    mi.Value = cs.CategoryID.ToString();
-                    mi.Text = cs.Name;
-                    mi.Selectable = false;
-                    m.ChildItems.Add(mi);
+
+                    if (cs.ParentCategoryID > 0)
+                    {
+                        foreach (MenuItem ms in m.ChildItems)
+                        {
+                            if (ms.Value == cs.ParentCategoryID.ToString())
+                            {
+                                mi.Value = cs.ParentCategoryID.ToString();
+                                mi.Text = cs.Name;
+                                mi.NavigateUrl = "~/Category.aspx?id=" + cs.CategoryID;
+                                ms.ChildItems.Add(mi);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        mi.Value = cs.CategoryID.ToString();
+                        mi.Text = cs.Name;
+                        mi.Selectable = false;
+                        m.ChildItems.Add(mi);
+                    }
                 }
             }
+            
         }
 
         protected void LinkButtonLoginLogout_Click(object sender, EventArgs e)

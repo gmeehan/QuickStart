@@ -78,6 +78,36 @@ namespace QSRDataObjects
         }
 
         /// <summary>
+        /// Purpose: Grabs all products for a given category id
+        /// Accepts: Integer, Boolean
+        /// Returns: List<Product>
+        /// </summary>
+        public List<Product> GetAllProductsByCategoryID(int catid, bool onlyActive)
+        {
+            QuickStart_DBEntities dbContext;
+            List<Product> allproducts = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                if (onlyActive == true) //only the active categories are returned
+                {
+                    allproducts = dbContext.Products.Where(p => p.isActive == true && p.CategoryID == catid).ToList();
+                }
+                else //all categories are returned
+                {
+                    allproducts = dbContext.Products.Where(p => p.CategoryID == catid).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ProductData", "GetAllProductsByCategoryID");
+            }
+
+            return allproducts;
+        }
+
+        /// <summary>
         /// Purpose: Update an existing Product in the database
         /// Accepts: Hashtable
         /// Returns: Boolean
