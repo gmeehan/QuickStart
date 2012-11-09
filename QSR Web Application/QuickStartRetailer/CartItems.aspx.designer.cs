@@ -10,6 +10,6 @@
 namespace QuickStartRetailer {
     
     
-    public partial class _AddToCart {
+    public partial class _CartItems {
     }
 }

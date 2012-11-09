@@ -99,7 +99,7 @@
     <Content Include="Admin\Styles\Admin.css" />
     <Content Include="Activation.aspx" />
     <Content Include="Category.aspx" />
-    <Content Include="AddToCart.aspx" />
+    <Content Include="CartItems.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="Images\arrow.png" />
@@ -289,12 +289,12 @@
     <Compile Include="Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddToCart.aspx.cs">
-      <DependentUpon>AddToCart.aspx</DependentUpon>
+    <Compile Include="CartItems.aspx.cs">
+      <DependentUpon>CartItems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddToCart.aspx.designer.cs">
-      <DependentUpon>AddToCart.aspx</DependentUpon>
+    <Compile Include="CartItems.aspx.designer.cs">
+      <DependentUpon>CartItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>

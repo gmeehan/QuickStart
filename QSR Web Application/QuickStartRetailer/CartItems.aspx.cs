@@ -9,7 +9,7 @@ using QSRWebObjects; //Connect presentation layer to web object layer
 
 namespace QuickStartRetailer
 {
-    public partial class _AddToCart : System.Web.UI.Page
+    public partial class _CartItems : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
