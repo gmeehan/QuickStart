@@ -18,13 +18,13 @@ namespace QSRWebObjects
         private string _description;
         private int _categoryID;
         private double _msrp;
-        private bool? _isFreeShipping;
-        private bool? _isTaxFree;
+        private bool _isFreeShipping;
+        private bool _isTaxFree;
         private int _quantityInStock;
-        private bool? _isQuantityUnlimited;
-        private DateTime? _created;
-        private DateTime? _modified;
-        private bool? _isActive;
+        private bool _isQuantityUnlimited;
+        private DateTime _created;
+        private DateTime _modified;
+        private bool _isActive;
 
         public Object ProductCode
         {
