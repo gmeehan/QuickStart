@@ -353,5 +353,176 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "User", "Login");
             }
         }
+
+        /// <summary>
+        /// Purpose: Grabs all users
+        /// Accepts: Nothing
+        /// Returns: List<User>
+        /// </summary>
+        public List<User> GetAllUsers()
+        {
+            List<User> users = new List<User>();
+            try
+            {
+                UserData data = new UserData();
+                List<QSRDataObjects.User> dataUsers = data.GetAllUsers();
+
+                foreach (QSRDataObjects.User u in dataUsers)
+                {
+                    User user = new User();
+                    user.UserID = u.UserID;
+                    user.Username = u.Username;
+                    user.Password = u.Password;
+                    user.Salutation = u.Salutation;
+                    user.FirstName = u.FirstName;
+                    user.LastName = u.LastName;
+                    user.Address1 = u.Address1;
+                    user.Address2 = u.Address2;
+                    user.City = u.City;
+                    user.StateProvinceID = Convert.ToInt32(u.StateProvinceID);
+                    user.ZipCodePostal = u.ZipPostalCode;
+                    user.Email = u.Email;
+                    user.IsReceiveNewsletters = u.IsReceiveNewsletters;
+                    user.Created = u.Created;
+                    user.Modified = u.Modified;
+                    users.Add(user);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "User", "GetAllUsers");
+            }
+            return users;
+        }
+    }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderUser
+    {
+        private int _userID;
+
+        public int UserID
+        {
+            get { return _userID; }
+            set { _userID = value; }
+        }
+        private string _username;
+
+        public string Username
+        {
+            get { return _username; }
+            set { _username = value; }
+        }
+        private string _password;
+
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; }
+        }
+        private string _salutation;
+
+        public string Salutation
+        {
+            get { return _salutation; }
+            set { _salutation = value; }
+        }
+        private string _firstName;
+
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+        private string _lastName;
+
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
+        private string _address1;
+
+        public string Address1
+        {
+            get { return _address1; }
+            set { _address1 = value; }
+        }
+        private string _address2;
+
+        public string Address2
+        {
+            get { return _address2; }
+            set { _address2 = value; }
+        }
+        private string _city;
+
+        public string City
+        {
+            get { return _city; }
+            set { _city = value; }
+        }
+        private int _stateProvinceID;
+
+        public int StateProvinceID
+        {
+            get { return _stateProvinceID; }
+            set { _stateProvinceID = value; }
+        }
+        private string _zipCodePostal;
+
+        public string ZipCodePostal
+        {
+            get { return _zipCodePostal; }
+            set { _zipCodePostal = value; }
+        }
+        private string _email;
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+        private bool _isReceiveNewsletters;
+
+        public bool IsReceiveNewsletters
+        {
+            get { return _isReceiveNewsletters; }
+            set { _isReceiveNewsletters = value; }
+        }
+        private DateTime _created;
+
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value; }
+        }
+        private DateTime _modified;
+
+        public DateTime Modified
+        {
+            get { return _modified; }
+            set { _modified = value; }
+        }
+
+        public RenderUser(User u)
+        {
+            UserID = u.UserID;
+            Username = Convert.ToString(u.Username);
+            Password = Convert.ToString(u.Password);
+            Salutation = Convert.ToString(u.Salutation);
+            FirstName = Convert.ToString(u.FirstName);
+            LastName = Convert.ToString(u.LastName);
+            Address1 = Convert.ToString(u.Address1);
+            Address2 = Convert.ToString(u.Address2);
+            City = Convert.ToString(u.City);
+            StateProvinceID = Convert.ToInt32(u.StateProvinceID);
+            ZipCodePostal = Convert.ToString(u.ZipCodePostal);
+            Email = Convert.ToString(u.Email);
+            IsReceiveNewsletters = Convert.ToBoolean(u.IsReceiveNewsletters);
+            Created = Convert.ToDateTime(u.Created);
+            Modified = Convert.ToDateTime(u.Modified);
+        }
     }
 }

@@ -39,5 +39,29 @@ namespace QSRDataObjects
 
             return hsh;
         }
+
+        /// <summary>
+        /// Purpose: Grabs all configuration settings
+        /// Accepts: Nothing
+        /// Returns: List<Configuration>
+        /// </summary>
+        public List<Configuration> GetAllConfigurations()
+        {
+            QuickStart_DBEntities dbContext;
+            List<Configuration> allconfigs = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all configurations are returned
+                allconfigs = dbContext.Configurations.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ConfigurationData", "GetAllConfigurations");
+            }
+
+            return allconfigs;
+        }
     }
 }

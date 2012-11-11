@@ -38,5 +38,30 @@ namespace QSRDataObjects
 
             return hsh;
         }
+
+
+        /// <summary>
+        /// Purpose: Grabs all order items
+        /// Accepts: Nothing
+        /// Returns: List<OrderItem>
+        /// </summary>
+        public List<OrderItem> GetAllOrderItems()
+        {
+            QuickStart_DBEntities dbContext;
+            List<OrderItem> allorderitems = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all order items are returned
+                allorderitems = dbContext.OrderItems.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "OrderItemData", "GetAllOrderItems");
+            }
+
+            return allorderitems;
+        }
     }
 }

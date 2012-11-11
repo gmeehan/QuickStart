@@ -139,5 +139,94 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "Audit", "GetAuditByID");
             }
         }
+
+        /// <summary>
+        /// Purpose: Grabs all audits
+        /// Accepts: Nothing
+        /// Returns: List<Audit>
+        /// </summary>
+        public List<Audit> GetAllAudits()
+        {
+            List<Audit> audits = new List<Audit>();
+            try
+            {
+                AuditData data = new AuditData();
+                List<QSRDataObjects.Audit> dataAudits = data.GetAllAudits();
+
+                foreach (QSRDataObjects.Audit a in dataAudits)
+                {
+                    Audit audit = new Audit();
+                    audit.AuditID = a.AuditID;
+                    audit.AuditTypeID = Convert.ToInt32(a.AuditTypeID);
+                    audit.UserID = Convert.ToInt32(a.UserID);
+                    audit.AdminID = Convert.ToInt32(a.AdminID);
+                    audit.Notes = a.Notes;
+                    audit.Created = a.Created;
+                    audits.Add(audit);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "Audit", "GetAllAudits");
+            }
+            return audits;
+        }
+    }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderAudit
+    {
+        private int _auditID;
+
+        public int AuditID
+        {
+            get { return _auditID; }
+            set { _auditID = value; }
+        }
+        private int _auditTypeID;
+
+        public int AuditTypeID
+        {
+            get { return _auditTypeID; }
+            set { _auditTypeID = value; }
+        }
+        private int _userID;
+
+        public int UserID
+        {
+            get { return _userID; }
+            set { _userID = value; }
+        }
+        private int _adminID;
+
+        public int AdminID
+        {
+            get { return _adminID; }
+            set { _adminID = value; }
+        }
+        private string _notes;
+
+        public string Notes
+        {
+            get { return _notes; }
+            set { _notes = value; }
+        }
+        private DateTime _created;
+
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value; }
+        }
+
+        public RenderAudit(Audit a)
+        {
+            AuditID = a.AuditID;
+            AuditTypeID = Convert.ToInt32(a.AuditTypeID);
+            UserID = Convert.ToInt32(a.UserID);
+            AdminID = Convert.ToInt32(a.AdminID);
+            Notes = Convert.ToString(a.Created);
+        }
     }
 }

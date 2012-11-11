@@ -193,5 +193,123 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "Order", "GetOrderByID");
             }
         }
+
+        /// <summary>
+        /// Purpose: Grabs all orders
+        /// Accepts: Nothing
+        /// Returns: List<Order>
+        /// </summary>
+        public List<Order> GetAllOrders()
+        {
+            List<Order> orders = new List<Order>();
+            try
+            {
+                OrderData data = new OrderData();
+                List<QSRDataObjects.Order> dataOrders = data.GetAllOrders();
+
+                foreach (QSRDataObjects.Order o in dataOrders)
+                {
+                    Order order = new Order();
+                    order.OrderID = o.OrderID;
+                    order.UserID = Convert.ToInt32(o.UserID);
+                    order.Subtotal = Convert.ToDouble(o.Subtotal);
+                    order.Taxes = Convert.ToDouble(o.Taxes);
+                    order.DeliveryCost = Convert.ToDouble(o.DeliveryCost);
+                    order.DeliveryTypeID = Convert.ToInt32(o.DeliveryTypeID);
+                    order.GrandTotal = Convert.ToDouble(o.GrandTotal);
+                    order.Created = o.Created;
+                    order.Modified = o.Modified;
+                    orders.Add(order);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "Order", "GetAllOrders");
+            }
+            return orders;
+        }
+    }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderOrder
+    {
+        private int _orderID;
+
+        public int OrderID
+        {
+            get { return _orderID; }
+            set { _orderID = value; }
+        }
+        private int _userID;
+
+        public int UserID
+        {
+            get { return _userID; }
+            set { _userID = value; }
+        }
+        private double _subtotal;
+
+        public double Subtotal
+        {
+            get { return _subtotal; }
+            set { _subtotal = value; }
+        }
+        private double _taxes;
+
+        public double Taxes
+        {
+            get { return _taxes; }
+            set { _taxes = value; }
+        }
+        private double _deliveryCost;
+
+        public double DeliveryCost
+        {
+            get { return _deliveryCost; }
+            set { _deliveryCost = value; }
+        }
+        private int _deliveryTypeID;
+
+        public int DeliveryTypeID
+        {
+            get { return _deliveryTypeID; }
+            set { _deliveryTypeID = value; }
+        }
+        private double _grandTotal;
+
+        public double GrandTotal
+        {
+            get { return _grandTotal; }
+            set { _grandTotal = value; }
+        }
+        private DateTime _created;
+
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value; }
+        }
+        private DateTime _modified;
+
+        public DateTime Modified
+        {
+            get { return _modified; }
+            set { _modified = value; }
+        }
+
+        public RenderOrder(Order o)
+        {
+            OrderID = o.OrderID;
+            UserID = Convert.ToInt32(o.UserID);
+            Subtotal = Convert.ToDouble(o.Subtotal);
+            Taxes = Convert.ToDouble(o.Taxes);
+            DeliveryCost = Convert.ToDouble(o.DeliveryCost);
+            DeliveryTypeID = Convert.ToInt32(o.DeliveryTypeID);
+            GrandTotal = Convert.ToDouble(o.GrandTotal);
+            Created = Convert.ToDateTime(o.Created);
+            Modified = Convert.ToDateTime(o.Modified);
+        }
+
     }
 }

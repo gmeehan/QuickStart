@@ -190,6 +190,74 @@ namespace QSRWebObjects
             }
             return categories;
         }
+    }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderCategory
+    {
+        private int _categoryID;
+
+        public int CategoryID
+        {
+            get { return _categoryID; }
+            set { _categoryID = value; }
+        }
+        private string _name;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        private string _description;
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+        private int _parentCategoryID;
+
+        public int ParentCategoryID
+        {
+            get { return _parentCategoryID; }
+            set { _parentCategoryID = value; }
+        }
+        private DateTime _created;
+
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value; }
+        }
+        private DateTime _modified;
+
+        public DateTime Modified
+        {
+            get { return _modified; }
+            set { _modified = value; }
+        }
+        private bool _isActive;
+
+        public bool IsActive
+        {
+            get { return _isActive; }
+            set { _isActive = value; }
+        }
+
+        public RenderCategory(Category c)
+        {
+            CategoryID = c.CategoryID;
+            Name = Convert.ToString(c.Name);
+            Description = Convert.ToString(c.Description);
+            ParentCategoryID = Convert.ToInt32(c.ParentCategoryID);
+            Created = Convert.ToDateTime(c.Created);
+            Modified = Convert.ToDateTime(c.Modified);
+            IsActive = Convert.ToBoolean(c.IsActive);
+        }
 
     }
+
+
 }

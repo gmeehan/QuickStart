@@ -103,5 +103,78 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "ProductDeliveryType", "GetProductDeliveryTypeByID");
             }
         }
+
+        /// <summary>
+        /// Purpose: Grabs all product delivery types
+        /// Accepts: Nothing
+        /// Returns: List<ProductDeliveryType>
+        /// </summary>
+        public List<ProductDeliveryType> GetAllProductDeliveryTypes()
+        {
+            List<ProductDeliveryType> pdtypes = new List<ProductDeliveryType>();
+            try
+            {
+                ProductDeliveryTypeData data = new ProductDeliveryTypeData();
+                List<QSRDataObjects.ProductDeliveryType> dataPDTypes = data.GetAllProductDeliveryTypes();
+
+                foreach (QSRDataObjects.ProductDeliveryType pdt in dataPDTypes)
+                {
+                    ProductDeliveryType pdtype = new ProductDeliveryType();
+                    pdtype.ProductDeliveryTypeID = pdt.ProductDeliveryTypeID;
+                    pdtype.ProductCode = pdt.ProductCode;
+                    pdtype.Created = pdt.Created;
+                    pdtype.Modified = pdt.Modified;
+                    pdtypes.Add(pdtype);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ProductDeliveryType", "GetAllProductDeliveryTypes");
+            }
+            return pdtypes;
+        }
+    }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderProductDeliveryType
+    {
+        private int _productDeliveryTypeID;
+
+        public int ProductDeliveryTypeID
+        {
+            get { return _productDeliveryTypeID; }
+            set { _productDeliveryTypeID = value; }
+        }
+        private string _productCode;
+
+        public string ProductCode
+        {
+            get { return _productCode; }
+            set { _productCode = value; }
+        }
+        private DateTime _created;
+
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value; }
+        }
+        private DateTime _modified;
+
+        public DateTime Modified
+        {
+            get { return _modified; }
+            set { _modified = value; }
+        }
+
+        public RenderProductDeliveryType(ProductDeliveryType pdt)
+        {
+            ProductDeliveryTypeID = pdt.ProductDeliveryTypeID;
+            ProductCode = Convert.ToString(pdt.ProductCode);
+            Created = Convert.ToDateTime(pdt.Created);
+            Modified = Convert.ToDateTime(pdt.Modified);
+        }
+
     }
 }

@@ -36,5 +36,29 @@ namespace QSRDataObjects
 
             return hsh;
         }
+
+        /// <summary>
+        /// Purpose: Grabs all language labels
+        /// Accepts: Nothing
+        /// Returns: List<LanguageLabel>
+        /// </summary>
+        public List<LangLabel> GetAllLangLabels()
+        {
+            QuickStart_DBEntities dbContext;
+            List<LangLabel> alllanglabels = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all language labels are returned
+                alllanglabels = dbContext.LangLabels.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "LangLabelData", "GetAllLangLabels");
+            }
+
+            return alllanglabels;
+        }
     }
 }

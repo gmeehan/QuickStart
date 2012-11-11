@@ -139,5 +139,95 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "StateProvince", "GetStateProvinceByID");
             }
         }
+
+        /// <summary>
+        /// Purpose: Grabs all states/provinces
+        /// Accepts: Nothing
+        /// Returns: List<StateProvince>
+        /// </summary>
+        public List<StateProvince> GetAllStatesProvinces()
+        {
+            List<StateProvince> statesProvinces = new List<StateProvince>();
+            try
+            {
+                StateProvinceData data = new StateProvinceData();
+                List<QSRDataObjects.StatesProvince> dataStatesProvinces = data.GetAllStatesProvinces();
+
+                foreach (QSRDataObjects.StatesProvince sp in dataStatesProvinces)
+                {
+                    StateProvince stateProvince = new StateProvince();
+                    stateProvince.StateProvinceID = sp.StateProvinceID;
+                    stateProvince.Name = sp.Name;
+                    stateProvince.Country = sp.Country;
+                    stateProvince.CurrencyCode = sp.CurrencyCode;
+                    stateProvince.TaxRatePercentage = Convert.ToDouble(sp.TaxRatePercentage);
+                    stateProvince.Modified = sp.Modified;
+                    statesProvinces.Add(stateProvince);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "StateProvince", "GetAllStateProvinces");
+            }
+            return statesProvinces;
+        }
+    }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderStateProvince
+    {
+        private int _stateProvinceID;
+
+        public int StateProvinceID
+        {
+            get { return _stateProvinceID; }
+            set { _stateProvinceID = value; }
+        }
+        private string _name;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        private string _country;
+
+        public string Country
+        {
+            get { return _country; }
+            set { _country = value; }
+        }
+        private string _currencyCode;
+
+        public string CurrencyCode
+        {
+            get { return _currencyCode; }
+            set { _currencyCode = value; }
+        }
+        private double _taxRatePercentage;
+
+        public double TaxRatePercentage
+        {
+            get { return _taxRatePercentage; }
+            set { _taxRatePercentage = value; }
+        }
+        private DateTime _modified;
+
+        public DateTime Modified
+        {
+            get { return _modified; }
+            set { _modified = value; }
+        }
+
+        public RenderStateProvince(StateProvince sp)
+        {
+            StateProvinceID = sp.StateProvinceID;
+            Name = Convert.ToString(sp.Name);
+            Country = Convert.ToString(sp.Country);
+            CurrencyCode = Convert.ToString(sp.CurrencyCode);
+            TaxRatePercentage = Convert.ToDouble(sp.TaxRatePercentage);
+            Modified = Convert.ToDateTime(sp.Modified);
+        }
     }
 }

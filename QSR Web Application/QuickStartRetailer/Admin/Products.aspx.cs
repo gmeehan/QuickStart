@@ -84,24 +84,6 @@ namespace QuickStartRetailer.Admin
             GridViewProducts.DataBind();
         }
 
-        private string ConvertSortDirectionToSql(SortDirection sortDirection)
-        {
-            string newSortDirection = String.Empty;
-
-            switch (sortDirection)
-            {
-                case SortDirection.Ascending:
-                    newSortDirection = "ASC";
-                    break;
-
-                case SortDirection.Descending:
-                    newSortDirection = "DESC";
-                    break;
-            }
-
-            return newSortDirection;
-        }
-
         protected void UpdatePanel1_Load(object sender, EventArgs e)
         {
             //Populate products grid

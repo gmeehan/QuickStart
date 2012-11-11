@@ -103,5 +103,78 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "OrderItem", "GetOrderItemByID");
             }
         }
+
+        /// <summary>
+        /// Purpose: Grabs all order items
+        /// Accepts: Nothing
+        /// Returns: List<OrderItem>
+        /// </summary>
+        public List<OrderItem> GetAllOrderItems()
+        {
+            List<OrderItem> orderitems = new List<OrderItem>();
+            try
+            {
+                OrderItemData data = new OrderItemData();
+                List<QSRDataObjects.OrderItem> dataOrderItems = data.GetAllOrderItems();
+
+                foreach (QSRDataObjects.OrderItem oi in dataOrderItems)
+                {
+                    OrderItem order = new OrderItem();
+                    order.OrderItemID = oi.OrderItemID;
+                    order.ProductCode = oi.ProductCode;
+                    order.Created = oi.Created;
+                    order.Modified = oi.Modified;
+                    orderitems.Add(order);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "OrderItem", "GetAllOrderItems");
+            }
+            return orderitems;
+        }
+    }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderOrderItem
+    {
+        private int _orderItemID;
+
+        public int OrderItemID
+        {
+            get { return _orderItemID; }
+            set { _orderItemID = value; }
+        }
+        private string _productCode;
+
+        public string ProductCode
+        {
+            get { return _productCode; }
+            set { _productCode = value; }
+        }
+        private DateTime _created;
+
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value; }
+        }
+        private DateTime _modified;
+
+        public DateTime Modified
+        {
+            get { return _modified; }
+            set { _modified = value; }
+        }
+
+        public RenderOrderItem(OrderItem oi)
+        {
+            OrderItemID = oi.OrderItemID;
+            ProductCode = Convert.ToString(oi.ProductCode);
+            Created = Convert.ToDateTime(oi.Created);
+            Modified = Convert.ToDateTime(oi.Modified);
+        }
+
     }
 }

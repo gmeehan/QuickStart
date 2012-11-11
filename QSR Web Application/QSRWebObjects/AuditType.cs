@@ -86,5 +86,69 @@ namespace QSRWebObjects
             }
         }
 
+        /// <summary>
+        /// Purpose: Grabs all audit types
+        /// Accepts: Nothing
+        /// Returns: List<AuditType>
+        /// </summary>
+        public List<AuditType> GetAllAuditTypes()
+        {
+            List<AuditType> audittypes = new List<AuditType>();
+            try
+            {
+                AuditTypeData data = new AuditTypeData();
+                List<QSRDataObjects.AuditType> dataAudits = data.GetAllAuditTypes();
+
+                foreach (QSRDataObjects.AuditType at in dataAudits)
+                {
+                    AuditType audittype = new AuditType();
+                    audittype.AuditTypeID = Convert.ToInt32(at.AuditTypeID);
+                    audittype.Description = at.Description;
+                    audittype.IsAdmin = at.IsAdmin;
+                    audittypes.Add(audittype);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "AuditType", "GetAllAuditTypes");
+            }
+            return audittypes;
+        }
     }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderAuditType
+    {
+        private int _auditTypeID;
+
+        public int AuditTypeID
+        {
+            get { return _auditTypeID; }
+            set { _auditTypeID = value; }
+        }
+        private string _description;
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+        private bool _isAdmin;
+
+        public bool IsAdmin
+        {
+            get { return _isAdmin; }
+            set { _isAdmin = value; }
+        }
+
+        public RenderAuditType(AuditType at)
+        {
+            AuditTypeID = Convert.ToInt32(at.AuditTypeID);
+            Description = Convert.ToString(at.Description);
+            IsAdmin = Convert.ToBoolean(at.IsAdmin);
+        }
+
+    }
+
 }

@@ -39,5 +39,30 @@ namespace QSRDataObjects
 
             return hsh;
         }
+
+
+        /// <summary>
+        /// Purpose: Grabs all StatesProvinces
+        /// Accepts: Nothing
+        /// Returns: List<StatesProvince>
+        /// </summary>
+        public List<StatesProvince> GetAllStatesProvinces()
+        {
+            QuickStart_DBEntities dbContext;
+            List<StatesProvince> allstatesprovinces = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all states/provinces are returned
+                allstatesprovinces = dbContext.StatesProvinces.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "StatesProvinceData", "GetAllStatesProvinces");
+            }
+
+            return allstatesprovinces;
+        }
     }
 }

@@ -37,5 +37,29 @@ namespace QSRDataObjects
 
             return hsh;
         }
+
+        /// <summary>
+        /// Purpose: Grabs all product delivery types
+        /// Accepts: Nothing
+        /// Returns: List<ProductDeliveryType>
+        /// </summary>
+        public List<ProductDeliveryType> GetAllProductDeliveryTypes()
+        {
+            QuickStart_DBEntities dbContext;
+            List<ProductDeliveryType> allproddeliverytypes = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all product delivery types are returned
+                allproddeliverytypes = dbContext.ProductDeliveryTypes.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ProductDeliveryTypeData", "GetAllProductDeliveryTypes");
+            }
+
+            return allproddeliverytypes;
+        }
     }
 }

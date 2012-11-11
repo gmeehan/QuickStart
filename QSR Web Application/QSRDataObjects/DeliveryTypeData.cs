@@ -39,5 +39,29 @@ namespace QSRDataObjects
 
             return hsh;
         }
+
+        /// <summary>
+        /// Purpose: Grabs all delivery types
+        /// Accepts: Nothing
+        /// Returns: List<DeliveryType>
+        /// </summary>
+        public List<DeliveryType> GetAllDeliveryTypes()
+        {
+            QuickStart_DBEntities dbContext;
+            List<DeliveryType> alldeliverytypes = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all delivery types are returned
+                alldeliverytypes = dbContext.DeliveryTypes.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "DeliveryTypeData", "GetAllDeliveryTypes");
+            }
+
+            return alldeliverytypes;
+        }
     }
 }

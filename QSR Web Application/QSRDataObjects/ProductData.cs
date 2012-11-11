@@ -60,11 +60,11 @@ namespace QSRDataObjects
             {
                 dbContext = new QuickStart_DBEntities();
 
-                if (onlyActive == true) //only the active categories are returned
+                if (onlyActive == true) //only the active products are returned
                 {
                     allproducts = dbContext.Products.Where(p => p.isActive == true).ToList();
                 }
-                else //all categories are returned
+                else //all products are returned
                 {
                     allproducts = dbContext.Products.ToList();
                 }

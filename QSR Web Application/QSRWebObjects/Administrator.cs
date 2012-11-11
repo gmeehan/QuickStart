@@ -161,11 +161,10 @@ namespace QSRWebObjects
             }
         }
 
-        /*
         /// <summary>
         /// Purpose: Grabs all administrators
         /// Accepts: Boolean
-        /// Returns: List<Product>
+        /// Returns: List<Administrator>
         /// </summary>
         public List<Administrator> GetAllAdministrators(bool onlyActive)
         {
@@ -183,7 +182,8 @@ namespace QSRWebObjects
                     admin.Password = a.Password;
                     admin.FirstName = a.FirstName;
                     admin.LastName = a.LastName;
-                    admin.IsActive = Convert.ToBoolean(a.IsActive);
+                    admin.IsActive = a.IsActive;
+                    administrators.Add(admin);
                 }
             }
             catch (Exception ex)
@@ -192,6 +192,62 @@ namespace QSRWebObjects
             }
             return administrators;
         }
-        */
+    }
+
+    public class RenderAdministrator
+    {
+        private int _administratorID;
+
+        public int AdministratorID
+        {
+            get { return _administratorID; }
+            set { _administratorID = value; }
+        }
+        private string _username;
+
+        public string Username
+        {
+            get { return _username; }
+            set { _username = value; }
+        }
+        private string _password;
+
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; }
+        }
+        private string _firstName;
+
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+        private string _lastName;
+
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
+        private bool _isActive;
+
+        public bool IsActive
+        {
+            get { return _isActive; }
+            set { _isActive = value; }
+        }
+
+        public RenderAdministrator(Administrator a)
+        {
+            AdministratorID = a.AdministratorID;
+            Username = Convert.ToString(a.Username);
+            Password = Convert.ToString(a.Password);
+            FirstName = Convert.ToString(a.FirstName);
+            LastName = Convert.ToString(a.LastName);
+            IsActive = Convert.ToBoolean(a.IsActive);
+        }
+
     }
 }

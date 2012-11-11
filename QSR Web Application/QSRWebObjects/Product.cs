@@ -458,4 +458,119 @@ namespace QSRWebObjects
             return retProdcd;
         }
     }
+
+    //Render wrapper classes are used to display table contents in a GridView with AutoGenerateColumns = "true"
+    //(This is mandatory when using anonymous-typed properties (example: the "Object" class type)
+    public class RenderProduct
+    {
+        private string _productCode;
+
+        public string ProductCode
+        {
+            get { return _productCode; }
+            set { _productCode = value; }
+        }
+        private string _name;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        private string _brand;
+
+        public string Brand
+        {
+            get { return _brand; }
+            set { _brand = value; }
+        }
+        private string _description;
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+        private int _categoryID;
+
+        public int CategoryID
+        {
+            get { return _categoryID; }
+            set { _categoryID = value; }
+        }
+        private double _msrp;
+
+        public double Msrp
+        {
+            get { return _msrp; }
+            set { _msrp = value; }
+        }
+        private bool _isFreeShipping;
+
+        public bool IsFreeShipping
+        {
+            get { return _isFreeShipping; }
+            set { _isFreeShipping = value; }
+        }
+        private bool _isTaxFree;
+
+        public bool IsTaxFree
+        {
+            get { return _isTaxFree; }
+            set { _isTaxFree = value; }
+        }
+        private int _quantityInStock;
+
+        public int QuantityInStock
+        {
+            get { return _quantityInStock; }
+            set { _quantityInStock = value; }
+        }
+        private bool _isQuantityUnlimited;
+
+        public bool IsQuantityUnlimited
+        {
+            get { return _isQuantityUnlimited; }
+            set { _isQuantityUnlimited = value; }
+        }
+        private DateTime _created;
+
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value; }
+        }
+        private DateTime _modified;
+
+        public DateTime Modified
+        {
+            get { return _modified; }
+            set { _modified = value; }
+        }
+        private bool _isActive;
+
+        public bool IsActive
+        {
+            get { return _isActive; }
+            set { _isActive = value; }
+        }
+
+        public RenderProduct(Product p)
+        {
+            ProductCode = Convert.ToString(p.ProductCode);
+            Name = Convert.ToString(p.Name);
+            Brand = Convert.ToString(p.Brand);
+            Description = Convert.ToString(p.Description);
+            CategoryID = Convert.ToInt32(p.CategoryID);
+            Msrp = Convert.ToDouble(p.Msrp);
+            IsFreeShipping = Convert.ToBoolean(p.IsFreeShipping);
+            IsTaxFree = Convert.ToBoolean(p.IsTaxFree);
+            QuantityInStock = Convert.ToInt32(p.QuantityInStock);
+            IsQuantityUnlimited = Convert.ToBoolean(p.IsQuantityUnlimited);
+            Created = Convert.ToDateTime(p.Created);
+            Modified = Convert.ToDateTime(p.Modified);
+            IsActive = Convert.ToBoolean(p.IsActive);
+        }
+
+    }
 }

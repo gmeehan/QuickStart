@@ -128,5 +128,30 @@ namespace QSRDataObjects
 
             return retUserID;
         }
+
+
+        /// <summary>
+        /// Purpose: Grabs all users
+        /// Accepts: Nothing
+        /// Returns: List<User>
+        /// </summary>
+        public List<User> GetAllUsers()
+        {
+            QuickStart_DBEntities dbContext;
+            List<User> allusers = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all users are returned
+                allusers = dbContext.Users.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "UserData", "GetAllUsers");
+            }
+
+            return allusers;
+        }
     }
 }

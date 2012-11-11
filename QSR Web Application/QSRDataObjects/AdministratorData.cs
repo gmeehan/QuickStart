@@ -79,5 +79,35 @@ namespace QSRDataObjects
 
             return retAdminID;
         }
+
+        /// <summary>
+        /// Purpose: Grabs all administrators
+        /// Accepts: Boolean
+        /// Returns: List<Administrator>
+        /// </summary>
+        public List<Administrator> GetAllAdministrators(bool onlyActive)
+        {
+            QuickStart_DBEntities dbContext;
+            List<Administrator> alladministrators = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                if (onlyActive == true) //only the active administrators are returned
+                {
+                    alladministrators = dbContext.Administrators.Where(a => a.IsActive == true).ToList();
+                }
+                else //all administrators are returned
+                {
+                    alladministrators = dbContext.Administrators.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "AdministratorData", "GetAllAdministrators");
+            }
+
+            return alladministrators;
+        }
     }
 }

@@ -39,5 +39,29 @@ namespace QSRDataObjects
 
             return hsh;
         }
+
+        /// <summary>
+        /// Purpose: Grabs all audits
+        /// Accepts: Nothing
+        /// Returns: List<Audit>
+        /// </summary>
+        public List<Audit> GetAllAudits()
+        {
+            QuickStart_DBEntities dbContext;
+            List<Audit> allaudits = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all audits are returned
+                allaudits = dbContext.Audits.ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "AuditData", "GetAllAudits");
+            }
+
+            return allaudits;
+        }
     }
 }
