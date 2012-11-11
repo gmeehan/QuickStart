@@ -20,37 +20,97 @@ namespace QSRWebObjects
         public int DeliveryTypeID
         {
             get { return _deliveryTypeID; }
-            set { _deliveryTypeID = value; }
+            set
+            {
+                try
+                {
+                    _deliveryTypeID = value;
+                }
+                catch (Exception)
+                {
+                    _deliveryTypeID = 0;
+                }
+            }
         }
 
-        public string Name
+        public Object Name
         {
             get { return _name; }
-            set { _name = value; }
+            set
+            {
+                try
+                {
+                    _name = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _name = "";
+                }
+            }
         }
 
-        public string Description
+        public Object Description
         {
             get { return _description; }
-            set { _description = value; }
+            set
+            {
+                try
+                {
+                    _description = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _description = "";
+                }
+            }
         }
 
         public double Cost
         {
             get { return _cost; }
-            set { _cost = value; }
+            set
+            {
+                try
+                {
+                    _cost = value;
+                }
+                catch (Exception)
+                {
+                    _cost = 0.00;
+                }
+            }
         }
 
-        public DateTime Created
+        public Object Created
         {
             get { return _created; }
-            set { _created = value; }
+            set
+            {
+                try
+                {
+                    _created = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _created = DateTime.MinValue;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -68,11 +128,11 @@ namespace QSRWebObjects
                 hsh = data.GetDeliveryTypeByID(id);
 
                 _deliveryTypeID = id;
-                try{ _name = hsh["name"].ToString(); } catch (Exception){ _name = ""; }
-                try{ _description = hsh["description"].ToString(); } catch (Exception){ _description = ""; }
-                try{ _cost = Convert.ToDouble(hsh["cost"]); } catch (Exception){ _cost = 0.00; }
-                try{ _created = Convert.ToDateTime(hsh["created"]); } catch (Exception){ _created = DateTime.MinValue; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
+                Name = hsh["name"].ToString();
+                Description = hsh["description"].ToString();
+                Cost = Convert.ToDouble(hsh["cost"]);
+                Created = Convert.ToDateTime(hsh["created"]);
+                Modified = Convert.ToDateTime(hsh["modified"]);
             }
             catch (Exception ex)
             {

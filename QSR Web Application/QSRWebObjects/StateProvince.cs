@@ -20,37 +20,97 @@ namespace QSRWebObjects
         public int StateProvinceID
         {
             get { return _stateProvinceID; }
-            set { _stateProvinceID = value; }
+            set
+            {
+                try
+                {
+                    _stateProvinceID = value;
+                }
+                catch (Exception)
+                {
+                    _stateProvinceID = 0;
+                }
+            }
         }
 
-        public string Name
+        public Object Name
         {
             get { return _name; }
-            set { _name = value; }
+            set
+            {
+                try
+                {
+                    _name = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _name = "";
+                }
+            }
         }
 
-        public string Country
+        public Object Country
         {
             get { return _country; }
-            set { _country = value; }
+            set
+            {
+                try
+                {
+                    _country = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _country = "";
+                }
+            }
         }
 
-        public string CurrencyCode
+        public Object CurrencyCode
         {
             get { return _currencyCode; }
-            set { _currencyCode = value; }
+            set
+            {
+                try
+                {
+                    _currencyCode = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _currencyCode = "";
+                }
+            }
         }
 
         public double TaxRatePercentage
         {
             get { return _taxRatePercentage; }
-            set { _taxRatePercentage = value; }
+            set
+            {
+                try
+                {
+                    _taxRatePercentage = value;
+                }
+                catch (Exception)
+                {
+                    _taxRatePercentage = 0.00;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -67,12 +127,12 @@ namespace QSRWebObjects
 
                 hsh = data.GetStateProvinceByID(id);
 
-                _stateProvinceID = id;
-                try{ _name = hsh["name"].ToString(); } catch (Exception){ _name = ""; }
-                try{ _country = hsh["country"].ToString(); } catch (Exception){ _country = ""; }
-                try{ _currencyCode = hsh["currencyCode"].ToString(); } catch (Exception){ _currencyCode = ""; }
-                try{ _taxRatePercentage = Convert.ToDouble(hsh["taxratepercentage"]); } catch (Exception){ _taxRatePercentage = 0.00; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
+                StateProvinceID = id;
+                Name = hsh["name"];
+                Country = hsh["country"];
+                CurrencyCode = hsh["currencyCode"];
+                TaxRatePercentage = Convert.ToDouble(hsh["taxratepercentage"]);
+                Modified = hsh["modified"];
             }
             catch (Exception ex)
             {

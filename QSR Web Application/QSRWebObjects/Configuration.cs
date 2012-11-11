@@ -17,40 +17,100 @@ namespace QSRWebObjects
         private bool _yesNoValue;
         private DateTime _modified;
 
-        public string ConfigurationCode
+        public Object ConfigurationCode
         {
             get { return _configurationCode; }
-            set { _configurationCode = value; }
+            set
+            {
+                try
+                {
+                    _configurationCode = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _configurationCode = "";
+                }
+            }
         }
 
-        public string Description
+        public Object Description
         {
             get { return _description; }
-            set { _description = value; }
+            set
+            {
+                try
+                {
+                    _description = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _description = "";
+                }
+            }
         }
 
-        public string Value
+        public Object Value
         {
             get { return _value; }
-            set { _value = value; }
+            set
+            {
+                try
+                {
+                    _value = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _value = "";
+                }
+            }
         }
 
-        public bool IsYesNoValue
+        public Object IsYesNoValue
         {
             get { return _isYesNoValue; }
-            set { _isYesNoValue = value; }
+            set
+            {
+                try
+                {
+                    _isYesNoValue = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isYesNoValue = false;
+                }
+            }
         }
 
-        public bool YesNoValue
+        public Object YesNoValue
         {
             get { return _yesNoValue; }
-            set { _yesNoValue = value; }
+            set
+            {
+                try
+                {
+                    _yesNoValue = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _yesNoValue = false;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -67,12 +127,12 @@ namespace QSRWebObjects
 
                 hsh = data.GetConfigurationByCode(code);
 
-                _configurationCode= code;
-                try{ _description = hsh["description"].ToString(); } catch (Exception){ _description = ""; }
-                try{ _value = hsh["value"].ToString(); } catch (Exception){ _value = ""; }
-                try{ _isYesNoValue = Convert.ToBoolean(hsh["isyesnovalue"]); } catch (Exception){ _isYesNoValue = false; }
-                try{ _yesNoValue = Convert.ToBoolean(hsh["yesnovalue"]); } catch (Exception){ _yesNoValue = false; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
+                ConfigurationCode= code;
+                Description = hsh["description"];
+                Value = hsh["value"];
+                IsYesNoValue = hsh["isyesnovalue"];
+                YesNoValue = hsh["yesnovalue"];
+                Modified = hsh["modified"];
             }
             catch (Exception ex)
             {

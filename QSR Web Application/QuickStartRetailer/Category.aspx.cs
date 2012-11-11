@@ -53,7 +53,7 @@ namespace QuickStartRetailer
 
             //Set the parent category
             TreeNode categoryNode = new TreeNode();
-            categoryNode.Text = parentCat.Name;
+            categoryNode.Text = parentCat.Name.ToString();
             categoryNode.Expanded = true;
             TreeViewLeftNav.Nodes.Add(categoryNode);
 
@@ -65,7 +65,7 @@ namespace QuickStartRetailer
                 if (c.ParentCategoryID == parentCat.CategoryID)
                 {
                     TreeNode subCategoryNode = new TreeNode();
-                    subCategoryNode.Text = c.Name;
+                    subCategoryNode.Text = c.Name.ToString();
                     subCategoryNode.Value = c.CategoryID.ToString();
                     categoryNode.ChildNodes.Add(subCategoryNode);
                 }
@@ -84,7 +84,7 @@ namespace QuickStartRetailer
             cat.GetCategoryByID(Convert.ToInt32(TreeViewLeftNav.SelectedValue));
 
             //Set the title for content section
-            subcategoryTitle.InnerText = cat.Name;
+            subcategoryTitle.InnerText = cat.Name.ToString();
 
             //Get all products for this category
             Product prod = new Product();

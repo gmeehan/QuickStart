@@ -23,55 +23,145 @@ namespace QSRWebObjects
         public int OrderID
         {
             get { return _orderID; }
-            set { _orderID = value; }
+            set
+            {
+                try
+                {
+                    _orderID = value;
+                }
+                catch (Exception)
+                {
+                    _orderID = 0;
+                }
+            }
         }
 
         public int UserID
         {
             get { return _userID; }
-            set { _userID = value; }
+            set
+            {
+                try
+                {
+                    _userID = value;
+                }
+                catch (Exception)
+                {
+                    _userID = 0;
+                }
+            }
         }
 
         public double Subtotal
         {
             get { return _subtotal; }
-            set { _subtotal = value; }
+            set
+            {
+                try
+                {
+                    _subtotal = value;
+                }
+                catch (Exception)
+                {
+                    _subtotal = 0.00;
+                }
+            }
         }
 
         public double Taxes
         {
             get { return _taxes; }
-            set { _taxes = value; }
+            set
+            {
+                try
+                {
+                    _taxes = value;
+                }
+                catch (Exception)
+                {
+                    _taxes = 0.00;
+                }
+            }
         }
 
         public double DeliveryCost
         {
             get { return _deliveryCost; }
-            set { _deliveryCost = value; }
+            set
+            {
+                try
+                {
+                    _deliveryCost = value;
+                }
+                catch (Exception)
+                {
+                    _deliveryCost = 0.00;
+                }
+            }
         }
 
         public int DeliveryTypeID
         {
             get { return _deliveryTypeID; }
-            set { _deliveryTypeID = value; }
+            set
+            {
+                try
+                {
+                    _deliveryTypeID = value;
+                }
+                catch (Exception)
+                {
+                    _deliveryTypeID = 0;
+                }
+            }
         }
 
         public double GrandTotal
         {
             get { return _grandTotal; }
-            set { _grandTotal = value; }
+            set
+            {
+                try
+                {
+                    _grandTotal = value;
+                }
+                catch (Exception)
+                {
+                    _grandTotal = 0.00;
+                }
+            }
         }
 
-        public DateTime Created
+        public Object Created
         {
             get { return _created; }
-            set { _created = value; }
+            set
+            {
+                try
+                {
+                    _created = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _created = DateTime.MinValue;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -88,15 +178,15 @@ namespace QSRWebObjects
 
                 hsh = data.GetOrderByID(id);
 
-                _orderID = id;
-                try{ _userID = Convert.ToInt32(hsh["userid"]); } catch (Exception){ _userID = 0; }
-                try{ _subtotal = Convert.ToDouble(hsh["subtotal"]); } catch (Exception){ _subtotal = 0.00; }
-                try{ _taxes = Convert.ToDouble(hsh["taxes"]); } catch (Exception){ _taxes = 0.00; }
-                try{ _deliveryCost = Convert.ToDouble(hsh["deliverycost"]); } catch (Exception){ _deliveryCost = 0.00; }
-                try{ _deliveryTypeID = Convert.ToInt32(hsh["deliverytypeid"]); } catch (Exception){ _deliveryTypeID = 0; }
-                try{ _grandTotal = Convert.ToDouble(hsh["grandtotal"]); } catch (Exception){ _grandTotal = 0.00; }
-                try{ _created = Convert.ToDateTime(hsh["created"]); } catch (Exception){ _created = DateTime.MinValue; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
+                OrderID = id;
+                UserID = Convert.ToInt32(hsh["userid"]);
+                Subtotal = Convert.ToDouble(hsh["subtotal"]);
+                Taxes = Convert.ToDouble(hsh["taxes"]);
+                DeliveryCost = Convert.ToDouble(hsh["deliverycost"]);
+                DeliveryTypeID = Convert.ToInt32(hsh["deliverytypeid"]);
+                GrandTotal = Convert.ToDouble(hsh["grandtotal"]);
+                Created = hsh["created"];
+                Modified = hsh["modified"];
             }
             catch (Exception ex)
             {

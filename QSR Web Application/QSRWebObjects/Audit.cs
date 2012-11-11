@@ -20,37 +20,97 @@ namespace QSRWebObjects
         public int AuditID
         {
             get { return _auditID; }
-            set { _auditID = value; }
+            set
+            {
+                try
+                {
+                    _auditID = value;
+                }
+                catch (Exception)
+                {
+                    _auditID = 0;
+                }
+            }
         }
 
-        public int AuditType
+        public int AuditTypeID
         {
             get { return _auditTypeID; }
-            set { _auditTypeID = value; }
+            set
+            {
+                try
+                {
+                    _auditTypeID = value;
+                }
+                catch (Exception)
+                {
+                    _auditTypeID = 0;
+                }
+            }
         }
 
         public int UserID
         {
             get { return _userID; }
-            set { _userID = value; }
+            set
+            {
+                try
+                {
+                    _userID = value;
+                }
+                catch (Exception)
+                {
+                    _userID = 0;
+                }
+            }
         }
 
         public int AdminID
         {
             get { return _adminID; }
-            set { _adminID = value; }
+            set
+            {
+                try
+                {
+                    _adminID = value;
+                }
+                catch (Exception)
+                {
+                    _adminID = 0;
+                }
+            }
         }
 
-        public string Notes
+        public Object Notes
         {
             get { return _notes; }
-            set { _notes = value; }
+            set
+            {
+                try
+                {
+                    _notes = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _notes = "";
+                }
+            }
         }
 
-        public DateTime Created
+        public Object Created
         {
             get { return _created; }
-            set { _created = value; }
+            set
+            {
+                try
+                {
+                    _created = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _created = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -67,12 +127,12 @@ namespace QSRWebObjects
 
                 hsh = data.GetAuditByID(id);
 
-                _auditID = id;
-                try{ _auditTypeID = Convert.ToInt32(hsh["audittypeid"]); } catch (Exception){ _auditTypeID = 0; }
-                try{ _userID = Convert.ToInt32(hsh["userid"]); } catch (Exception){ _userID = 0; }
-                try{ _adminID = Convert.ToInt32(hsh["adminid"]); } catch (Exception){ _adminID = 0; }
-                try{ _notes = hsh["notes"].ToString(); } catch (Exception){ _notes = ""; }
-                try{ _created = Convert.ToDateTime(hsh["created"]); } catch (Exception){ _created = DateTime.MinValue; }
+                AuditID = id;
+                AuditTypeID = Convert.ToInt32(hsh["audittypeid"]);
+                UserID = Convert.ToInt32(hsh["userid"]);
+                AdminID = Convert.ToInt32(hsh["adminid"]);
+                Notes = hsh["notes"];
+                Created = hsh["created"];
             }
             catch (Exception ex)
             {

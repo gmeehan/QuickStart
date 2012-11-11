@@ -5,5 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-Edit Tables
+    <asp:DropDownList ID="DropDownListDBTables" runat="server" AutoPostBack="true" 
+        onselectedindexchanged="DropDownListDBTables_SelectedIndexChanged"></asp:DropDownList>
+    <asp:GridView ID="GridViewDBTable" AutoGenerateColumns="true" runat="server"></asp:GridView>
 </asp:Content>

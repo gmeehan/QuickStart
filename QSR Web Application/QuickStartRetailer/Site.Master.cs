@@ -61,7 +61,7 @@ namespace QuickStartRetailer
                             if (ms.Value == cs.ParentCategoryID.ToString())
                             {
                                 mi.Value = cs.ParentCategoryID.ToString();
-                                mi.Text = cs.Name;
+                                mi.Text = cs.Name.ToString();
                                 mi.NavigateUrl = "~/Category.aspx?id=" + cs.CategoryID;
                                 ms.ChildItems.Add(mi);
                                 break;
@@ -71,7 +71,7 @@ namespace QuickStartRetailer
                     else
                     {
                         mi.Value = cs.CategoryID.ToString();
-                        mi.Text = cs.Name;
+                        mi.Text = cs.Name.ToString();
                         mi.Selectable = false;
                         m.ChildItems.Add(mi);
                     }

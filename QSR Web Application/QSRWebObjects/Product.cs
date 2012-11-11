@@ -18,42 +18,92 @@ namespace QSRWebObjects
         private string _description;
         private int _categoryID;
         private double _msrp;
-        private bool _isFreeShipping;
-        private bool _isTaxFree;
+        private bool? _isFreeShipping;
+        private bool? _isTaxFree;
         private int _quantityInStock;
-        private bool _isQuantityUnlimited;
-        private DateTime _created;
-        private DateTime _modified;
-        private bool _isActive;
+        private bool? _isQuantityUnlimited;
+        private DateTime? _created;
+        private DateTime? _modified;
+        private bool? _isActive;
 
-        public string ProductCode
+        public Object ProductCode
         {
             get { return _productCode; }
-            set { _productCode = value; }
+            set
+            {
+                try
+                {
+                    _productCode = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _productCode = "";
+                }
+            }
         }
 
-        public string Name
+        public Object Name
         {
             get { return _name; }
-            set { _name = value; }
+            set
+            {
+                try
+                {
+                    _name = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _name = "";
+                }
+            }
         }
 
-        public string Brand
+        public Object Brand
         {
             get { return _brand; }
-            set { _brand = value; }
+            set
+            {
+                try
+                {
+                    _brand = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _brand = "";
+                }
+            }
         }
 
-        public string Description
+        public Object Description
         {
             get { return _description; }
-            set { _description = value; }
+            set
+            {
+                try
+                {
+                    _description = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _description = "";
+                }
+            }
         }
 
         public int CategoryID
         {
             get { return _categoryID; }
-            set { _categoryID = value; }
+            set
+            {
+                try
+                {
+                    _categoryID = value;
+                }
+                catch (Exception)
+                {
+                    _categoryID = 0;
+                }
+            }
         }
 
         public string CategoryName
@@ -61,50 +111,120 @@ namespace QSRWebObjects
             get {
                 QSRWebObjects.Category cat = new QSRWebObjects.Category();
                 cat.GetCategoryByID(_categoryID);
-                return cat.Name;
+                return cat.Name.ToString();
             }
         }
 
         public double Msrp
         {
             get { return _msrp; }
-            set { _msrp = value; }
+            set
+            {
+                try
+                {
+                    _msrp = value;
+                }
+                catch (Exception)
+                {
+                    _msrp = 0.00;
+                }
+            }
         }
 
-        public bool IsFreeShipping
+        public Object IsFreeShipping
         {
             get { return _isFreeShipping; }
-            set { _isFreeShipping = value; }
+            set
+            {
+                try
+                {
+                    _isFreeShipping = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isFreeShipping = false;
+                }
+            }
         }
 
-        public bool IsTaxFree
+        public Object IsTaxFree
         {
             get { return _isTaxFree; }
-            set { _isTaxFree = value; }
+            set
+            {
+                try
+                {
+                    _isTaxFree = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isTaxFree = false;
+                }
+            }
         }
 
         public int QuantityInStock
         {
             get { return _quantityInStock; }
-            set { _quantityInStock = value; }
+            set
+            {
+                try
+                {
+                    _quantityInStock = value;
+                }
+                catch (Exception)
+                {
+                    _quantityInStock = 0;
+                }
+            }
         }
 
-        public bool IsQuantityUnlimited
+        public Object IsQuantityUnlimited
         {
             get { return _isQuantityUnlimited; }
-            set { _isQuantityUnlimited = value; }
+            set
+            {
+                try
+                {
+                    _isQuantityUnlimited = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isQuantityUnlimited = false;
+                }
+            }
         }
 
-        public DateTime Created
+        public Object Created
         {
             get { return _created; }
-            set { _created = value; }
+            set
+            {
+                try
+                {
+                    _created = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _created = DateTime.MinValue;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         //This is used to return null if Mofidied is min value and therefore
@@ -113,17 +233,27 @@ namespace QSRWebObjects
         {
             get
             {
-                if (this.Modified == default(DateTime))
+                if (Convert.ToDateTime(this.Modified) == default(DateTime))
                     return null;
                 else
-                    return this.Modified;
+                    return Convert.ToDateTime(this.Modified);
             }
         }
 
-        public bool IsActive
+        public Object IsActive
         {
             get { return _isActive; }
-            set { _isActive = value; }
+            set
+            {
+                try
+                {
+                    _isActive = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isActive = false;
+                }
+            }
         }
 
         /// <summary>
@@ -140,19 +270,19 @@ namespace QSRWebObjects
 
                 hsh = data.GetProductByCode(code);
 
-                _productCode = code;
-                try{ _name = hsh["name"].ToString(); } catch (Exception){ _name = ""; }
-                try{ _brand = hsh["brand"].ToString(); }catch (Exception) { _brand = ""; }
-                try{ _description = hsh["description"].ToString(); } catch (Exception){ _description = ""; }
-                try{ _categoryID = Convert.ToInt32(hsh["categoryid"]); } catch (Exception){ _categoryID = 0; }
-                try{ _msrp = Convert.ToDouble(hsh["msrp"]); } catch (Exception){ _msrp = 0.00; }
-                try{ _isFreeShipping = Convert.ToBoolean(hsh["isfreeshipping"]); } catch (Exception){ _isFreeShipping = false; }
-                try{ _isTaxFree = Convert.ToBoolean(hsh["istaxfree"]); } catch (Exception){ _isTaxFree = false; }
-                try{ _quantityInStock = Convert.ToInt32(hsh["quantityinstock"]); } catch (Exception){ _quantityInStock = 0; }
-                try{ _isQuantityUnlimited = Convert.ToBoolean(hsh["isquantityunlimited"]); } catch (Exception){ _isQuantityUnlimited = false; }
-                try{ _created = Convert.ToDateTime(hsh["created"]); } catch (Exception){ _created = DateTime.MinValue; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
-                try{ _isActive = Convert.ToBoolean(hsh["isactive"]); } catch (Exception){ _isActive = false; }
+                ProductCode = code;
+                Name = hsh["name"];
+                Brand = hsh["brand"];
+                Description = hsh["description"];
+                CategoryID = Convert.ToInt32(hsh["categoryid"]);
+                Msrp = Convert.ToDouble(hsh["msrp"]);
+                IsFreeShipping = hsh["isfreeshipping"];
+                IsTaxFree = hsh["istaxfree"];
+                QuantityInStock = Convert.ToInt32(hsh["quantityinstock"]);
+                IsQuantityUnlimited = hsh["isquantityunlimited"];
+                Created = hsh["created"];
+                Modified = hsh["modified"];
+                IsActive = hsh["isactive"];
             }
             catch (Exception ex)
             {
@@ -176,19 +306,19 @@ namespace QSRWebObjects
                 foreach (QSRDataObjects.Product p in dataProducts)
                 {
                     Product prod = new Product();
-                    try{ prod.ProductCode = p.ProductCode.ToString(); } catch (Exception){ prod.ProductCode = ""; }
-                    try{ prod.Name = p.Name.ToString(); } catch (Exception){ prod.Name = ""; }
-                    try{ prod.Brand = p.Brand.ToString(); } catch (Exception){ prod.Brand = ""; }
-                    try{ prod.Description = p.Description.ToString(); } catch (Exception){ prod.Description = ""; }
-                    try{ prod.CategoryID = Convert.ToInt32(p.CategoryID); } catch (Exception){ prod.CategoryID = 0; }
-                    try{ prod.Msrp = Convert.ToDouble(p.MSRP); } catch (Exception){ prod.Msrp = 0.00; }
-                    try{ prod.IsFreeShipping = Convert.ToBoolean(p.isFreeShipping); } catch (Exception){ prod.IsFreeShipping = false; }
-                    try{ prod.IsTaxFree = Convert.ToBoolean(p.isTaxFree); } catch (Exception){ prod.IsTaxFree = false; }
-                    try{ prod.QuantityInStock = Convert.ToInt32(p.QuantityInStock); } catch (Exception){ prod.QuantityInStock = 0; }
-                    try{ prod.IsQuantityUnlimited = Convert.ToBoolean(p.IsQuantityUnlimited); } catch (Exception){ prod.IsQuantityUnlimited = false; }
-                    try{ prod.Created = Convert.ToDateTime(p.Created); } catch (Exception){ prod.Created = DateTime.MinValue; }
-                    try{ prod.Modified = Convert.ToDateTime(p.Modified); } catch (Exception){ prod.Modified = DateTime.MinValue; }
-                    try{ prod.IsActive = Convert.ToBoolean(p.isActive); } catch (Exception){ prod.IsActive = false; }
+                    prod.ProductCode = p.ProductCode;
+                    prod.Name = p.Name;
+                    prod.Brand = p.Brand;
+                    prod.Description = p.Description;
+                    prod.CategoryID = Convert.ToInt32(p.CategoryID);
+                    prod.Msrp = Convert.ToDouble(p.MSRP);
+                    prod.IsFreeShipping = p.isFreeShipping;
+                    prod.IsTaxFree = p.isTaxFree;
+                    prod.QuantityInStock = Convert.ToInt32(p.QuantityInStock);
+                    prod.IsQuantityUnlimited = p.IsQuantityUnlimited;
+                    prod.Created = p.Created;
+                    prod.Modified = p.Modified;
+                    prod.IsActive = p.isActive;
                     products.Add(prod);
                 }
             }
@@ -215,19 +345,19 @@ namespace QSRWebObjects
                 foreach (QSRDataObjects.Product p in dataProducts)
                 {
                     Product prod = new Product();
-                    try { prod.ProductCode = p.ProductCode.ToString(); }catch (Exception) { prod.ProductCode = ""; }
-                    try { prod.Name = p.Name.ToString(); }catch (Exception) { prod.Name = ""; }
-                    try { prod.Brand = p.Brand.ToString(); }catch (Exception) { prod.Brand = ""; }
-                    try { prod.Description = p.Description.ToString(); }catch (Exception) { prod.Description = ""; }
-                    try { prod.CategoryID = Convert.ToInt32(p.CategoryID); }catch (Exception) { prod.CategoryID = 0; }
-                    try { prod.Msrp = Convert.ToDouble(p.MSRP); }catch (Exception) { prod.Msrp = 0.00; }
-                    try { prod.IsFreeShipping = Convert.ToBoolean(p.isFreeShipping); }catch (Exception) { prod.IsFreeShipping = false; }
-                    try { prod.IsTaxFree = Convert.ToBoolean(p.isTaxFree); }catch (Exception) { prod.IsTaxFree = false; }
-                    try { prod.QuantityInStock = Convert.ToInt32(p.QuantityInStock); }catch (Exception) { prod.QuantityInStock = 0; }
-                    try { prod.IsQuantityUnlimited = Convert.ToBoolean(p.IsQuantityUnlimited); }catch (Exception) { prod.IsQuantityUnlimited = false; }
-                    try { prod.Created = Convert.ToDateTime(p.Created); }catch (Exception) { prod.Created = DateTime.MinValue; }
-                    try { prod.Modified = Convert.ToDateTime(p.Modified); }catch (Exception) { prod.Modified = DateTime.MinValue; }
-                    try { prod.IsActive = Convert.ToBoolean(p.isActive); }catch (Exception) { prod.IsActive = false; }
+                    prod.ProductCode = p.ProductCode;
+                    prod.Name = p.Name;
+                    prod.Brand = p.Brand;
+                    prod.Description = p.Description;
+                    prod.CategoryID = Convert.ToInt32(p.CategoryID);
+                    prod.Msrp = Convert.ToDouble(p.MSRP);
+                    prod.IsFreeShipping = p.isFreeShipping;
+                    prod.IsTaxFree = p.isTaxFree;
+                    prod.QuantityInStock = Convert.ToInt32(p.QuantityInStock);
+                    prod.IsQuantityUnlimited = p.IsQuantityUnlimited;
+                    prod.Created = p.Created;
+                    prod.Modified = p.Modified;
+                    prod.IsActive = p.isActive;
                     products.Add(prod);
                 }
             }
@@ -265,18 +395,18 @@ namespace QSRWebObjects
             try
             {
                 Hashtable hsh = new Hashtable();
-                hsh["productcode"] = _productCode;
-                hsh["name"] = _name;
-                hsh["brand"] = _brand;
-                hsh["description"] = _description;
-                hsh["categoryid"] = _categoryID;
-                hsh["msrp"] = _msrp;
-                hsh["isfreeshipping"] = _isFreeShipping;
-                hsh["istaxfree"] = _isTaxFree;
-                hsh["quantityinstock"] = _quantityInStock;
-                hsh["isquantityunlimited"] = _isQuantityUnlimited;
-                hsh["created"] = _created;
-                hsh["modified"] = _modified;
+                hsh["productcode"] = ProductCode;
+                hsh["name"] = Name;
+                hsh["brand"] = Brand;
+                hsh["description"] = Description;
+                hsh["categoryid"] = CategoryID;
+                hsh["msrp"] = Msrp;
+                hsh["isfreeshipping"] = IsFreeShipping;
+                hsh["istaxfree"] = IsTaxFree;
+                hsh["quantityinstock"] = QuantityInStock;
+                hsh["isquantityunlimited"] = IsQuantityUnlimited;
+                hsh["created"] = Created;
+                hsh["modified"] = Modified;
                 hsh["isactive"] = IsActive;
 
                 ProductData prodData = new ProductData();
@@ -303,18 +433,18 @@ namespace QSRWebObjects
             try
             {
                 Hashtable hsh = new Hashtable();
-                hsh["productcode"] = _productCode;
-                hsh["name"] = _name;
-                hsh["brand"] = _brand;
-                hsh["description"] = _description;
-                hsh["categoryid"] = _categoryID;
-                hsh["msrp"] = _msrp;
-                hsh["isfreeshipping"] = _isFreeShipping;
-                hsh["istaxfree"] = _isTaxFree;
-                hsh["quantityinstock"] = _quantityInStock;
-                hsh["isquantityunlimited"] = _isQuantityUnlimited;
-                hsh["created"] = _created;
-                hsh["modified"] = _modified;
+                hsh["productcode"] = ProductCode;
+                hsh["name"] = Name;
+                hsh["brand"] = Brand;
+                hsh["description"] = Description;
+                hsh["categoryid"] = CategoryID;
+                hsh["msrp"] = Msrp;
+                hsh["isfreeshipping"] = IsFreeShipping;
+                hsh["istaxfree"] = IsTaxFree;
+                hsh["quantityinstock"] = QuantityInStock;
+                hsh["isquantityunlimited"] = IsQuantityUnlimited;
+                hsh["created"] = Created;
+                hsh["modified"] = Modified;
                 hsh["isactive"] = IsActive;
 
                 ProductData prodData = new ProductData();

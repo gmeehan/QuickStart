@@ -32,19 +32,19 @@ namespace QuickStartRetailer.Admin.Forms
 
                 //Put product details into fields
                 LabelProductCode.Text = Request.QueryString["prodcd"].ToString();
-                TextBoxName.Text = prod.Name;
-                TextBoxBrand.Text = prod.Brand;
-                TextBoxDescription.Text = prod.Description;
+                TextBoxName.Text = prod.Name.ToString();
+                TextBoxBrand.Text = prod.Brand.ToString();
+                TextBoxDescription.Text = prod.Description.ToString();
                 DropDownListCategory.SelectedValue = prod.CategoryID.ToString();
                 TextBoxMSRP.Text = prod.Msrp.ToString();
-                CheckBoxFreeShipping.Checked = prod.IsFreeShipping;
-                CheckBoxTaxFree.Checked = prod.IsTaxFree;
+                CheckBoxFreeShipping.Checked = Convert.ToBoolean(prod.IsFreeShipping);
+                CheckBoxTaxFree.Checked = Convert.ToBoolean(prod.IsTaxFree);
                 TextBoxQtyInStock.Text = prod.QuantityInStock.ToString();
-                CheckBoxQtyUnlimited.Checked = prod.IsQuantityUnlimited;
-                LabelCreated.Text = prod.Created.ToShortDateString();
-                if (prod.Modified > DateTime.MinValue)
+                CheckBoxQtyUnlimited.Checked = Convert.ToBoolean(prod.IsQuantityUnlimited);
+                LabelCreated.Text = Convert.ToDateTime(prod.Created).ToShortDateString();
+                if (Convert.ToDateTime(prod.Modified) > DateTime.MinValue)
                 {
-                    LabelModified.Text = prod.Modified.ToShortDateString();
+                    LabelModified.Text = Convert.ToDateTime(prod.Modified).ToShortDateString();
                 }
                 else
                 {

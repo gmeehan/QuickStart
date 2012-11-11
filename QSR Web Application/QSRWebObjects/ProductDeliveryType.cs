@@ -18,25 +18,65 @@ namespace QSRWebObjects
         public int ProductDeliveryTypeID
         {
             get { return _productDeliveryTypeID; }
-            set { _productDeliveryTypeID = value; }
+            set
+            {
+                try
+                {
+                    _productDeliveryTypeID = value;
+                }
+                catch (Exception)
+                {
+                    _productDeliveryTypeID = 0;
+                }
+            }
         }
 
-        public string ProductCode
+        public Object ProductCode
         {
             get { return _productCode; }
-            set { _productCode = value; }
+            set
+            {
+                try
+                {
+                    _productCode = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _productCode = "";
+                }
+            }
         }
 
-        public DateTime Created
+        public Object Created
         {
             get { return _created; }
-            set { _created = value; }
+            set
+            {
+                try
+                {
+                    _created = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _created = DateTime.MinValue;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -53,10 +93,10 @@ namespace QSRWebObjects
 
                 hsh = data.GetProductDeliveryTypeByID(id);
 
-                _productDeliveryTypeID = id;
-                try{ _productCode = hsh["productcode"].ToString(); } catch (Exception){ _productCode = ""; }
-                try{ _created = Convert.ToDateTime(hsh["created"]); } catch (Exception){ _created = DateTime.MinValue; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
+                ProductDeliveryTypeID = id;
+                ProductCode = hsh["productcode"];
+                Created = hsh["created"];
+                Modified = hsh["modified"];
             }
             catch (Exception ex)
             {

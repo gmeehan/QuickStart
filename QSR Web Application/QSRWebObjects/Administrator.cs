@@ -20,37 +20,97 @@ namespace QSRWebObjects
         public int AdministratorID
         {
             get { return _administratorID; }
-            set { _administratorID = value; }
+            set
+            {
+                try
+                {
+                    _administratorID = value;
+                }
+                catch (Exception)
+                {
+                    _administratorID = 0;
+                }
+            }
         }
 
-        public string Username
+        public Object Username
         {
             get { return _username; }
-            set { _username = value; }
+            set
+            {
+                try
+                {
+                    _username = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _username = "";
+                }
+            }
         }
 
-        public string Password
+        public Object Password
         {
             get { return _password; }
-            set { _password = value; }
+            set
+            {
+                try
+                {
+                    _password = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _password = "";
+                }
+            }
         }
 
-        public string FirstName
+        public Object FirstName
         {
             get { return _firstName; }
-            set { _firstName = value; }
+            set
+            {
+                try
+                {
+                    _firstName = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _firstName = "";
+                }
+            }
         }
 
-        public string Lastname
+        public Object LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set
+            {
+                try
+                {
+                    _lastName = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _lastName = "";
+                }
+            }
         }
 
-        public bool IsActive
+        public Object IsActive
         {
             get { return _isActive; }
-            set { _isActive = value; }
+            set
+            {
+                try
+                {
+                    _isActive = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isActive = false;
+                }
+            }
         }
 
         /// <summary>
@@ -67,12 +127,12 @@ namespace QSRWebObjects
 
                 hsh = data.GetAdministratorByID(id);
 
-                _administratorID = id;
-                try{ _username = hsh["username"].ToString(); } catch (Exception){ _username = ""; }
-                try{ _password = hsh["password"].ToString(); } catch (Exception){ _password = ""; }
-                try{ _firstName = hsh["firstname"].ToString(); } catch (Exception){ _firstName = ""; }
-                try{ _lastName = hsh["lastname"].ToString(); } catch (Exception){ _lastName = ""; }
-                try{ _isActive = Convert.ToBoolean(hsh["isactive"]); } catch (Exception){ _isActive = false; }
+                AdministratorID = id;
+                Username = hsh["username"];
+                Password = hsh["password"];
+                FirstName = hsh["firstname"];
+                LastName = hsh["lastname"];
+                IsActive = hsh["isactive"];
             }
             catch (Exception ex)
             {
@@ -93,12 +153,45 @@ namespace QSRWebObjects
                 Hashtable hsh = new Hashtable();
                 hsh["username"] = username.Trim();
                 hsh["password"] = password.Trim();
-                _administratorID = adminData.Login(hsh);
+                AdministratorID = adminData.Login(hsh);
             }
             catch (Exception ex)
             {
                 ErrorRoutine(ex, "Administrator", "Login");
             }
         }
+
+        /*
+        /// <summary>
+        /// Purpose: Grabs all administrators
+        /// Accepts: Boolean
+        /// Returns: List<Product>
+        /// </summary>
+        public List<Administrator> GetAllAdministrators(bool onlyActive)
+        {
+            List<Administrator> administrators = new List<Administrator>();
+            try
+            {
+                AdministratorData data = new AdministratorData();
+                List<QSRDataObjects.Administrator> dataAdministrators = data.GetAllAdministrators(onlyActive);
+
+                foreach (QSRDataObjects.Administrator a in dataAdministrators)
+                {
+                    Administrator admin = new Administrator();
+                    admin.AdministratorID = a.AdministratorID;
+                    admin.Username = a.Username;
+                    admin.Password = a.Password;
+                    admin.FirstName = a.FirstName;
+                    admin.LastName = a.LastName;
+                    admin.IsActive = Convert.ToBoolean(a.IsActive);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "Administrator", "GetAllAdministrators");
+            }
+            return administrators;
+        }
+        */
     }
 }

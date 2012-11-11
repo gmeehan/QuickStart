@@ -29,91 +29,241 @@ namespace QSRWebObjects
         public int UserID
         {
             get { return _userID; }
-            set { _userID = value; }
+            set
+            {
+                try
+                {
+                    _userID = value;
+                }
+                catch (Exception)
+                {
+                    _userID = 0;
+                }
+            }
         }
 
-        public string Username
+        public Object Username
         {
             get { return _username; }
-            set { _username = value; }
+            set
+            {
+                try
+                {
+                    _username = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _username = "";
+                }
+            }
         }
 
-        public string Password
+        public Object Password
         {
             get { return _password; }
-            set { _password = value; }
+            set
+            {
+                try
+                {
+                    _password = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _password = "";
+                }
+            }
         }
 
-        public string Salutation
+        public Object Salutation
         {
             get { return _salutation; }
-            set { _salutation = value; }
+            set
+            {
+                try
+                {
+                    _salutation = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _salutation = "";
+                }
+            }
         }
 
-        public string FirstName
+        public Object FirstName
         {
             get { return _firstName; }
-            set { _firstName = value; }
+            set
+            {
+                try
+                {
+                    _firstName = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _firstName = "";
+                }
+            }
         }
 
-        public string LastName
+        public Object LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set
+            {
+                try
+                {
+                    _lastName = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _lastName = "";
+                }
+            }
         }
 
-        public string Address1
+        public Object Address1
         {
             get { return _address1; }
-            set { _address1 = value; }
+            set
+            {
+                try
+                {
+                    _address1 = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _address1 = "";
+                }
+            }
         }
 
-        public string Address2
+        public Object Address2
         {
             get { return _address2; }
-            set { _address2 = value; }
+            set
+            {
+                try
+                {
+                    _address2 = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _address2 = "";
+                }
+            }
         }
 
-        public string City
+        public Object City
         {
             get { return _city; }
-            set { _city = value; }
+            set
+            {
+                try
+                {
+                    _city = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _city = "";
+                }
+            }
         }
 
         public int StateProvinceID
         {
             get { return _stateProvinceID; }
-            set { _stateProvinceID = value; }
+            set
+            {
+                try
+                {
+                    _stateProvinceID = value;
+                }
+                catch (Exception)
+                {
+                    _stateProvinceID = 0;
+                }
+            }
         }
 
-        public string ZipCodePostal
+        public Object ZipCodePostal
         {
             get { return _zipCodePostal; }
-            set { _zipCodePostal = value; }
+            set
+            {
+                try
+                {
+                    _zipCodePostal = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _zipCodePostal = "";
+                }
+            }
         }
 
-        public string Email
+        public Object Email
         {
             get { return _email; }
-            set { _email = value; }
+            set
+            {
+                try
+                {
+                    _email = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _email = "";
+                }
+            }
         }
 
-        public bool IsReceiveNewsletters
+        public Object IsReceiveNewsletters
         {
             get { return _isReceiveNewsletters; }
-            set { _isReceiveNewsletters = value; }
+            set
+            {
+                try
+                {
+                    _isReceiveNewsletters = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isReceiveNewsletters = false;
+                }
+            }
         }
 
-        public DateTime Created
+        public Object Created
         {
             get { return _created; }
-            set { _created = value; }
+            set
+            {
+                try
+                {
+                    _created = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _created = DateTime.MinValue;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -127,19 +277,19 @@ namespace QSRWebObjects
             try
             {
                 UserData usr = new UserData();
-                HashUser["username"] = _username;
-                HashUser["password"] = _password;
-                HashUser["salutation"] = _salutation;
-                HashUser["firstName"] = _firstName;
-                HashUser["lastName"] = _lastName;
-                HashUser["address1"] = _address1;
-                HashUser["address2"] = _address2;
-                HashUser["city"] = _city;
-                HashUser["stateProv"] = _stateProvinceID;
-                HashUser["zipPC"] = _zipCodePostal;
-                HashUser["email"] = _email;
-                HashUser["newsletters"] = _isReceiveNewsletters;
-                _userID = usr.AddUser(HashUser);
+                HashUser["username"] = Username;
+                HashUser["password"] = Password;
+                HashUser["salutation"] = Salutation;
+                HashUser["firstName"] = FirstName;
+                HashUser["lastName"] = LastName;
+                HashUser["address1"] = Address1;
+                HashUser["address2"] = Address2;
+                HashUser["city"] = City;
+                HashUser["stateProv"] = StateProvinceID;
+                HashUser["zipPC"] = ZipCodePostal;
+                HashUser["email"] = Email;
+                HashUser["newsletters"] = IsReceiveNewsletters;
+                UserID = usr.AddUser(HashUser);
             }
             catch (Exception ex)
             {
@@ -161,21 +311,21 @@ namespace QSRWebObjects
 
                 hsh = data.GetUserByID(id);
 
-                _userID = id;
-                try{ _username = hsh["username"].ToString(); } catch (Exception){ _username = ""; }
-                try{ _password = hsh["password"].ToString(); } catch (Exception){ _password = ""; }
-                try{ _salutation = hsh["salutation"].ToString(); } catch (Exception){ _salutation = ""; }
-                try{ _firstName = hsh["firstname"].ToString(); } catch (Exception){ _firstName = ""; }
-                try{ _lastName = hsh["lastname"].ToString(); } catch (Exception){ _lastName = ""; }
-                try{ _address1 = hsh["address1"].ToString(); } catch (Exception){ _address1 = ""; }
-                try{ _address2 = hsh["address2"].ToString(); } catch (Exception){ _address2 = ""; }
-                try{ _city = hsh["city"].ToString(); } catch (Exception){ _city = ""; }
-                try{ _stateProvinceID = Convert.ToInt32(hsh["stateprovinceid"]); } catch (Exception){ _stateProvinceID = 0; }
-                try{ _zipCodePostal = hsh["zippostalcode"].ToString(); } catch (Exception){ _zipCodePostal = ""; }
-                try{ _email = hsh["email"].ToString(); } catch (Exception){ _email = ""; }
-                try{ _isReceiveNewsletters = Convert.ToBoolean(hsh["isreceivenewsletters"]); } catch (Exception){ _isReceiveNewsletters = false; }
-                try { _created = Convert.ToDateTime(hsh["created"]); }catch (Exception) { _created = DateTime.MinValue; }
-                try { _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception) { _modified = DateTime.MinValue; }
+                UserID = id;
+                Username = hsh["username"];
+                Password = hsh["password"];
+                Salutation = hsh["salutation"];
+                FirstName = hsh["firstname"];
+                LastName = hsh["lastname"];
+                Address1 = hsh["address1"];
+                Address2 = hsh["address2"];
+                City = hsh["city"].ToString();
+                StateProvinceID = Convert.ToInt32(hsh["stateprovinceid"]);
+                ZipCodePostal = hsh["zippostalcode"];
+                Email = hsh["email"];
+                IsReceiveNewsletters = hsh["isreceivenewsletters"];
+                Created = hsh["created"];
+                Modified = hsh["modified"];
             }
             catch (Exception ex)
             {
@@ -196,7 +346,7 @@ namespace QSRWebObjects
                 Hashtable hsh = new Hashtable();
                 hsh["username"] = username.Trim();
                 hsh["password"] = password.Trim();
-                _userID = userData.Login(hsh);
+                UserID = userData.Login(hsh);
             }
             catch (Exception ex)
             {

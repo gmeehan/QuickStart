@@ -21,43 +21,113 @@ namespace QSRWebObjects
         public int CategoryID
         {
             get { return _categoryID; }
-            set { _categoryID = value; }
+            set
+            {
+                try
+                {
+                    _categoryID = value;
+                }
+                catch (Exception)
+                {
+                    _categoryID = 0;
+                }
+            }
         }
 
-        public string Name
+        public Object Name
         {
             get { return _name; }
-            set { _name = value; }
+            set
+            {
+                try
+                {
+                    _name = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _name = "";
+                }
+            }
         }
 
-        public string Description
+        public Object Description
         {
             get { return _description; }
-            set { _description = value; }
+            set
+            {
+                try
+                {
+                    _description = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _description = "";
+                }
+            }
         }
 
         public int ParentCategoryID
         {
             get { return _parentCategoryID; }
-            set { _parentCategoryID = value; }
+            set
+            {
+                try
+                {
+                    _parentCategoryID = value;
+                }
+                catch (Exception)
+                {
+                    _parentCategoryID = 0;
+                }
+            }
         }
 
-        public DateTime Created
+        public Object Created
         {
             get { return _created; }
-            set { _created = value; }
+            set
+            {
+                try
+                {
+                    _created = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _created = DateTime.MinValue;
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
-        public bool IsActive
+        public Object IsActive
         {
             get { return _isActive; }
-            set { _isActive = value; }
+            set
+            {
+                try
+                {
+                    _isActive = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isActive = false;
+                }
+            }
         }
 
         /// <summary>
@@ -74,13 +144,13 @@ namespace QSRWebObjects
 
                 hsh = data.GetCategoryByID(id);
 
-                _categoryID = id;
-                try{ _name = hsh["name"].ToString(); } catch (Exception){ _name = ""; }
-                try{ _description = hsh["description"].ToString(); } catch (Exception){ _description = ""; }
-                try{ _parentCategoryID = Convert.ToInt32(hsh["parentcategoryid"]); } catch (Exception){ _parentCategoryID = 0; }
-                try{ _created = Convert.ToDateTime(hsh["created"]); } catch (Exception){ _created = DateTime.MinValue; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
-                try{ _isActive = Convert.ToBoolean(hsh["isactive"]); } catch (Exception){ _isActive = false; }
+                CategoryID = id;
+                Name = hsh["name"];
+                Description = hsh["description"];
+                ParentCategoryID = Convert.ToInt32(hsh["parentcategoryid"]);
+                Created = hsh["created"];
+                Modified = hsh["modified"];
+                IsActive = hsh["isactive"];
             }
             catch (Exception ex)
             {
@@ -104,13 +174,13 @@ namespace QSRWebObjects
                 foreach (QSRDataObjects.Category c in dataCategories)
                 {
                     Category cat = new Category();
-                    try { cat.CategoryID = c.CategoryID; } catch (Exception) { cat.CategoryID = 0; }
-                    try { cat.Name = c.Name; } catch (Exception) { cat.Name = ""; }
-                    try { cat.Description = c.Description; } catch (Exception) { cat.Description = ""; }
-                    try { cat.ParentCategoryID = Convert.ToInt32(c.ParentCategoryID); } catch (Exception) { cat.ParentCategoryID = 0; }
-                    try { cat.Created = Convert.ToDateTime(c.Created); } catch (Exception) { cat.Created = DateTime.MinValue; }
-                    try { cat.Modified = Convert.ToDateTime(c.Modified); } catch (Exception) { cat.Modified = DateTime.MinValue; }
-                    try { cat.IsActive = Convert.ToBoolean(c.IsActive); } catch (Exception) { cat.IsActive = false; }
+                    cat.CategoryID = c.CategoryID;
+                    cat.Name = c.Name;
+                    cat.Description = c.Description;
+                    cat.ParentCategoryID = Convert.ToInt32(c.ParentCategoryID);
+                    cat.Created = c.Created;
+                    cat.Modified = c.Modified;
+                    cat.IsActive = c.IsActive;
                     categories.Add(cat);
                 }
             }

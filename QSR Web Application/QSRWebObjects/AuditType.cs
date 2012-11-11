@@ -17,19 +17,49 @@ namespace QSRWebObjects
         public int AuditTypeID
         {
             get { return _auditTypeID; }
-            set { _auditTypeID = value; }
+            set
+            {
+                try
+                {
+                    _auditTypeID = value;
+                }
+                catch (Exception)
+                {
+                    _auditTypeID = 0;
+                }
+            }
         }
 
-        public string Description
+        public Object Description
         {
             get { return _description; }
-            set { _description = value; }
+            set
+            {
+                try
+                {
+                    _description = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _description = "";
+                }
+            }
         }
 
-        public bool IsAdmin
+        public Object IsAdmin
         {
             get { return _isAdmin; }
-            set { _isAdmin = value; }
+            set
+            {
+                try
+                {
+                    _isAdmin = Convert.ToBoolean(value);
+                }
+                catch (Exception)
+                {
+                    _isAdmin = false;
+                }
+            }
         }
 
         /// <summary>
@@ -46,9 +76,9 @@ namespace QSRWebObjects
 
                 hsh = data.GetAuditTypeByID(id);
 
-                _auditTypeID = id;
-                try{ _description = hsh["description"].ToString(); } catch (Exception){ _description = ""; }
-                try{ _isAdmin = Convert.ToBoolean(hsh["isadmin"]); } catch (Exception){ _isAdmin = false; }
+                AuditTypeID = id;
+                Description = hsh["description"];
+                IsAdmin = hsh["isadmin"];
             }
             catch (Exception ex)
             {

@@ -14,22 +14,52 @@ namespace QSRWebObjects
         private string _value;
         private DateTime _modified;
 
-        public string LangLabelCode
+        public Object LangLabelCode
         {
             get { return _langLabelCode; }
-            set { _langLabelCode = value; }
+            set
+            {
+                try
+                {
+                    _langLabelCode = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _langLabelCode = "";
+                }
+            }
         }
 
-        public string Value
+        public Object Value
         {
             get { return _value; }
-            set { _value = value; }
+            set
+            {
+                try
+                {
+                    _value = Convert.ToString(value);
+                }
+                catch (Exception)
+                {
+                    _value = "";
+                }
+            }
         }
 
-        public DateTime Modified
+        public Object Modified
         {
             get { return _modified; }
-            set { _modified = value; }
+            set
+            {
+                try
+                {
+                    _modified = Convert.ToDateTime(value);
+                }
+                catch (Exception)
+                {
+                    _modified = DateTime.MinValue;
+                }
+            }
         }
 
         /// <summary>
@@ -46,9 +76,9 @@ namespace QSRWebObjects
 
                 hsh = data.GetLangLabelByCode(code);
 
-                _langLabelCode = code;
-                try{ _value = hsh["value"].ToString(); } catch (Exception){ _value = ""; }
-                try{ _modified = Convert.ToDateTime(hsh["modified"]); } catch (Exception){ _modified = DateTime.MinValue; }
+                LangLabelCode = code;
+                Value = hsh["value"];
+                Modified = hsh["modified"];
             }
             catch (Exception ex)
             {
