@@ -406,7 +406,6 @@ namespace QSRWebObjects
                 hsh["quantityinstock"] = QuantityInStock;
                 hsh["isquantityunlimited"] = IsQuantityUnlimited;
                 hsh["created"] = Created;
-                hsh["modified"] = Modified;
                 hsh["isactive"] = IsActive;
 
                 ProductData prodData = new ProductData();

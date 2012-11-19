@@ -131,8 +131,8 @@ namespace QSRDataObjects
                 prod.isTaxFree = Convert.ToBoolean(hsh["istaxfree"]);
                 prod.QuantityInStock = Convert.ToInt32(hsh["quantityinstock"]);
                 prod.IsQuantityUnlimited = Convert.ToBoolean(hsh["isquantityunlimited"]);
-                //prod.Created = Convert.ToDateTime(hsh["created"]);
-                prod.Modified = Convert.ToDateTime(hsh["modified"]);
+                //need 'modified' but not 'created' during an update
+                prod.Modified = DateTime.Now;
                 prod.isActive = Convert.ToBoolean(hsh["isactive"]);
 
                 dbContext.SaveChanges();

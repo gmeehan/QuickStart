@@ -62,31 +62,31 @@ namespace QuickStartRetailer
                         LabelOutput.Text = "Passwords do not match!";
                     }
                     else
+                    {
                         user.Password = txtPass.Text;
-                    user.Salutation = txtSal.Text;
-                    user.FirstName = txtFName.Text;
-                    user.LastName = txtLName.Text;
-                    user.Address1 = txtAddress.Text;
-                    user.Address2 = txtAddress2.Text;
-                    user.City = txtCity.Text;
-                    user.StateProvinceID = Convert.ToInt32(dropStateProv.SelectedValue);
-                    user.ZipCodePostal = txtZip.Text;
-                    user.Email = txtEmail.Text;
-                    user.IsReceiveNewsletters = ckBox.Checked;
+                        user.Salutation = txtSal.Text;
+                        user.FirstName = txtFName.Text;
+                        user.LastName = txtLName.Text;
+                        user.Address1 = txtAddress.Text;
+                        user.Address2 = txtAddress2.Text;
+                        user.City = txtCity.Text;
+                        user.StateProvinceID = Convert.ToInt32(dropStateProv.SelectedValue);
+                        user.ZipCodePostal = txtZip.Text;
+                        user.Email = txtEmail.Text;
+                        user.IsReceiveNewsletters = ckBox.Checked;
 
-                    // call addUser method to add user and display success/fail text to user
-                    user.AddUser();
-
-                    if (user.UserID > 0)
-                    {
-                        LabelOutput.ForeColor = System.Drawing.Color.Green;
-                        LabelOutput.Text = "Thank you " + txtUName.Text + "! You have successfully registered as a new user.";
-                    }
-                    else
-                    {
-                        LabelOutput.ForeColor = System.Drawing.Color.Red;
-                        LabelOutput.Text = "Register Failed.<br />Please verify entered values.";
-                        throw new Exception();
+                        // call addUser method to add user and display success/fail text to user
+                        if (user.AddUser() > 0)
+                        {
+                            LabelOutput.ForeColor = System.Drawing.Color.Green;
+                            LabelOutput.Text = "Thank you " + txtUName.Text + "! You have successfully registered as a new user.";
+                        }
+                        else
+                        {
+                            LabelOutput.ForeColor = System.Drawing.Color.Red;
+                            LabelOutput.Text = "Register Failed.<br />Please verify entered values.";
+                            throw new Exception();
+                        }
                     }
                 }
                 catch (Exception ex)

@@ -75,7 +75,7 @@ namespace QSRDataObjects
                     hsh["address2"] = obj.Address2;
                     hsh["city"] = obj.City;
                     hsh["stateprovinceid"] = obj.StateProvinceID;
-                    hsh["zipostalcode"] = obj.ZipPostalCode;
+                    hsh["zippostalcode"] = obj.ZipPostalCode;
                     hsh["email"] = obj.Email;
                     hsh["isreceivenewsletters"] = obj.IsReceiveNewsletters;
                     hsh["created"] = obj.Created;
@@ -152,6 +152,50 @@ namespace QSRDataObjects
             }
 
             return allusers;
+        }
+
+        /// <summary>
+        /// Purpose: Update an existing User in the database
+        /// Accepts: Hashtable
+        /// Returns: Boolean
+        /// </summary>
+        public bool UpdateUser(Hashtable hsh)
+        {
+            bool isSuccess = false;
+            User usr = new User();
+            QuickStart_DBEntities dbContext;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //Get the user to update based on its id
+                int userid = Convert.ToInt32(hsh["userid"]);
+                usr = dbContext.Users.FirstOrDefault(u => u.UserID == userid);
+
+                usr.Username = Convert.ToString(hsh["username"]);
+                usr.Password = Convert.ToString(hsh["password"]);
+                usr.Salutation = Convert.ToString(hsh["salutation"]);
+                usr.FirstName = Convert.ToString(hsh["firstName"]);
+                usr.LastName = Convert.ToString(hsh["lastName"]);
+                usr.Address1 = Convert.ToString(hsh["address1"]);
+                usr.Address2 = Convert.ToString(hsh["address2"]);
+                usr.City = Convert.ToString(hsh["city"]);
+                usr.StateProvinceID = Convert.ToInt32(hsh["stateProv"]);
+                usr.ZipPostalCode = Convert.ToString(hsh["zipPC"]);
+                usr.Email = Convert.ToString(hsh["email"]);
+                usr.IsReceiveNewsletters = Convert.ToBoolean(hsh["newsletters"]);
+                //need 'modified' but not 'created' during an update
+                usr.Modified = DateTime.Now;
+
+                dbContext.SaveChanges();
+                isSuccess = true;
+            }
+            catch (Exception e)
+            {
+                ErrorRoutine(e, "UserData", "UpdateUser");
+            }
+
+            return isSuccess;
         }
     }
 }

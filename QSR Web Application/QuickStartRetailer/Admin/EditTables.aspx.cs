@@ -263,5 +263,10 @@ namespace QuickStartRetailer.Admin
             GridViewDBTable.DataSource = dataTable;
             GridViewDBTable.DataBind();
         }
+
+        protected void GridViewDBTable_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
     }
 }

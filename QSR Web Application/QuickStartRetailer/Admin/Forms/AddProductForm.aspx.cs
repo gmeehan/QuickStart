@@ -45,7 +45,8 @@ namespace QuickStartRetailer.Admin.Forms
                 prod.IsTaxFree = CheckBoxTaxFree.Checked;
                 prod.QuantityInStock = Convert.ToInt32(TextBoxQtyInStock.Text);
                 prod.IsQuantityUnlimited = CheckBoxQtyUnlimited.Checked;
-                prod.Modified = DateTime.Now;
+                prod.Created = DateTime.Now;
+                prod.Modified = DateTime.MinValue;
 
                 //Add the product
                 if (prod.AddProduct() != "")

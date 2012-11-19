@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-using QSRDataObjects; //Connect web layer to data layer
+using QSRDataObjects;
+using System.Data;
+using System.ComponentModel; //Connect web layer to data layer
 
 namespace QSRWebObjects
 {
@@ -266,12 +268,25 @@ namespace QSRWebObjects
             }
         }
 
+        //This is used to return null if Mofidied is min value and therefore
+        //not show the date in a gridview which has NullDisplayText set.
+        public DateTime? ModifiedDisplay
+        {
+            get
+            {
+                if (Convert.ToDateTime(this.Modified) == default(DateTime))
+                    return null;
+                else
+                    return Convert.ToDateTime(this.Modified);
+            }
+        }
+
         /// <summary>
         /// Purpose: Add new user information to the DB
         /// Accepts: Nothing
-        /// Returns: Boolean
+        /// Returns: Integer(the userid added)
         /// </summary>
-        public void AddUser()
+        public int AddUser()
         {
             Hashtable HashUser = new Hashtable();
             try
@@ -295,6 +310,8 @@ namespace QSRWebObjects
             {
                 ErrorRoutine(ex, "User", "AddUser");
             }
+
+            return UserID;
         }
 
         /// <summary>
@@ -319,7 +336,7 @@ namespace QSRWebObjects
                 LastName = hsh["lastname"];
                 Address1 = hsh["address1"];
                 Address2 = hsh["address2"];
-                City = hsh["city"].ToString();
+                City = hsh["city"];
                 StateProvinceID = Convert.ToInt32(hsh["stateprovinceid"]);
                 ZipCodePostal = hsh["zippostalcode"];
                 Email = hsh["email"];
@@ -393,6 +410,58 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "User", "GetAllUsers");
             }
             return users;
+        }
+
+        /// <summary>
+        /// Purpose: Update an existing user
+        /// Accepts: Nothing
+        /// Returns: Boolean
+        /// </summary>
+        public bool UpdateUser()
+        {
+            bool isSuccess = false;
+            try
+            {
+                Hashtable HashUser = new Hashtable();
+                HashUser["userid"] = UserID;
+                HashUser["username"] = Username;
+                HashUser["password"] = Password;
+                HashUser["salutation"] = Salutation;
+                HashUser["firstName"] = FirstName;
+                HashUser["lastName"] = LastName;
+                HashUser["address1"] = Address1;
+                HashUser["address2"] = Address2;
+                HashUser["city"] = City;
+                HashUser["stateProv"] = StateProvinceID;
+                HashUser["zipPC"] = ZipCodePostal;
+                HashUser["email"] = Email;
+                HashUser["newsletters"] = IsReceiveNewsletters;
+
+                UserData userData = new UserData();
+                isSuccess = userData.UpdateUser(HashUser);
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "User", "UpdateUser()");
+            }
+
+            return isSuccess;
+        }
+
+        public DataTable ToDataTable(List<User> data)
+        {
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(User));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (User item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
         }
     }
 

@@ -71,6 +71,8 @@
     <Content Include="Admin\fancybox\source\jquery.fancybox.pack.js" />
     <Content Include="Admin\Forms\ActivateProductForm.aspx" />
     <Content Include="Admin\Forms\AddProductForm.aspx" />
+    <Content Include="Admin\Forms\AddUserForm.aspx" />
+    <Content Include="Admin\Forms\EditUserForm.aspx" />
     <Content Include="Admin\Forms\DeactivateProductForm.aspx" />
     <Content Include="Admin\Forms\EditProductForm.aspx" />
     <Content Include="Admin\Images\Check-icon.png" />
@@ -197,6 +199,20 @@
     </Compile>
     <Compile Include="Admin\Forms\AddProductForm.aspx.designer.cs">
       <DependentUpon>AddProductForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Forms\AddUserForm.aspx.cs">
+      <DependentUpon>AddUserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Forms\AddUserForm.aspx.designer.cs">
+      <DependentUpon>AddUserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Forms\EditUserForm.aspx.cs">
+      <DependentUpon>EditUserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Forms\EditUserForm.aspx.designer.cs">
+      <DependentUpon>EditUserForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Forms\DeactivateProductForm.aspx.cs">
       <DependentUpon>DeactivateProductForm.aspx</DependentUpon>
