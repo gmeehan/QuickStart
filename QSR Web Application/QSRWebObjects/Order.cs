@@ -244,6 +244,36 @@ namespace QSRWebObjects
             return orders;
         }
 
+        public List<Order> GetAllOrdersByUserID(int userID)
+        {
+            List<Order> orders = new List<Order>();
+            try
+            {
+                OrderData data = new OrderData();
+                List<QSRDataObjects.Order> dataOrders = data.GetAllOrdersByUserID(userID);
+
+                foreach (QSRDataObjects.Order o in dataOrders)
+                {
+                    Order order = new Order();
+                    order.OrderID = o.OrderID;
+                    order.UserID = Convert.ToInt32(o.UserID);
+                    order.Subtotal = Convert.ToDouble(o.Subtotal);
+                    order.Taxes = Convert.ToDouble(o.Taxes);
+                    order.DeliveryCost = Convert.ToDouble(o.DeliveryCost);
+                    order.DeliveryTypeID = Convert.ToInt32(o.DeliveryTypeID);
+                    order.GrandTotal = Convert.ToDouble(o.GrandTotal);
+                    order.Created = o.Created;
+                    order.Modified = o.Modified;
+                    orders.Add(order);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "Order", "GetAllOrdersByUserID");
+            }
+            return orders;
+        }
+
         public DataTable ToDataTable(List<Order> data)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(Order));

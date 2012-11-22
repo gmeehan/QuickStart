@@ -66,5 +66,29 @@ namespace QSRDataObjects
 
             return allorders;
         }
+
+        /// <summary>
+        /// Purpose: Grabs all orders
+        /// Accepts: Int representing the userID
+        /// Returns: List<Order>
+        /// </summary>
+        public List<Order> GetAllOrdersByUserID(int uId)
+        {
+            QuickStart_DBEntities dbContext;
+            List<Order> allorders = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all orders are returned
+                allorders = dbContext.Orders.Where(o => o.UserID == uId).ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "OrderData", "GetAllOrders");
+            }
+
+            return allorders;
+        }
     }
 }

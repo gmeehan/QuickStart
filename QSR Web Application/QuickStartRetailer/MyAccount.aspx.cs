@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Configuration;
+using System.Data.SqlClient;
+
 using QSRWebObjects; //Connect presentation layer to web object layer
 
 namespace QuickStartRetailer
@@ -19,9 +22,16 @@ namespace QuickStartRetailer
             {
                 if (!Page.IsPostBack)
                 {
-
+                    
                 }
             }
+        }
+
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            //Log out
+            Session.Clear();
+            Response.Redirect("~/Index.aspx");
         }
     }
 }
