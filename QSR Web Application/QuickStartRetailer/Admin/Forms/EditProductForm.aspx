@@ -12,7 +12,7 @@
     <div class="form_title">
         <h2 runat="server" id="formTitleHeader">Edit Product</h2>
     </div>
-    <div class="form_ContentLeft">
+    <div class="form_ContentLeft_WithImage">
         <div class="form_row">
             <asp:Label ID="Label2" CssClass="form_label" runat="server" Width="100px" Text="Product Code:"></asp:Label>
             <asp:Label ID="LabelProductCode" CssClass="form_label" runat="server" Text=""></asp:Label>
@@ -38,7 +38,7 @@
             <asp:TextBox ID="TextBoxMSRP" CssClass ="form_textbox_numeric_short" runat="server"></asp:TextBox>
         </div>
     </div>
-    <div class="form_ContentRight">
+    <div class="form_ContentCenter_WithImage">
         <div class="form_row">
             <asp:Label ID="Label7" CssClass="form_label" runat="server" Width="100px" Text="Free Shipping:"></asp:Label>
             <asp:CheckBox ID="CheckBoxFreeShipping" runat="server" />
@@ -63,6 +63,14 @@
             <asp:Label ID="Label12" CssClass="form_label" runat="server" Width="100px" Text="Last Modified:"></asp:Label>
             <asp:Label ID="LabelModified" CssClass="form_label" runat="server" Text=""></asp:Label>
         </div>
+    </div>
+    <div class="form_ContentRight_WithImage">
+        <div class="form_row">
+            <asp:Label ID="Label13" CssClass="form_label" runat="server" Width="100px" Text="Image (JPEG):"></asp:Label>
+            <asp:FileUpload ID="FileUpload1"  runat="server" />
+        </div>
+        <br />
+        <asp:Image ID="Image1" Height="150px" Width="150px" BorderStyle="Solid" BorderColor="Black" BorderWidth="1" runat="server" />
     </div>
     <div class="form_bottom_div">
         <div class="form_buttons_div">

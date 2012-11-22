@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using QSRWebObjects;
+using System.IO;
 
 namespace QuickStartRetailer.Admin.Forms
 {
@@ -49,10 +50,35 @@ namespace QuickStartRetailer.Admin.Forms
                 prod.Modified = DateTime.MinValue;
 
                 //Add the product
-                if (prod.AddProduct() != "")
+                string prodcd = prod.AddProduct();
+
+                //If it worked...
+                if (prodcd != "")
                 {
+                    if (FileUpload1.HasFile)
+                        try
+                        {
+                            //Get the file extension
+                            FileInfo finfo = new FileInfo(FileUpload1.FileName);
+                            string fileExtension = finfo.Extension.ToLower();
+
+                            //Save file to server
+                            FileUpload1.SaveAs(Server.MapPath("~/Images/Product_Images/") +
+                                 prodcd + fileExtension);
+                        }
+                        catch (Exception ex)
+                        {
+                            LabelOutput.Text = "ERROR: " + ex.Message.ToString();
+                            return;
+                        }
+                    else
+                    {
+                        LabelOutput.Text = "You have not specified a file.";
+                        return;
+                    }
+
+                    //Close the FancyBox
                     ScriptManager.RegisterStartupScript(this, GetType(), "", "window.top.window.$.fancybox.close();", true);
-                    //Response.Redirect("~/Admin/Products.aspx");
                 }
                 else
                 {
@@ -64,6 +90,7 @@ namespace QuickStartRetailer.Admin.Forms
             {
                 LabelOutput.ForeColor = System.Drawing.Color.Red;
                 LabelOutput.Text = "Error: " + ex.Message;
+                return;
             }
         }
     }

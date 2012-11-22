@@ -9,15 +9,16 @@
     <asp:Label ID="Label1" runat="server" Text="Table: "></asp:Label>
     <asp:DropDownList ID="DropDownListDBTables" runat="server" AutoPostBack="true" 
         onselectedindexchanged="DropDownListDBTables_SelectedIndexChanged"></asp:DropDownList>
-
-    <asp:GridView ID="GridViewDBTable" AutoGenerateColumns="true" 
-        ShowHeaderWhenEmpty="true" runat="server"
-        PageSize="20" GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" 
-        AlternatingRowStyle-CssClass="alt" AllowSorting="True" 
-        HeaderStyle-Wrap="true" onpageindexchanging="GridViewDBTable_PageIndexChanging" 
-        onsorting="GridViewDBTable_Sorting" AutoGenerateEditButton="true" 
-        onrowediting="GridViewDBTable_RowEditing">
-    </asp:GridView>
+    <div style="padding:10px; width:100%; overflow:auto">
+        <asp:GridView ID="GridViewDBTable" AutoGenerateColumns="true" 
+            ShowHeaderWhenEmpty="true" runat="server"
+            PageSize="20" GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" 
+            AlternatingRowStyle-CssClass="alt" AllowSorting="True" 
+            HeaderStyle-Wrap="true" onpageindexchanging="GridViewDBTable_PageIndexChanging" 
+            onsorting="GridViewDBTable_Sorting" AutoGenerateEditButton="true" 
+            onrowediting="GridViewDBTable_RowEditing">
+        </asp:GridView>
+    </div>
 
 </asp:Content>
 

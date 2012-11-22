@@ -72,6 +72,7 @@
     <Content Include="Admin\Forms\ActivateProductForm.aspx" />
     <Content Include="Admin\Forms\AddProductForm.aspx" />
     <Content Include="Admin\Forms\AddUserForm.aspx" />
+    <Content Include="Admin\Forms\EditOrderForm.aspx" />
     <Content Include="Admin\Forms\EditUserForm.aspx" />
     <Content Include="Admin\Forms\DeactivateProductForm.aspx" />
     <Content Include="Admin\Forms\EditProductForm.aspx" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="Admin\Forms\AddUserForm.aspx.designer.cs">
       <DependentUpon>AddUserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Forms\EditOrderForm.aspx.cs">
+      <DependentUpon>EditOrderForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Forms\EditOrderForm.aspx.designer.cs">
+      <DependentUpon>EditOrderForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Forms\EditUserForm.aspx.cs">
       <DependentUpon>EditUserForm.aspx</DependentUpon>
@@ -438,6 +446,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Product_Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

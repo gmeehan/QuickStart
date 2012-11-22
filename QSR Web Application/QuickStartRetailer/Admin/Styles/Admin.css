@@ -452,6 +452,27 @@ div.hideSkiplink
     margin-right:5%;
 }
 
+.form_ContentLeft_WithImage
+{
+    float:left;
+    width:33%;
+    margin-left:2%;
+}
+
+.form_ContentCenter_WithImage
+{
+    float:left;
+    width:33%;
+    margin-left: 2%;
+}
+
+.form_ContentRight_WithImage
+{
+    float:left;
+    width:28%;
+    margin-right:2%;
+}
+
 .form_title
 {
     width:100%;

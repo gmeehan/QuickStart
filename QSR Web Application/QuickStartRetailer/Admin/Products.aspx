@@ -14,10 +14,10 @@
                 <%=Page.ClientScript.GetPostBackEventReference(UpdatePanel1, "")%>
                 }
             });
-            $(".fancybox_600x425").fancybox({ //add/edit boxes
+            $(".fancybox_870x420").fancybox({ //add/edit boxes
             'autoSize': false,
-            'width': 600,
-            'height': 425,
+            'width': 870,
+            'height': 420,
             'padding': 0,
             'type': 'iframe',
             'beforeClose': function() {
@@ -32,7 +32,7 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <asp:ScriptManager ID="ScriptManager1" runat="server" /> 
 <br />
-<a runat="server" id="add" class="fancybox_600x425" href="~/Admin/Forms/AddProductForm.aspx">
+<a runat="server" id="add" class="fancybox_870x420" href="~/Admin/Forms/AddProductForm.aspx">
     <asp:Button ID="ButtonAddProduct" runat="server" CssClass="fancy_button" Text="Add New Product" />
 </a>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" onload="UpdatePanel1_Load" UpdateMode="Conditional"> 
@@ -85,7 +85,7 @@
                 </asp:BoundField>
                 <asp:TemplateField HeaderText="Edit">
                     <ItemTemplate>
-                        <a runat="server" id="edit" class="fancybox_600x425"><img alt="edit" src="Images/clipboard_edit.png" /></a>
+                        <a runat="server" id="edit" class="fancybox_870x420"><img alt="edit" src="Images/clipboard_edit.png" /></a>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Active">

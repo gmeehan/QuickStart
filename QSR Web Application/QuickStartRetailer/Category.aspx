@@ -23,7 +23,7 @@
             <ItemTemplate>
                 <div id="productListInnerCell" runat="server" class="productListInnerCell">
                     <asp:HyperLink ID="ProductImageLink" NavigateUrl='<%# "~/ProductInfo.aspx?prodcd=" + Eval("ProductCode") %>' runat="server">
-                        <asp:Image ID="Image1" CssClass="product-image-small" ImageUrl="~/Images/image1.jpg" runat="server" />
+                        <asp:Image ID="Image1" CssClass="product-image-small" ImageUrl='<%# "~/Images/Product_Images/" + Eval("ProductCode") + ".jpg" %>' runat="server" />
                     </asp:HyperLink>
                     <br />
                     <asp:Label ID="LabelPrice" runat="server" CssClass="product-price-small" Text='<%# Eval("MSRP") %>' />

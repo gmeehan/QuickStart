@@ -244,6 +244,38 @@ namespace QSRWebObjects
             return orders;
         }
 
+        /// <summary>
+        /// Purpose: Update an existing order
+        /// Accepts: Nothing
+        /// Returns: Boolean
+        /// </summary>
+        public bool UpdateOrder()
+        {
+            bool isSuccess = false;
+            try
+            {
+                Hashtable hsh = new Hashtable();
+                hsh["orderid"] = OrderID;
+                hsh["userid"] = UserID;
+                hsh["subtotal"] = Subtotal;
+                hsh["taxes"] = Taxes;
+                hsh["deliverycost"] = DeliveryCost;
+                hsh["deliverytypeid"] = DeliveryTypeID;
+                hsh["grandtotal"] = GrandTotal;
+                hsh["created"] = Created;
+                hsh["modified"] = Modified;
+
+                OrderData orderData = new OrderData();
+                isSuccess = orderData.UpdateOrder(hsh);
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "Order", "UpdateOrder()");
+            }
+
+            return isSuccess;
+        }
+
         public DataTable ToDataTable(List<Order> data)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(Order));
