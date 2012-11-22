@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-using QSRDataObjects; //Connect web layer to data layer
+using QSRDataObjects;
+using System.Data;
+using System.ComponentModel; //Connect web layer to data layer
 
 namespace QSRWebObjects
 {
@@ -164,6 +166,19 @@ namespace QSRWebObjects
             }
         }
 
+        //This is used to return null if Mofidied is min value and therefore
+        //not show the date in a gridview which has NullDisplayText set.
+        public DateTime? ModifiedDisplay
+        {
+            get
+            {
+                if (Convert.ToDateTime(this.Modified) == default(DateTime))
+                    return null;
+                else
+                    return Convert.ToDateTime(this.Modified);
+            }
+        }
+
         /// <summary>
         /// Purpose: Grabs order information based on ID
         /// Accepts: Int
@@ -227,6 +242,22 @@ namespace QSRWebObjects
                 ErrorRoutine(ex, "Order", "GetAllOrders");
             }
             return orders;
+        }
+
+        public DataTable ToDataTable(List<Order> data)
+        {
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(Order));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (Order item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
         }
     }
 
