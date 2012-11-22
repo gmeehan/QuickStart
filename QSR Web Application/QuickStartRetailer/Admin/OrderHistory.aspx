@@ -4,10 +4,10 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 <script type="text/javascript">
         $(document).ready(function () {
-            $(".fancybox_700x425").fancybox({ //add/edit boxes
+            $(".fancybox_700x375").fancybox({ //add/edit boxes
             'autoSize': false,
             'width': 700,
-            'height': 425,
+            'height': 375,
             'padding': 0,
             'type': 'iframe',
             'beforeClose': function() {
@@ -36,7 +36,7 @@
             <Columns>
                 <asp:TemplateField HeaderText="Edit">
                     <ItemTemplate>
-                        <a runat="server" id="edit" class="fancybox_700x425"><img alt="edit" src="Images/clipboard_edit.png" /></a>
+                        <a runat="server" id="edit" class="fancybox_700x375"><img alt="edit" src="Images/clipboard_edit.png" /></a>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="OrderID" DataField="OrderID" SortExpression="OrderID">

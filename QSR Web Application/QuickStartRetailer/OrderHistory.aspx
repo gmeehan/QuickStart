@@ -10,8 +10,9 @@
                 HeaderStyle-Wrap="true" onsorting="HistoryGrid_Sorting">
         <Columns>
             <asp:TemplateField HeaderText="Order ID">
+                <ItemStyle HorizontalAlign="Center"></ItemStyle>
                 <ItemTemplate>
-                    <a class="orderItemLink" runat="server" href='<%# "~/OrderInvoice.aspx?orderid=" + Eval("OrderID") %>'>'<%# Eval("OrderID") %>'</a>
+                    <a class="orderItemLink" runat="server" href='<%# "~/OrderInvoice.aspx?orderid=" + Eval("OrderID") %>'><%# Eval("OrderID") %></a>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField HeaderText="Date Created" DataField="Created" SortExpression="Created" >

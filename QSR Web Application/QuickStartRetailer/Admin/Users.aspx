@@ -38,7 +38,7 @@
 </a>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" onload="UpdatePanel1_Load" UpdateMode="Conditional"> 
     <ContentTemplate>  
-        <div style="width:100%; overflow-x: scroll">
+        <div style="padding:10px; width:100%; overflow:auto; background-color:#F2F2F2; border:1px solid black">
             <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="false" 
                 PageSize="5" GridLines="None"
                 AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" 
