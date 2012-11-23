@@ -65,6 +65,7 @@
     <Compile Include="ConfigurationData.cs" />
     <Compile Include="DeliveryTypeData.cs" />
     <Compile Include="ErrorLoggerData.cs" />
+    <Compile Include="InvoiceItemData.cs" />
     <Compile Include="LangLabelData.cs" />
     <Compile Include="Model1.Designer.cs">
       <AutoGen>True</AutoGen>
