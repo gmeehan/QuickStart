@@ -11,6 +11,12 @@ namespace QuickStartRetailer
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            //Set banner image
+            ImageLogo.ImageUrl = "~/Images/Logos/Logo_Banner.png";
+        }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserID"] == null)

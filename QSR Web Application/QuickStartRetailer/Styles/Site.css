@@ -571,18 +571,18 @@ div.hideSkiplink
     padding:0px 20px 20px 20px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    background-image: linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -o-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -moz-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -webkit-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -ms-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -o-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -moz-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -webkit-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -ms-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
 
     background-image: -webkit-gradient(
 	    linear,
 	    left bottom,
 	    left top,
-	    color-stop(0.02, rgb(215,239,195)),
-	    color-stop(0.51, rgb(234,247,235))
+	    color-stop(0.31, rgb(218,235,235)),
+	    color-stop(0.66, rgb(232,243,250))
     );
 }
 
