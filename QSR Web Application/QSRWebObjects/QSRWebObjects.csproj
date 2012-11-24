@@ -50,6 +50,7 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="DeliveryType.cs" />
     <Compile Include="ErrorLogger.cs" />
+    <Compile Include="InvoiceItem.cs" />
     <Compile Include="LangLabel.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />

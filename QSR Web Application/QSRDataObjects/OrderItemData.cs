@@ -25,6 +25,7 @@ namespace QSRDataObjects
                 if (obj != null)
                 {
                     hsh["orderitemid"] = obj.OrderItemID;
+                    hsh["orderid"] = obj.OrderID;
                     hsh["productcode"] = obj.ProductCode;
                     hsh["quantity"] = obj.Quantity;
                     hsh["created"] = obj.Created;
