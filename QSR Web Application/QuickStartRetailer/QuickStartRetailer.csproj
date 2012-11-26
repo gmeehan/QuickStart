@@ -110,6 +110,7 @@
     <Content Include="Images\blue-arrow.png" />
     <Content Include="Images\btrFly.jpg" />
     <Content Include="Images\h-dot.gif" />
+    <Content Include="Images\Logos\Logo_Banner_Backup.png" />
     <Content Include="Images\Magnifying-Glass-icon.png" />
     <Content Include="Images\info-box-top.gif" />
     <Content Include="Images\info-box.gif" />
@@ -138,7 +139,7 @@
     <Content Include="ResendEmail.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Images\QuickStart_Logo_Transparent.png" />
+    <Content Include="Images\Logos\Logo_Banner.png" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Index.aspx" />

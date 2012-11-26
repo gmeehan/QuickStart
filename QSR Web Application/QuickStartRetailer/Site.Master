@@ -29,7 +29,7 @@
                 <div class="title">
                     <div style="float:left">
                         <a href="Index.aspx">
-                            <img src="Images/QuickStart_Logo_Transparent.png" id="ImageLogo" alt="logo" class="logo" />
+                            <asp:Image ID="ImageLogo" runat="server" AlternateText="Logo" CssClass="logo" />
                         </a>
                     </div>
                     <div class="userPanel">

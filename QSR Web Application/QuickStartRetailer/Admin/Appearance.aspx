@@ -5,5 +5,15 @@
 </asp:Content>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-Appearance
+    <div class="appearanceDiv">
+    <h1 style="font-weight:bold">Edit Website Banner Logo</h1>
+    <br />
+    <asp:FileUpload ID="FileUploadBannerLogo" runat="server" />
+    <br />
+    <br />
+    <asp:Button ID="ButtonUpdateBannerLogo" runat="server" Text="Update" 
+        onclick="ButtonUpdateBannerLogo_Click" CssClass="fancy_button" />
+    <br />
+    <asp:Label ID="LabelOutput" runat="server"></asp:Label>
+    </div>
 </asp:Content>

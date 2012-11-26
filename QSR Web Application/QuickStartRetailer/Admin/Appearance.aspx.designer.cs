@@ -8,8 +8,35 @@
 //------------------------------------------------------------------------------
 
 namespace QuickStartRetailer.Admin {
-
-
-    public partial class _Appearance{
+    
+    
+    public partial class _Appearance {
+        
+        /// <summary>
+        /// FileUploadBannerLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadBannerLogo;
+        
+        /// <summary>
+        /// ButtonUpdateBannerLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonUpdateBannerLogo;
+        
+        /// <summary>
+        /// LabelOutput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelOutput;
     }
 }
