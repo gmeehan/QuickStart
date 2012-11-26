@@ -26,7 +26,15 @@ namespace QuickStartRetailer
             if (user.UserID > 0)
             {
                 Session.Add("UserID", user.UserID);
-                Response.Redirect("Index.aspx");
+
+                if (Session["ReturnToCheckout"] != null)
+                {
+                    Response.Redirect("Checkout.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Index.aspx");
+                }
             }
             else //if not successful...
             {

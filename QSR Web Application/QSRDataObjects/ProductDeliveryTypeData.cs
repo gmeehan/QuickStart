@@ -25,6 +25,7 @@ namespace QSRDataObjects
                 if (obj != null)
                 {
                     hsh["productdeliverytypeid"] = obj.ProductDeliveryTypeID;
+                    hsh["deliverytypeid"] = obj.DeliveryTypeID;
                     hsh["productcode"] = obj.ProductCode;
                     hsh["created"] = obj.Created;
                     hsh["modified"] = obj.Modified;
@@ -60,6 +61,30 @@ namespace QSRDataObjects
             }
 
             return allproddeliverytypes;
+        }
+
+        /// <summary>
+        /// Purpose: Grabs all product delivery types by product code
+        /// Accepts: String (Product Code)
+        /// Returns: List<ProductDeliveryType>
+        /// </summary>
+        public List<ProductDeliveryType> GetAllProductDeliveryTypesByProdCode(string prodcd)
+        {
+            QuickStart_DBEntities dbContext;
+            List<ProductDeliveryType> proddeliverytypes = null;
+            try
+            {
+                dbContext = new QuickStart_DBEntities();
+
+                //all product delivery types for this product are returned
+                proddeliverytypes = dbContext.ProductDeliveryTypes.Where(pdt => pdt.ProductCode == prodcd).ToList();
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ProductDeliveryTypeData", "GetAllDeliveryTypesByProdCode");
+            }
+
+            return proddeliverytypes;
         }
     }
 }

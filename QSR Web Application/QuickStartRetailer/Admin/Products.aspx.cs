@@ -22,7 +22,41 @@ namespace QuickStartRetailer.Admin
             {
                 if (!Page.IsPostBack)
                 {
-                    
+                    //Populate the featured product dropdowns
+                    Product prod = new Product();
+                    List<Product> products = prod.GetAllProducts(true);
+                    DropDownListFeaturedProduct1.DataSource = products;
+                    DropDownListFeaturedProduct1.DataTextField = "ProductCode";
+                    DropDownListFeaturedProduct1.DataValueField = "ProductCode";
+                    DropDownListFeaturedProduct1.DataBind();
+                    Configuration config1 = new Configuration();
+                    config1.GetConfigurationByCode("xFeaturedProduct1");
+                    DropDownListFeaturedProduct1.SelectedValue = config1.Value.ToString();
+
+
+                    DropDownListFeaturedProduct2.DataSource = products;
+                    DropDownListFeaturedProduct2.DataTextField = "ProductCode";
+                    DropDownListFeaturedProduct2.DataValueField = "ProductCode";
+                    DropDownListFeaturedProduct2.DataBind();
+                    Configuration config2 = new Configuration();
+                    config2.GetConfigurationByCode("xFeaturedProduct2");
+                    DropDownListFeaturedProduct2.SelectedValue = config2.Value.ToString();
+
+                    DropDownListFeaturedProduct3.DataSource = products;
+                    DropDownListFeaturedProduct3.DataTextField = "ProductCode";
+                    DropDownListFeaturedProduct3.DataValueField = "ProductCode";
+                    DropDownListFeaturedProduct3.DataBind();
+                    Configuration config3 = new Configuration();
+                    config3.GetConfigurationByCode("xFeaturedProduct3");
+                    DropDownListFeaturedProduct3.SelectedValue = config3.Value.ToString();
+
+                    DropDownListFeaturedProduct4.DataSource = products;
+                    DropDownListFeaturedProduct4.DataTextField = "ProductCode";
+                    DropDownListFeaturedProduct4.DataValueField = "ProductCode";
+                    DropDownListFeaturedProduct4.DataBind();
+                    Configuration config4 = new Configuration();
+                    config4.GetConfigurationByCode("xFeaturedProduct4");
+                    DropDownListFeaturedProduct4.SelectedValue = config4.Value.ToString();
                 }
             }
         }

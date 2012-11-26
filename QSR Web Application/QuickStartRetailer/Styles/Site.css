@@ -261,6 +261,12 @@ div.hideSkiplink
     background-color:#5f5f5f; /* Fallback */
 }
 
+.userPanel a:link, .userPanel a:visited
+{
+    color: #BAD8E9 !important;
+    text-decoration:none;
+}
+
 /* LEFT NAVIGATION MENU 
 ----------------------------------------------------------*/
 
@@ -557,6 +563,59 @@ div.hideSkiplink
     margin: 0 24px 0 18px;
 }
 
+.featured_slide
+{
+    width:460px; 
+    height:258px;
+}
+
+.slide-product-image
+{
+    height:250px;
+    width:250px;
+    float:left;
+}
+
+.slide-product-detailsDiv
+{
+    float:left;
+    margin-top:10%;
+    margin-bottom:10%;
+    margin-right:10px;
+    margin-left:10px;
+    width:190px;
+    text-align:center;
+}
+
+.slide-product-brand
+{
+    font-weight:bold;
+    font-size:18px;
+    color:#0B0B61;
+}
+
+.slide-product-name
+{
+    font-weight:bold;
+    font-size:18px;
+    color:#0B0B61;
+}
+
+.slide-product-price
+{
+    font-weight:bold;
+    font-size:24px;
+    color:#B40404;
+}
+
+.homepage_products
+{
+    width:600px; 
+    height:auto; 
+    margin-left:140px;
+}
+
+
 /* LOGIN PAGE
 ----------------------------------------------------------*/ 
 .userLoginDiv
@@ -639,22 +698,23 @@ div.hideSkiplink
     padding:0px 20px 20px 20px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    background-image: linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -o-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -moz-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -webkit-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
-    background-image: -ms-linear-gradient(bottom, rgb(215,239,195) 2%, rgb(234,247,235) 51%);
+    background-image: linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -o-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -moz-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -webkit-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
+    background-image: -ms-linear-gradient(bottom, rgb(218,235,235) 31%, rgb(232,243,250) 66%);
 
     background-image: -webkit-gradient(
 	    linear,
 	    left bottom,
 	    left top,
-	    color-stop(0.02, rgb(215,239,195)),
-	    color-stop(0.51, rgb(234,247,235))
+	    color-stop(0.31, rgb(218,235,235)),
+	    color-stop(0.66, rgb(232,243,250))
     );
 }
 
-/* Account Page  
+
+/* ACCOUNT PAGE  
 ----------------------------------------------------------*/
 .accountBlock  
 {
@@ -668,6 +728,115 @@ div.hideSkiplink
 }
 
 .accLabel p.ckBox { width:40% !important }
+
+
+/* PRODUCT INFO PAGE
+----------------------------------------------------------*/
+.prodInfo_prodName
+{
+    font-weight:bold;
+    font-size:20px;
+    text-align:center;
+}
+
+.prodInfo_brand
+{
+    font-weight:bold;
+    font-size:25px;
+    float:left;
+}
+
+.prodInfo_image
+{
+    height:350px;
+    width:350px;
+    float:left;
+}
+
+.prodInfo_RightDiv
+{
+    width:400px;
+    float:right;
+}
+
+.prodInfo_price
+{
+    font-weight:bold;
+    font-size:40px;
+    color:#B40404;
+}
+
+.prodInfo_RightInnerDiv
+{
+    padding:10px;
+    border:1px solid silver;
+    background-color: #FAFAFA;
+}
+
+.prodInfo_quantity
+{
+    font-weight:bold;
+    font-size:16px;
+}
+
+.prodInfo_delTypesTitle
+{
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+.prodInfo_dtypesGV
+{
+    
+}
+
+.prodInfo_dtypesGVItem
+{
+    padding-right:20px;
+}
+
+.prodInfo_DescriptionDiv
+{
+    float:left;
+    clear:both;
+    padding:10px;
+    /*border:1px solid silver;*/
+    /*background-color: #FAFAFA;*/
+    width:100%;
+    margin-bottom:30px;
+}
+
+.prodInfo_descriptionTitle
+{
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+.prodInfo_description
+{
+    
+}
+
+prodInfo_TabControl a:link, prodInfo_TabControl a:visited
+{
+    color: #BAD8E9;
+    text-decoration:none;
+}
+
+/* CHECKOUT PAGE
+----------------------------------------------------------*/
+.DataListCheckout
+{
+    border-top:1px solid silver;
+}
+
+.DataListCheckoutItem
+{
+    border-right:1px solid silver;
+    border-left:1px solid silver;
+    border-bottom:1px solid silver;
+}
+
 
 /* BUTTONS
 ----------------------------------------------------------*/
@@ -762,9 +931,4 @@ div.hideSkiplink
 .maxWidth
 {
     width:100%;
-}
-
-.productInfoMargins
-{
-    margin-right:25%;
 }

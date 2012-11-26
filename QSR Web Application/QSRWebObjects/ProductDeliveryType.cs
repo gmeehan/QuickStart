@@ -11,6 +11,7 @@ namespace QSRWebObjects
     public class ProductDeliveryType : ErrorLogger
     {
         private int _productDeliveryTypeID;
+        private int _deliveryTypeID;
         private string _productCode;
         private DateTime _created;
         private DateTime _modified;
@@ -27,6 +28,22 @@ namespace QSRWebObjects
                 catch (Exception)
                 {
                     _productDeliveryTypeID = 0;
+                }
+            }
+        }
+
+        public int DeliveryTypeID
+        {
+            get { return _deliveryTypeID; }
+            set
+            {
+                try
+                {
+                    _deliveryTypeID = value;
+                }
+                catch (Exception)
+                {
+                    _deliveryTypeID = 0;
                 }
             }
         }
@@ -94,6 +111,7 @@ namespace QSRWebObjects
                 hsh = data.GetProductDeliveryTypeByID(id);
 
                 ProductDeliveryTypeID = id;
+                DeliveryTypeID = Convert.ToInt32(hsh["deliverytypeid"]);
                 ProductCode = hsh["productcode"];
                 Created = hsh["created"];
                 Modified = hsh["modified"];
@@ -121,6 +139,7 @@ namespace QSRWebObjects
                 {
                     ProductDeliveryType pdtype = new ProductDeliveryType();
                     pdtype.ProductDeliveryTypeID = pdt.ProductDeliveryTypeID;
+                    pdtype.DeliveryTypeID = Convert.ToInt32(pdt.DeliveryTypeID);
                     pdtype.ProductCode = pdt.ProductCode;
                     pdtype.Created = pdt.Created;
                     pdtype.Modified = pdt.Modified;
@@ -130,6 +149,37 @@ namespace QSRWebObjects
             catch (Exception ex)
             {
                 ErrorRoutine(ex, "ProductDeliveryType", "GetAllProductDeliveryTypes");
+            }
+            return pdtypes;
+        }
+
+        /// <summary>
+        /// Purpose: Grabs all product delivery types by product code
+        /// Accepts: String (Product Code)
+        /// Returns: List<ProductDeliveryType>
+        /// </summary>
+        public List<ProductDeliveryType> GetAllProductDeliveryTypesByProdCode(string prodcd)
+        {
+            List<ProductDeliveryType> pdtypes = new List<ProductDeliveryType>();
+            try
+            {
+                ProductDeliveryTypeData data = new ProductDeliveryTypeData();
+                List<QSRDataObjects.ProductDeliveryType> dataPDTypes = data.GetAllProductDeliveryTypesByProdCode(prodcd);
+
+                foreach (QSRDataObjects.ProductDeliveryType pdt in dataPDTypes)
+                {
+                    ProductDeliveryType pdtype = new ProductDeliveryType();
+                    pdtype.ProductDeliveryTypeID = pdt.ProductDeliveryTypeID;
+                    pdtype.DeliveryTypeID = Convert.ToInt32(pdt.DeliveryTypeID);
+                    pdtype.ProductCode = pdt.ProductCode;
+                    pdtype.Created = pdt.Created;
+                    pdtype.Modified = pdt.Modified;
+                    pdtypes.Add(pdtype);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ProductDeliveryType", "GetAllProductDeliveryTypesByProdCode");
             }
             return pdtypes;
         }
@@ -146,6 +196,15 @@ namespace QSRWebObjects
             get { return _productDeliveryTypeID; }
             set { _productDeliveryTypeID = value; }
         }
+
+        private int _deliveryTypeID;
+
+        public int DeliveryTypeID
+        {
+            get { return _deliveryTypeID; }
+            set { _deliveryTypeID = value; }
+        }
+
         private string _productCode;
 
         public string ProductCode

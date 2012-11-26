@@ -399,6 +399,20 @@ div.hideSkiplink
     text-align:center;
 }
 
+/* PRODUCTS PAGE
+----------------------------------------------------------*/
+.FeaturedProductsTable
+{
+    
+}
+
+.FeaturedProductsTable td
+{
+    padding-right:100px;
+    font-weight:bold;
+}
+
+
 /* GRIDVIEW
 ----------------------------------------------------------*/
 
@@ -651,4 +665,10 @@ div.hideSkiplink
 .maxWidth
 {
     width:100%;
+}
+
+.center
+{
+    margin-left:auto !important;
+    margin-right:auto !important;
 }

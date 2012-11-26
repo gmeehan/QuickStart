@@ -72,6 +72,7 @@ namespace QuickStartRetailer.Admin.Forms
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
             if (FileUpload1.HasFile)
+            {
                 try
                 {
                     //Get the file extension
@@ -87,10 +88,6 @@ namespace QuickStartRetailer.Admin.Forms
                     LabelOutput.Text = "ERROR: " + ex.Message.ToString();
                     return;
                 }
-            else
-            {
-                LabelOutput.Text = "You have not specified a file.";
-                return;
             }
 
             try

@@ -4,20 +4,81 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    
     <div id="slider">
 	    <div class="simpleSlide-window" rel="0">
 	        <div class="simpleSlide-tray" rel="0">
 	            <div class="simpleSlide-slide" rel="0">
-	               <img src="Images/image1.jpg" alt="" />
+                   <div class="featured_slide">
+	                    <img id="ImageFeatured1" runat="server" class="slide-product-image" src="Images/image1.jpg" alt="" />
+                        <div class="slide-product-detailsDiv">
+                            <asp:Label ID="LabelFeaturedBrand1" class="slide-product-brand" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <asp:Label ID="LabelFeaturedName1" class="slide-product-name" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <hr />
+                            <br />
+                            <asp:Label ID="LabelFeaturedPrice1" class="slide-product-price" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <asp:LinkButton ID="LinkButtonFeatured1" CssClass="fancy_button" runat="server">More Information</asp:LinkButton>
+                        </div>
+                   </div>
 	            </div>
 	            <div class="simpleSlide-slide" rel="0">
-	               <img src="Images/image2.jpg" alt="" />
+                    <div class="featured_slide">
+	                    <img id="ImageFeatured2" runat="server" class="slide-product-image" src="Images/image2.jpg" alt="" />
+                        <div class="slide-product-detailsDiv">
+                            <asp:Label ID="LabelFeaturedBrand2" class="slide-product-brand" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <asp:Label ID="LabelFeaturedName2" class="slide-product-name" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <hr />
+                            <br />
+                            <asp:Label ID="LabelFeaturedPrice2" class="slide-product-price" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <asp:LinkButton ID="LinkButtonFeatured2" CssClass="fancy_button" runat="server">More Information</asp:LinkButton>
+                        </div>
+                    </div>
 	            </div>
 	            <div class="simpleSlide-slide" rel="0">
-	               <img src="Images/image3.jpg" alt="" />
+                    <div class="featured_slide">
+	                    <img id="ImageFeatured3" runat="server" class="slide-product-image" src="Images/image3.jpg" alt="" />
+                        <div class="slide-product-detailsDiv">
+                            <asp:Label ID="LabelFeaturedBrand3" class="slide-product-brand" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <asp:Label ID="LabelFeaturedName3" class="slide-product-name" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <hr />
+                            <br />
+                            <asp:Label ID="LabelFeaturedPrice3" class="slide-product-price" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <asp:LinkButton ID="LinkButtonFeatured3" CssClass="fancy_button" runat="server">More Information</asp:LinkButton>
+                        </div>
+                    </div>
 	            </div>
 	            <div class="simpleSlide-slide" rel="0">
-	               <img src="Images/image4.jpg" alt="" />
+                    <div class="featured_slide">
+	                    <img id="ImageFeatured4" runat="server" class="slide-product-image" src="Images/image4.jpg" alt="" />
+                        <div class="slide-product-detailsDiv">
+                            <asp:Label ID="LabelFeaturedBrand4" class="slide-product-brand" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <asp:Label ID="LabelFeaturedName4" class="slide-product-name" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <hr />
+                            <br />
+                            <asp:Label ID="LabelFeaturedPrice4" class="slide-product-price" runat="server" Text="Label"></asp:Label>
+                            <br />
+                            <br />
+                            <asp:LinkButton ID="LinkButtonFeatured4" CssClass="fancy_button" runat="server">More Information</asp:LinkButton>
+                        </div>
+                    </div>
 	            </div>
 	        </div>
 	    </div>
@@ -32,6 +93,7 @@
 		        <div class="simpleSlideStatus-window" rel="0"></div>
 		    </div>
 	    </div>
+        <div class="auto-slider" rel="0"></div>
 	
 	    <!-- //////////////////////////////////////////////////
 	    //////////////////  Use only one.  ////////////////////
@@ -45,6 +107,7 @@
 	    /////////////////////////////////////////////////// -->
     </div><!-- end #slider -->
 
+    <!--
     <div class="left-content-section">
         <div class="index-info-box">
             <div class="info-head">
@@ -84,4 +147,30 @@
             </div>
         </div>
     </div>
+    -->
+    <br />
+    <div id="HomepageProducts" class="homepage_products">
+        <h1 style="font-weight:bold; text-align:center">Featured Products</h1>
+        <asp:DataList ID="DataListProducts" CssClass="productList" RepeatDirection="Horizontal" 
+        RepeatColumns="3" runat="server" onitemcreated="DataListProducts_ItemCreated">
+            <ItemStyle CssClass="productListOuterCell" />
+                <ItemTemplate>
+                    <div id="productListInnerCell" runat="server" class="productListInnerCell">
+                        <asp:HyperLink ID="ProductImageLink" NavigateUrl='<%# "~/ProductInfo.aspx?prodcd=" + Eval("ProductCode") %>' runat="server">
+                            <asp:Image ID="Image1" CssClass="product-image-small" ImageUrl='<%# "~/Images/Product_Images/" + Eval("ProductCode") + ".jpg" %>' 
+                            runat="server" />
+                        </asp:HyperLink>
+                        <br />
+                        <asp:Label ID="LabelPrice" runat="server" CssClass="product-price-small" Text='<%# Eval("MSRP") %>' />
+                        <br />
+                        <br />
+                        <asp:HyperLink ID="ProductNameLink" CssClass="product-name-small" NavigateUrl='<%# "~/ProductInfo.aspx?prodcd=" + Eval("ProductCode") %>' 
+                        runat="server"><%# Eval("Name") %></asp:HyperLink>
+                        <br />
+                    </div>
+            </ItemTemplate>
+        </asp:DataList>
+    </div>
+    <br />
+
 </asp:Content>

@@ -97,4 +97,29 @@
         </asp:GridView>
     </ContentTemplate>
 </asp:UpdatePanel>
+<asp:UpdatePanel ID="UpdatePanel2" runat="server" onload="UpdatePanel1_Load" UpdateMode="Conditional"> 
+    <ContentTemplate>
+        <div style="border:1px solid silver; padding:5px; text-align:center; margin-bottom:30px; background-color: #FAFAFA;">
+            <h1 style="font-weight:bold; text-align:center">Change Featured Products</h1>
+            <br />
+            <table class="FeaturedProductsTable">
+                <tr>
+                    <td>Product 1</td>
+                    <td>Product 2</td>
+                    <td>Product 3</td>
+                    <td>Product 4</td>
+                </tr>
+                <tr>
+                    <td><asp:DropDownList ID="DropDownListFeaturedProduct1" runat="server" /></td>
+                    <td><asp:DropDownList ID="DropDownListFeaturedProduct2" runat="server" /></td>
+                    <td><asp:DropDownList ID="DropDownListFeaturedProduct3" runat="server" /></td>
+                    <td><asp:DropDownList ID="DropDownListFeaturedProduct4" runat="server" /></td>
+                </tr>
+            </table>
+            <br />
+            <asp:Button runat="server" CssClass="fancy_button" Text="Save Changes" />
+        </div>
+    </ContentTemplate>
+</asp:UpdatePanel>
 </asp:Content>
+

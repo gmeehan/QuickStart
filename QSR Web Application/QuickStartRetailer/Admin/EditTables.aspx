@@ -9,7 +9,7 @@
     <asp:Label ID="Label1" runat="server" Text="Table: "></asp:Label>
     <asp:DropDownList ID="DropDownListDBTables" runat="server" AutoPostBack="true" 
         onselectedindexchanged="DropDownListDBTables_SelectedIndexChanged"></asp:DropDownList>
-    <div style="padding:10px; width:100%; overflow:auto; background-color:#F2F2F2; border:1px solid black">
+    <div style="padding:10px; width:100%; overflow:auto; max-height:400px; background-color:#F2F2F2; border:1px solid black">
         <asp:GridView ID="GridViewDBTable" AutoGenerateColumns="true" 
             ShowHeaderWhenEmpty="true" runat="server"
             PageSize="20" GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" 

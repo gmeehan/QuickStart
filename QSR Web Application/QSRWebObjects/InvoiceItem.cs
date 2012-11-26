@@ -74,7 +74,7 @@ namespace QSRWebObjects
                     item.ProdCode = dataItem.ProductCode;
                     item.ProdName = dataItem.ProductName;
                     item.ProdDesc = dataItem.ProductDescription;
-                    item.Msrp = dataItem.MSRP;
+                    item.Msrp = Convert.ToDouble(dataItem.MSRP);
                     item.Quantity = dataItem.Quantity.Value;
                     item.Tax = dataItem.TaxAmount.Value;
                     invoiceItems.Add(item);
