@@ -74,9 +74,9 @@ namespace QuickStartRetailer
         public void addCartClick(object sender, EventArgs e)
         {
             var list = new List<Tuple<string, int>>();
-            if (Session["cartList"] != null)
+            if (Session["stringList"] != null)
             {
-                list = (List<Tuple<string, int>>)(Session["cartList"]);
+                list = (List<Tuple<string, int>>)(Session["stringList"]);
             }
             list.Add(new Tuple<string,int>(prodcd, 1));
             Session["cartList"] = list;
