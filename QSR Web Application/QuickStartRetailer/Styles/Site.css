@@ -394,6 +394,15 @@ div.hideSkiplink
     margin-right:auto;
 }
 
+.product-image-small-left
+{
+    height:130px;
+    width:130px;
+    margin-left:auto;
+    margin-right:auto;
+    float:left;
+}
+
 .product-price-small
 {
     width:100%;

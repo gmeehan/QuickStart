@@ -21,15 +21,17 @@ namespace QuickStartRetailer
             productCode.Text = prod.ProductCode.ToString();
             brand.Text = prod.Brand.ToString();
             price.Text = prod.Msrp.ToString();
-            //itemPic.ImageUrl = TBD BROMEOS
+            itemPic.ImageUrl = "~/Images/Product_Images/" + prodcd + ".jpg";
+            itemPic.Height = 100;
+            itemPic.Width = 100; ;
         }
 
         public void addCartClick(object sender, EventArgs e)
         {
             var list = new List<Tuple<string, int>>();
-            if (Session["cartList"] != null)
+            if (Session["stringList"] != null)
             {
-                list = (List<Tuple<string, int>>)(Session["cartList"]);
+                list = (List<Tuple<string, int>>)(Session["stringList"]);
             }
             list.Add(new Tuple<string,int>(prodcd, 1));
             Session["stringList"] = list;
