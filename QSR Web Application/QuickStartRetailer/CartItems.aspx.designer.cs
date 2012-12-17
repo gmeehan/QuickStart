@@ -13,12 +13,30 @@ namespace QuickStartRetailer {
     public partial class _CartItems {
         
         /// <summary>
-        /// DataListProducts control.
+        /// DataListCartItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataListProducts;
+        protected global::System.Web.UI.WebControls.DataList DataListCartItems;
+        
+        /// <summary>
+        /// ButtonContinueShopping control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonContinueShopping;
+        
+        /// <summary>
+        /// ButtonCheckout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCheckout;
     }
 }

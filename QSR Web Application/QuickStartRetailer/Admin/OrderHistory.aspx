@@ -22,6 +22,8 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <asp:ScriptManager ID="ScriptManager1" runat="server" /> 
 <br />
+<h2 style="font-weight:bold; text-align:center;">Order History</h2>
+<br />
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" onload="UpdatePanel1_Load" UpdateMode="Conditional"> 
     <ContentTemplate>  
         <asp:GridView ID="GridViewOrders" runat="server" AutoGenerateColumns="false" 

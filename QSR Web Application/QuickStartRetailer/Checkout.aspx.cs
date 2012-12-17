@@ -121,17 +121,26 @@ namespace QuickStartRetailer
 
         protected void ButtonGoToPayInfo_Click(object sender, EventArgs e)
         {
+            //Pass this to next page
             List<Hashtable> products_hshList = new List<Hashtable>();
-            foreach (DataListItem item in DataListCheckout.Items)
+
+            List<CheckoutItem> coItems = DataListCheckout.DataSource as List<CheckoutItem>;
+            for (int i = 0; i < DataListCheckout.Items.Count; i++)
             {
-                //This hashtable represents one row of the checkout datalist
-                Hashtable hsh = new Hashtable();
-                CheckoutItem coItem = (CheckoutItem)item.DataItem;
-                hsh.Add("prodcd", coItem.Prodcd);
-                hsh.Add("quantity", coItem.Prodcd);
-                hsh.Add("deliverytypeid", Convert.ToInt32(((DropDownList)(item.FindControl("DropDownListDeliveryType"))).SelectedValue));
-                //Add it to the list (which will be passed into session)
-                products_hshList.Add(hsh);
+                //Get reference to this data list row
+                DataListItem item = DataListCheckout.Items[i];
+                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+                {
+                    //Get reference to CheckoutItem for this row
+                    var coItem = coItems[i] as CheckoutItem;
+
+                    Hashtable hsh = new Hashtable();
+                    hsh.Add("prodcd", coItem.Prodcd);
+                    hsh.Add("quantity", coItem.Quantity);
+                    hsh.Add("deliverytypeid", Convert.ToInt32(((DropDownList)(item.FindControl("DropDownListDeliveryType"))).SelectedValue));
+                    //Add it to the list (which will be passed into session)
+                    products_hshList.Add(hsh);
+                }
             }
 
             //Go to next page

@@ -422,6 +422,7 @@ div.hideSkiplink
     margin: 5px 0 10px 0;   
     border: solid 1px #525252;   
     border-collapse:collapse;   
+    table-layout:fixed;
 }  
 .mGrid td {   
     padding: 2px;   

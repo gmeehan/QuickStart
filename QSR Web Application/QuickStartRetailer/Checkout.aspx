@@ -26,13 +26,13 @@
             <!--Row 2-->
             <tr>
             <td><asp:Label ID="LabelName" runat="server" CssClass="" Text='<%# Eval("Name") %>' /></td>
-            <td><asp:Label ID="LabelMSRP" runat="server" CssClass="" Text='<%# Eval("Msrp") %>' /></td>
+            <td><asp:Label ID="LabelMSRP" runat="server" CssClass="" Text='<%# "$" + Eval("Msrp") + " each"%>' /></td>
             <td>Delivery Type: <asp:DropDownList ID="DropDownListDeliveryType" DataSource='<%# Eval("DeliveryTypes") %>' DataTextField="Name" DataValueField="DeliveryTypeID" runat="server" /></td>
             <td><asp:CheckBox ID="CheckBoxUseUserAddress" runat="server" Text="Send to User's Address" OnCheckedChanged="Check_Changed" AutoPostBack="true" Checked="true" /></td>
             </tr>
         </table>
         <br />
-        <div id="SpecifiedDeliveryInfoDiv" rowID='<%# Eval("Prodcd") %>' runat="server" visible="false">
+        <div id="SpecifiedDeliveryInfoDiv" rowID='<%# Eval("Prodcd") %>' runat="server" style="padding-left:15px; margin-bottom:15px;" visible="false">
             <p style="color:Red">Required Fields (*)</p>
             <table>
             <tr>

@@ -400,15 +400,6 @@ div.hideSkiplink
     margin-right:auto;
 }
 
-.product-image-small-left
-{
-    height:130px;
-    width:130px;
-    margin-left:auto;
-    margin-right:auto;
-    float:left;
-}
-
 .product-price-small
 {
     width:100%;
@@ -832,18 +823,45 @@ prodInfo_TabControl a:link, prodInfo_TabControl a:visited
     text-decoration:none;
 }
 
+/* CART ITEMS PAGE
+***********************************************************/
+.cartItemsList
+{
+    margin-top:40px;
+    border-top:1px solid silver;
+    font-weight:bold;
+}
+
+.cartItemsListItem
+{
+    border-bottom:1px solid silver;
+    width:100%;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.product-image-small-left
+{
+    height:130px;
+    width:130px;
+    margin-left:auto;
+    margin-right:15px;
+    float:left;
+    border:1px solid silver;
+}
+
 /* CHECKOUT PAGE
 ----------------------------------------------------------*/
 .DataListCheckout
 {
-    border-top:1px solid silver;
+    border-top:3px solid silver;
 }
 
 .DataListCheckoutItem
 {
-    border-right:1px solid silver;
-    border-left:1px solid silver;
-    border-bottom:1px solid silver;
+    border-right:3px solid silver;
+    border-left:3px solid silver;
+    border-bottom:3px solid silver;
 }
 
 

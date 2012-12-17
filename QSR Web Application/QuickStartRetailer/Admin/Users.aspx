@@ -33,6 +33,7 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <asp:ScriptManager ID="ScriptManager1" runat="server" /> 
 <br />
+<h2 style="font-weight:bold; text-align:center;">User Management</h2>
 <a runat="server" id="add" class="fancybox_700x525" href="~/Admin/Forms/AddUserForm.aspx">
     <asp:Button ID="ButtonAddUser" runat="server" CssClass="fancy_button" Text="Add New User" />
 </a>

@@ -127,6 +127,11 @@ namespace QuickStartRetailer.Admin
             GridViewProducts.DataBind();
         }
 
+        protected void UpdatePanel2_Load(object sender, EventArgs e)
+        {
+
+        }
+
         protected void ButtonAddProduct_Click(object sender, EventArgs e)
         {
 

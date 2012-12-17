@@ -65,9 +65,9 @@ namespace QuickStartRetailer
         {
             if (!Page.IsPostBack)
             {
-                if (Session["stringList"] != null)
+                if (Session["cartList"] != null)
                 {
-                    foreach (var i in (List<Tuple<string, int>>)(Session["stringList"]))
+                    foreach (var i in (List<Tuple<string, int>>)(Session["cartList"]))
                     {
                         bool exists = false;
                         
@@ -94,8 +94,8 @@ namespace QuickStartRetailer
                             prods.Add(cartItem);
                         }
                     }
-                    DataListProducts.DataSource = prods;
-                    DataListProducts.DataBind();
+                    DataListCartItems.DataSource = prods;
+                    DataListCartItems.DataBind();
                 }
             }
             //another test
@@ -103,7 +103,8 @@ namespace QuickStartRetailer
 
         public void DataListProducts_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            var list = (List<Tuple<string, int>>)(Session["stringList"]);
+            /*
+            var list = (List<Tuple<string, int>>)(Session["cartList"]);
             
             foreach (var i in list)
             {
@@ -113,7 +114,7 @@ namespace QuickStartRetailer
                     break;
                 }
             }
-            Session["stringList"] = list;
+            Session["cartList"] = list;
 
             
 
@@ -123,11 +124,22 @@ namespace QuickStartRetailer
                 {
                     x.Qty++;
                     x.Total = x.Qty * x.Price;
-                    DataListProducts.DataSource = prods;
-                    DataListProducts.DataBind();
+                    DataListCartItems.DataSource = prods;
+                    DataListCartItems.DataBind();
                     break;
                 }
             }
+             * */
+        }
+
+        protected void ButtonCheckout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Checkout.aspx");
+        }
+
+        protected void ButtonContinueShopping_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Index.aspx");
         }
 
     }
