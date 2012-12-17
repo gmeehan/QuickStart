@@ -171,3 +171,8 @@ bin
 /QSR Web Application/QuickStartRetailer/obj
 /QSR Web Application/QuickStartRetailer.suo
 /QSR Web Application/QSRDataObjects/App.Config
+packages
+/QSR Web Application/QuickStartRetailer/packages.config
+/QSR Web Application/QSRWebObjects/packages.config
+/QSR Web Application/QSRDataObjects/packages.config
+/QSR Web Application/QSRDataObjects/Model1.Designer.cs
