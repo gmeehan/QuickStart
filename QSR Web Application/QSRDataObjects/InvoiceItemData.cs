@@ -21,7 +21,7 @@ namespace QSRDataObjects
                 dbContext = new QuickStart_DBEntities();
 
                 //all Invoice Items are returned for this order id
-                retList = dbContext.spGetInvoiceItemsByOrderID(orderid).ToList();
+                retList = dbContext.GetInvoiceItemsByOrderID(orderid).ToList();
             }
             catch (Exception ex)
             {

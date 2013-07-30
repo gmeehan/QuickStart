@@ -297,7 +297,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ProductDeliveryTypes](
 	[ProductDeliveryTypeID] [int] IDENTITY(1,1) NOT NULL,
-	[ProductCode] [int] NULL,
+	[DeliveryTypeID] [int] NULL,
+	[ProductCode] varchar(10) NULL,
 	[Created] [datetime] NULL,
 	[Modified] [datetime] NULL,
  CONSTRAINT [PK_ProductDelivery] PRIMARY KEY CLUSTERED 
