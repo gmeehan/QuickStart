@@ -864,6 +864,60 @@ prodInfo_TabControl a:link, prodInfo_TabControl a:visited
     border-bottom:3px solid silver;
 }
 
+/* PAYMENT INFO PAGE
+***********************************************************/
+.paymentInfoList
+{
+    margin-top:40px;
+    margin-bottom:30px;
+    border-top:1px solid silver;
+    font-weight:bold;
+}
+
+.paymentInfoListItem
+{
+    border-bottom:1px solid silver;
+    width:100%;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.paymentInfoListItemImage
+{
+    height:130px;
+    width:130px;
+    margin-left:auto;
+    margin-right:15px;
+    float:left;
+    border:1px solid silver;
+}
+
+.paymentOuterDiv
+{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+    margin-bottom:50px;
+    border:1px solid silver;
+    -moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	background-image: linear-gradient(right , rgb(233,242,240) 43%, rgb(235,240,240) 72%, rgb(237,240,240) 86%);
+    background-image: -o-linear-gradient(right , rgb(233,242,240) 43%, rgb(235,240,240) 72%, rgb(237,240,240) 86%);
+    background-image: -moz-linear-gradient(right , rgb(233,242,240) 43%, rgb(235,240,240) 72%, rgb(237,240,240) 86%);
+    background-image: -webkit-linear-gradient(right , rgb(233,242,240) 43%, rgb(235,240,240) 72%, rgb(237,240,240) 86%);
+    background-image: -ms-linear-gradient(right , rgb(233,242,240) 43%, rgb(235,240,240) 72%, rgb(237,240,240) 86%);
+
+    background-image: -webkit-gradient(
+	    linear,
+	    right top,
+	    left top,
+	    color-stop(0.43, rgb(233,242,240)),
+	    color-stop(0.72, rgb(235,240,240)),
+	    color-stop(0.86, rgb(237,240,240))
+    );
+}
 
 /* BUTTONS
 ----------------------------------------------------------*/
