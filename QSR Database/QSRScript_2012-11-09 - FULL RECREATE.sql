@@ -336,6 +336,7 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[OrderItems](
 	[OrderItemID] [int] IDENTITY(1,1) NOT NULL,
+	[OrderID] [int] NULL,
 	[ProductCode] [varchar](10) NULL,
 	[Quantity] [int] NULL,
 	[Created] [datetime] NULL,
