@@ -72,7 +72,7 @@
                 <asp:Menu ID="appleNav" SkipLinkText="" runat="server" Orientation="Horizontal" RenderingMode="List">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Index.aspx" Text="Home" Value="Home"/>
-                        <asp:MenuItem NavigateUrl="~/Category.aspx" Text="Categories" Value="Categories"/>
+                        <asp:MenuItem Text="Categories" Value="Categories"/>
                         <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us" Value="Contact Us" />
                         <asp:MenuItem NavigateUrl="~/MyAccount.aspx" Text="My Account" Value="My Account" />
                     </Items>
