@@ -11,5 +11,41 @@ namespace QuickStartRetailer {
     
     
     public partial class _PaymentInfo {
+        
+        /// <summary>
+        /// GridViewPaymentInfoItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewPaymentInfoItems;
+        
+        /// <summary>
+        /// RadioButtonListPaymentTypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListPaymentTypes;
+        
+        /// <summary>
+        /// ButtonReturnToCheckout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonReturnToCheckout;
+        
+        /// <summary>
+        /// ButtonContinueToConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonContinueToConfirmation;
     }
 }

@@ -9,7 +9,7 @@
 <asp:ScriptManager ID="ScriptManager1" runat="server" /> 
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
-<asp:DataList ID="DataListCheckout" runat="server" CssClass="DataListCheckout" 
+<asp:DataList ID="DataListCheckout" DataKeyField="Prodcd" runat="server" CssClass="DataListCheckout" 
         Width="100%" onitemdatabound="DataListCheckout_ItemDataBound">
     <ItemStyle CssClass="DataListCheckoutItem" BackColor="#FCFCFB" Font-Bold="true" />
     <AlternatingItemStyle BackColor="AliceBlue" Font-Bold="true" />
@@ -27,7 +27,7 @@
             <tr>
             <td><asp:Label ID="LabelName" runat="server" CssClass="" Text='<%# Eval("Name") %>' /></td>
             <td><asp:Label ID="LabelMSRP" runat="server" CssClass="" Text='<%# "$" + Eval("Msrp") + " each"%>' /></td>
-            <td>Delivery Type: <asp:DropDownList ID="DropDownListDeliveryType" DataSource='<%# Eval("DeliveryTypes") %>' DataTextField="Name" DataValueField="DeliveryTypeID" runat="server" /></td>
+            <td>Delivery Type: <asp:DropDownList ID="DropDownListDeliveryType" runat="server" /></td>
             <td><asp:CheckBox ID="CheckBoxUseUserAddress" runat="server" Text="Send to User's Address" OnCheckedChanged="Check_Changed" AutoPostBack="true" Checked="true" /></td>
             </tr>
         </table>
@@ -51,7 +51,7 @@
                 <td>*City:</td>
                 <td style="padding-right:20px;"><asp:TextBox ID="txtCity" runat="server" Width="200px" AutoCompleteType="Search" /></td>
                 <td>*Country:</td>
-                <td><asp:DropDownList ID="drop" runat="server" Width="204px">
+                <td><asp:DropDownList ID="dropCountry" runat="server" Width="204px">
                         <asp:ListItem>United States</asp:ListItem>
                         <asp:ListItem>Canada</asp:ListItem>
                     </asp:DropDownList>
@@ -61,7 +61,7 @@
                 <td>*State/Province:</td>
                 <td style="padding-right:20px;"><asp:DropDownList ID="dropStateProv" runat="server" Width="204px"/></td>
                 <td>*Zip/Postal Code:</td>
-                <td><asp:TextBox ID="txtZip" runat="server" Width="200px" AutoCompleteType="Search" /></td>
+                <td><asp:TextBox ID="txtZipPostal" runat="server" Width="200px" AutoCompleteType="Search" /></td>
             </tr>
             <tr>
                 <td>*Email:</td>
