@@ -180,3 +180,5 @@ packages
 /QSR Database/test2.mdf
 /QSR CreateDB/CreateDB/obj
 /QSR CreateDB/CreateDB/bin
+/QSR Database/QuickStart_DB_log.ldf
+/QSR Database/QuickStart_DB.mdf
