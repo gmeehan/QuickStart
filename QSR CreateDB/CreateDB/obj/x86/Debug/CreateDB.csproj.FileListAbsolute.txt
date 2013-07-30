@@ -1,9 +1,0 @@
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\bin\Debug\CreateDB.exe
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\bin\Debug\CreateDB.pdb
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\obj\x86\Debug\CreateDB.Form1.resources
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\obj\x86\Debug\CreateDB.Properties.Resources.resources
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\obj\x86\Debug\CreateDB.exe
-C:\Users\Graham\QuickStart\Documents\FANSHAWE\Y3S2\Managing Software Projects\CreateDB\CreateDB\obj\x86\Debug\CreateDB.pdb

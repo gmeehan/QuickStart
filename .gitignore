@@ -176,3 +176,7 @@ packages
 /QSR Web Application/QSRWebObjects/packages.config
 /QSR Web Application/QSRDataObjects/packages.config
 /QSR Web Application/QSRDataObjects/Model1.Designer.cs
+/QSR Database/test2.ldf
+/QSR Database/test2.mdf
+/QSR CreateDB/CreateDB/obj
+/QSR CreateDB/CreateDB/bin

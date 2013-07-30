@@ -11,13 +11,10 @@ GO
 
 /****** Object:  Database [QuickStart_DB]    Script Date: 11/09/2012 11:56:50 ******/
 
-/* DAVE AND MARLON DON'T FORGET TO PUT YOUR OWN DIRECTORIES BELOW...MAYBE HAVE TO 
-DELETE PREVIOUSLY EXISTING ONE??*/
-
 CREATE DATABASE [QuickStart_DB] ON  PRIMARY 
-( NAME = N'QuickStart_DB', FILENAME = N'C:\QSR Database\QuickStart_DB.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+( NAME = N'QuickStart_DB', FILENAME = N'E:\Websites\QuickStart\QSR Database\QuickStart_DB.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
  LOG ON 
-( NAME = N'QuickStart_DB_log', FILENAME = N'C:\QSR Database\QuickStart_DB_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+( NAME = N'QuickStart_DB_log', FILENAME = N'E:\Websites\QuickStart\QSR Database\QuickStart_DB_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
 GO
 
 ALTER DATABASE [QuickStart_DB] SET COMPATIBILITY_LEVEL = 100
