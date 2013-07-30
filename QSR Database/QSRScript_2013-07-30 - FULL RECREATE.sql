@@ -110,10 +110,9 @@ GO
 ALTER DATABASE [QuickStart_DB] SET DB_CHAINING OFF 
 GO
 
-
 USE [QuickStart_DB]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -147,7 +146,7 @@ GO
 SET IDENTITY_INSERT [dbo].[Users] ON
 INSERT [dbo].[Users] ([UserID], [Username], [Password], [Salutation], [FirstName], [LastName], [Address1], [Address2], [City], [StateProvinceID], [ZipPostalCode], [Email], [IsReceiveNewsletters], [Created], [Modified]) VALUES (1, N'gmeehan', N'gmeehan', N'Mr.', N'Graham', N'Meehan', N'123 Test Street', NULL, N'London', 9, N'N6E 2N9', N'graham_meehan@hotmail.com', 0, CAST(0x0000A0F801156A47 AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[Users] OFF
-/****** Object:  Table [dbo].[StatesProvinces]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[StatesProvinces]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -243,7 +242,7 @@ INSERT [dbo].[StatesProvinces] ([StateProvinceID], [Name], [Country], [CurrencyC
 INSERT [dbo].[StatesProvinces] ([StateProvinceID], [Name], [Country], [CurrencyCode], [TaxRatePercentage], [Modified]) VALUES (71, N'Wisconsin', N'United States', N'USD', 5, NULL)
 INSERT [dbo].[StatesProvinces] ([StateProvinceID], [Name], [Country], [CurrencyCode], [TaxRatePercentage], [Modified]) VALUES (72, N'Wyoming', N'United States', N'USD', 4, NULL)
 SET IDENTITY_INSERT [dbo].[StatesProvinces] OFF
-/****** Object:  Table [dbo].[Products]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[Products]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -290,15 +289,17 @@ INSERT [dbo].[Products] ([ProductCode], [Name], [Brand], [Description], [Categor
 INSERT [dbo].[Products] ([ProductCode], [Name], [Brand], [Description], [CategoryID], [MSRP], [isFreeShipping], [isTaxFree], [QuantityInStock], [IsQuantityUnlimited], [Created], [Modified], [isActive]) VALUES (N'U68J39BVNF', N'44" LCD Television', N'Sharp', NULL, 23, 599.99, 0, 0, 0, 0, CAST(0x0000A0F300DD64C5 AS DateTime), NULL, 1)
 INSERT [dbo].[Products] ([ProductCode], [Name], [Brand], [Description], [CategoryID], [MSRP], [isFreeShipping], [isTaxFree], [QuantityInStock], [IsQuantityUnlimited], [Created], [Modified], [isActive]) VALUES (N'UVP9TQMFGC', N'8" Digital Frame', N'Nikon', NULL, 19, 799.99, 0, 0, 0, 0, CAST(0x0000A0F300DD2287 AS DateTime), NULL, 1)
 INSERT [dbo].[Products] ([ProductCode], [Name], [Brand], [Description], [CategoryID], [MSRP], [isFreeShipping], [isTaxFree], [QuantityInStock], [IsQuantityUnlimited], [Created], [Modified], [isActive]) VALUES (N'XBL5MU5CM1', N'10" Digital Frame', N'Nikon', NULL, 19, 899.99, 0, 0, 0, 0, CAST(0x0000A0F300DD48A9 AS DateTime), NULL, 1)
-/****** Object:  Table [dbo].[ProductDeliveryTypes]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[ProductDeliveryTypes]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING OFF
+GO
 CREATE TABLE [dbo].[ProductDeliveryTypes](
 	[ProductDeliveryTypeID] [int] IDENTITY(1,1) NOT NULL,
 	[DeliveryTypeID] [int] NULL,
-	[ProductCode] varchar(10) NULL,
+	[ProductCode] [varchar](10) NULL,
 	[Created] [datetime] NULL,
 	[Modified] [datetime] NULL,
  CONSTRAINT [PK_ProductDelivery] PRIMARY KEY CLUSTERED 
@@ -307,7 +308,9 @@ CREATE TABLE [dbo].[ProductDeliveryTypes](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Orders]    Script Date: 11/09/2012 11:57:37 ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Orders]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -328,7 +331,7 @@ CREATE TABLE [dbo].[Orders](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrderItems]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[OrderItems]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -350,7 +353,7 @@ CREATE TABLE [dbo].[OrderItems](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LangLabels]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[LangLabels]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -369,7 +372,7 @@ CREATE TABLE [dbo].[LangLabels](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[DeliveryType]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[DeliveryType]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -396,7 +399,7 @@ INSERT [dbo].[DeliveryType] ([DeliveryTypeID], [Name], [Description], [Cost], [C
 INSERT [dbo].[DeliveryType] ([DeliveryTypeID], [Name], [Description], [Cost], [Created], [Modified]) VALUES (2, N'Express Mail', N'Purchase is sent through express delivery', 30, CAST(0x0000A0F200EC6321 AS DateTime), NULL)
 INSERT [dbo].[DeliveryType] ([DeliveryTypeID], [Name], [Description], [Cost], [Created], [Modified]) VALUES (3, N'Electronic', N'Purchase is sent via e-mail', 0, CAST(0x0000A0F200EC6321 AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[DeliveryType] OFF
-/****** Object:  Table [dbo].[Configurations]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[Configurations]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -418,7 +421,15 @@ CREATE TABLE [dbo].[Configurations](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Categories]    Script Date: 11/09/2012 11:57:37 ******/
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xCurrencyCode', NULL, N'CAD', 0, NULL, NULL)
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xDisplayPrices', N'Display or hide prices', NULL, 1, 1, NULL)
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xEnableTaxes', N'Enable of disable taxes on all purchases', NULL, 1, 1, NULL)
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xFeaturedProduct1', N'The first product featured in the slideshow on the home page', N'0QEN0BL4OH', 0, NULL, NULL)
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xFeaturedProduct2', N'The second product featured in the slideshow on the home page', N'4Q8UMWUV3B', 0, NULL, NULL)
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xFeaturedProduct3', N'The third product featured in the slideshow on the home page', N'51PBBCMUQF', 0, NULL, NULL)
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xFeaturedProduct4', N'The fourth product featured in the slideshow on the home page', N'8XGWBVIZ5K', 0, NULL, NULL)
+INSERT [dbo].[Configurations] ([ConfigurationCode], [Description], [Value], [IsYesNoValue], [YesNoValue], [Modified]) VALUES (N'xIsCatalogueOnly', N'Catalogue mode removes all Add-to-cart and purchasing.', NULL, 1, 0, NULL)
+/****** Object:  Table [dbo].[Categories]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -471,7 +482,7 @@ INSERT [dbo].[Categories] ([CategoryID], [Name], [Description], [ParentCategoryI
 INSERT [dbo].[Categories] ([CategoryID], [Name], [Description], [ParentCategoryID], [Created], [Modified], [IsActive]) VALUES (27, N'IPods', NULL, 6, CAST(0x0000A0F200EB0516 AS DateTime), NULL, 1)
 INSERT [dbo].[Categories] ([CategoryID], [Name], [Description], [ParentCategoryID], [Created], [Modified], [IsActive]) VALUES (28, N'IPod Accessories', NULL, 6, CAST(0x0000A0F200EB171F AS DateTime), NULL, 1)
 SET IDENTITY_INSERT [dbo].[Categories] OFF
-/****** Object:  Table [dbo].[AuditTypes]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[AuditTypes]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -490,7 +501,7 @@ CREATE TABLE [dbo].[AuditTypes](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Audits]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[Audits]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -512,7 +523,7 @@ CREATE TABLE [dbo].[Audits](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Administrators]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Table [dbo].[Administrators]    Script Date: 07/30/2013 18:09:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -537,51 +548,51 @@ GO
 SET IDENTITY_INSERT [dbo].[Administrators] ON
 INSERT [dbo].[Administrators] ([AdministratorID], [Username], [Password], [FirstName], [LastName], [IsActive]) VALUES (2, N'admin', N'admin', N'Graham', N'Meehan', 1)
 SET IDENTITY_INSERT [dbo].[Administrators] OFF
-/****** Object:  Default [DF_Audits_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Audits_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Audits] ADD  CONSTRAINT [DF_Audits_Created]  DEFAULT (getdate()) FOR [Created]
 GO
-/****** Object:  Default [DF_Categories_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Categories_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Categories] ADD  CONSTRAINT [DF_Categories_Created]  DEFAULT (getdate()) FOR [Created]
 GO
-/****** Object:  Default [DF_Categories_IsActive]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Categories_IsActive]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Categories] ADD  CONSTRAINT [DF_Categories_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
-/****** Object:  Default [DF_DeliveryType_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_DeliveryType_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[DeliveryType] ADD  CONSTRAINT [DF_DeliveryType_Created]  DEFAULT (getdate()) FOR [Created]
 GO
-/****** Object:  Default [DF_OrderItems_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_OrderItems_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[OrderItems] ADD  CONSTRAINT [DF_OrderItems_Created]  DEFAULT (getdate()) FOR [Created]
 GO
-/****** Object:  Default [DF_Orders_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Orders_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Orders] ADD  CONSTRAINT [DF_Orders_Created]  DEFAULT (getdate()) FOR [Created]
 GO
-/****** Object:  Default [DF_ProductDeliveryTypes_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_ProductDeliveryTypes_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[ProductDeliveryTypes] ADD  CONSTRAINT [DF_ProductDeliveryTypes_Created]  DEFAULT (getdate()) FOR [Created]
 GO
-/****** Object:  Default [DF_Products_CategoryID]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_CategoryID]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_CategoryID]  DEFAULT ((0)) FOR [CategoryID]
 GO
-/****** Object:  Default [DF_Products_MSRP]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_MSRP]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_MSRP]  DEFAULT ((0.00)) FOR [MSRP]
 GO
-/****** Object:  Default [DF_Products_isFreeShipping]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_isFreeShipping]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_isFreeShipping]  DEFAULT ((0)) FOR [isFreeShipping]
 GO
-/****** Object:  Default [DF_Products_isTaxFree]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_isTaxFree]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_isTaxFree]  DEFAULT ((0)) FOR [isTaxFree]
 GO
-/****** Object:  Default [DF_Products_QuantityInStock]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_QuantityInStock]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_QuantityInStock]  DEFAULT ((0)) FOR [QuantityInStock]
 GO
-/****** Object:  Default [DF_Products_IsQuantityUnlimited]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_IsQuantityUnlimited]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_IsQuantityUnlimited]  DEFAULT ((0)) FOR [IsQuantityUnlimited]
 GO
-/****** Object:  Default [DF_Products_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_Created]  DEFAULT (getdate()) FOR [Created]
 GO
-/****** Object:  Default [DF_Products_isActive]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Products_isActive]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_isActive]  DEFAULT ((1)) FOR [isActive]
 GO
-/****** Object:  Default [DF_Users_Created]    Script Date: 11/09/2012 11:57:37 ******/
+/****** Object:  Default [DF_Users_Created]    Script Date: 07/30/2013 18:09:50 ******/
 ALTER TABLE [dbo].[Users] ADD  CONSTRAINT [DF_Users_Created]  DEFAULT (getdate()) FOR [Created]
 GO

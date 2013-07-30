@@ -33,7 +33,6 @@ namespace QuickStartRetailer.Admin
                     config1.GetConfigurationByCode("xFeaturedProduct1");
                     DropDownListFeaturedProduct1.SelectedValue = config1.Value.ToString();
 
-
                     DropDownListFeaturedProduct2.DataSource = products;
                     DropDownListFeaturedProduct2.DataTextField = "ProductCode";
                     DropDownListFeaturedProduct2.DataValueField = "ProductCode";
